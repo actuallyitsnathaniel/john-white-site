@@ -114,7 +114,7 @@ function NavBar() {
             Music
           </Link>
           <Link
-            className={`hidden nav-item ${
+            className={`nav-item ${
               pageTitle === "Merch" ? "nav-item-active" : ""
             }`}
             to="/merch"
