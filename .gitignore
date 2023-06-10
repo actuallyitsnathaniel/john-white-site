@@ -1,4 +1,5 @@
-/.DS_Store
+*.DS_Store
+./DS_Store*
 
 # Logs
 logs
@@ -35,3 +36,8 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+src/.DS_Store
+src/.DS_Store
+src/assets/.DS_Store
+src/assets/images/.DS_Store
+src/assets/images/icons/.DS_Store
