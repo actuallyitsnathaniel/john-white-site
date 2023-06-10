@@ -1,0 +1,32 @@
+
+.video {
+ filter: brightness(0.40) blur(10px) sepia(0.5);
+ /* The min width had to be set for both */
+ min-width: 230vh;
+ transform: translateY(-50px) translateX(-245px);
+ justify-content: center;
+ align-content: center;
+ overflow: hidden;
+ object-fit: fill;
+}
+
+.video-wrapper {
+  background-color: #000;
+  position: fixed;
+  display: flex;
+  min-width: 230vh;
+  z-index: -1;
+}
+
+@media  and min-width(600px) {
+  .video {
+    filter: brightness(0.75) blur(10px);
+    /* The min width had to be set for both */
+    min-width: 60vw;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    object-fit: fill;
+   }
+  
+}
