@@ -56,74 +56,74 @@ function Discography() {
           <Disc 
             artwork={momentsWillSingle}
             title={'Moments Will - single'}
-            spotifyLink=''
-            appleMusicLink=''
-            soundcloudLink=''
-            youtubeLink=''
+            spotifyLink='https://open.spotify.com/track/2nTRXnb4AeM3IFWdEYHBUY?si=a7d9b2e430674ba3'
+            appleMusicLink='https://music.apple.com/us/album/moments-will-single/1642081668'
+            soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-momentswill-6-4'
+            youtubeLink='https://youtu.be/rfw4jlwoadw'
           />
           <Disc
             artwork={wrongIntentionsSingle}
             title={'Wrong Intentions - single'}
-            spotifyLink=''
-            appleMusicLink=''
-            soundcloudLink=''
-            youtubeLink=''
+            spotifyLink='https://open.spotify.com/track/667IbZFF4vadYIqo5EVsAh?si=9bb0f03e66064dac'
+            appleMusicLink='https://music.apple.com/us/album/wrong-intentions-single/1636433723'
+            soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-wrongintentions-2'
+            youtubeLink='https://youtu.be/srotkdvfymc'
           />
           <Disc
             artwork={whoeverYouWantToBeSingle}
             title={'Whoever You Want to Be - single'}
-            spotifyLink=''
-            appleMusicLink=''
-            soundcloudLink=''
-            youtubeLink=''
+            spotifyLink='https://open.spotify.com/track/42W4JMlVCjf41SmqcimLhz?si=e40a72ca719e4625'
+            appleMusicLink='https://music.apple.com/us/album/whoever-you-want-to-be-single/1630867196'
+            soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-whoeveryouwanttobe'
+            youtubeLink='https://youtu.be/toxcnzk9xoo'
           />
           <Disc
             artwork={betterDaysSingle}
             title={'Better Days - single'}
-            spotifyLink=''
-            appleMusicLink=''
-            soundcloudLink=''
-            youtubeLink=''
+            spotifyLink='https://open.spotify.com/track/2VbvWM9HqFsCBHM46CfmS2?si=aeab1263485343b5'
+            appleMusicLink='https://music.apple.com/us/album/better-days-single/1624621356'
+            soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-better-days-mix'
+            youtubeLink='https://youtu.be/7ci3qjd3pg0'
           />
           <Disc
             artwork={everWantSingle}
             title={'Ever Want (with OKO) - single'}
-            spotifyLink=''
-            appleMusicLink=''
+            spotifyLink='https://open.spotify.com/track/3l60FtfpRHi2TSPSyeT6lz?si=d9b0101660b14dca'
+            appleMusicLink='https://music.apple.com/us/album/ever-want-single/1580378453'
             soundcloudLink=''
-            youtubeLink=''
+            youtubeLink='https://youtu.be/eoxpheyksdg'
           />
           <Disc
             artwork={better2021Single}
             title={'Better (with Sam Denton & Riley) - single (2021)'}
-            spotifyLink=''
-            appleMusicLink=''
+            spotifyLink='https://open.spotify.com/track/52lu5hXrnYdWtPb90ImyA6?si=112307d4c45a4830'
+            appleMusicLink='https://music.apple.com/us/album/better-single/1556313448'
             soundcloudLink=''
-            youtubeLink=''
+            youtubeLink='https://youtu.be/yktwodhhm0o'
           />
           <Disc
             artwork={timeSingle}
             title={'Time - single'}
-            spotifyLink=''
-            appleMusicLink=''
+            spotifyLink='https://open.spotify.com/track/09srn4UeMI8gSZxWKYpepL?si=af3f0cfb1b444730'
+            appleMusicLink='https://music.apple.com/us/album/time-single/1526426740'
             soundcloudLink=''
-            youtubeLink=''
+            youtubeLink='https://youtu.be/sbyoa5wmln8'
           />
           <Disc
             artwork={breakingSingle}
             title={'Breaking - single'}
-            spotifyLink=''
-            appleMusicLink=''
-            soundcloudLink=''
-            youtubeLink=''
+            spotifyLink='https://open.spotify.com/track/3W3oKk7R3ap2cyn8O144Ix?si=abb77701f05b42f7'
+            appleMusicLink='https://music.apple.com/us/album/breaking-single/1481706722'
+            soundcloudLink='https://soundcloud.com/johnwhitesmusic/breaking'
+            youtubeLink='https://youtu.be/tra6egt3tni'
           />
           <Disc
             artwork={better2019Single}
             title={'Better - single (2019)'}
-            spotifyLink=''
-            appleMusicLink=''
-            soundcloudLink=''
-            youtubeLink=''
+            spotifyLink='https://open.spotify.com/track/4rYhOltj2L4IE6OWGM9s5C?si=05d2650b7c4b4ba5'
+            appleMusicLink='https://music.apple.com/us/album/better-single/1477648616'
+            soundcloudLink='https://soundcloud.com/johnwhitesmusic/better'
+            youtubeLink='https://youtu.be/eoxzjq5brza'
           />
         </div>
       </div>
