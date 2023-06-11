@@ -5,7 +5,6 @@ import { MusicLinks } from ".//../../components/music-embeds";
 
 function Home() {
   return (
-    // TODO: fix homepage logo alignment...
     <div className="text-white justify-items-center">
       <div className="pt-32"/>
       <div className="grid justify-center">

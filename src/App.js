@@ -23,26 +23,26 @@ function App() {
     <BrowserRouter forceRefresh>
     { /** TODO: add FILM grain and burn overlay */}
     { /** May need to go on the bottom? could be a modal of some sort. */} 
-    <VideoBackground />
-    <FilmGrainEffect /> 
+    <FilmGrainEffect />
+    <VideoBackground /> 
           <div className="h-screen w-screen -z-10">
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home" render={() => <Home />} />
-          <Route path="/about" render={() => <About />} />
-          <Route path="/contact" render={() => <Contact />} />
-          <Route path="/links" render={() => <Links />} />
-          <Route path="/merch" render={() => <Merch />} />
-          <Route path="/music" render={() => <Music />} />
-          <Route path="/shows" render={() => <Shows />} />
-          <Route path="/secret" render={() => <Secret />} />
-          <Route path="*" render={() => <ErrorPage />} />
-        </Switch>
-        <SocialLinks />
-        <Footer />
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home" render={() => <Home />} />
+            <Route path="/about" render={() => <About />} />
+            <Route path="/contact" render={() => <Contact />} />
+            <Route path="/links" render={() => <Links />} />
+            <Route path="/merch" render={() => <Merch />} />
+            <Route path="/music" render={() => <Music />} />
+            <Route path="/shows" render={() => <Shows />} />
+            <Route path="/secret" render={() => <Secret />} />
+            <Route path="*" render={() => <ErrorPage />} />
+          </Switch>
+          <SocialLinks />
+          <Footer />
       </div>
     </BrowserRouter>
   );

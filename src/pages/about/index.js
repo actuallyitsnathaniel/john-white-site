@@ -2,6 +2,7 @@ import React from "react";
 import oneSheet from '../../assets/images/john_white_one_sheet.png'
 
 // TODO: carousel-type component with all images shared from daniel
+// TODO: implement resizeable 'pinch-to-zoom' for one sheet
 function About() {
   return (
     <div className="flex flex-wrap md:pt-14 justify-center items-center text-4xl text-white h-2/3 md:h-fit">

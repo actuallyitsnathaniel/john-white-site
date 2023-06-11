@@ -1,22 +1,21 @@
 .grain-background {
-  position: absolute;
-  width: 130vw;
-  height: 1600px;
+  position: fixed;
+  width: 100vw;
 }
 
 
 .outer-scratch, .inner-scratch {
   height: inherit;
-  opacity: 1;
+  opacity: .07;
 }
 
 .outer-scratch:after, .inner-scratch:after {
   content: '';
   width: 120%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: -5%;
+  left: -5%;
   padding-left: 100px;
   background: url('./assets/images/background/scratch.png') repeat center center;
 }
