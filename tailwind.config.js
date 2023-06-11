@@ -95,9 +95,9 @@ module.exports = {
         }
       },
       animation: {
-        'scratch': 'scratch 0.45s steps(1) infinite', // todo: fix this implementaion. check syntax?
+        'scratch': 'scratch 0.45s steps(1) infinite', 
         'grain': 'grain 0.5s steps(1) infinite',
-        'inner-scratch': 'inner-scratch 2s infinite' // todo: fix this implementaion. check syntax?
+        'inner-scratch': 'inner-scratch 2s infinite'
       }
     },
   },
