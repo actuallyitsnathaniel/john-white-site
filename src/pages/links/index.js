@@ -10,29 +10,29 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
 
 const Links = () => {
   return (
-    <div className="text-center mb-auto h-auto text-white">
+    <div className="text-center  text-white">
       <Link exact to={"/home"}>
       <div className="mx-auto">
         <JohnWhiteLogo/>
       </div>
       </Link>
-      <h1 className="text-[175%] pb-8 md:text-6xl font-semibold italic">
+      <h1 className="text-[200%] md:text-6xl py-6 font-semibold italic">
         links
       </h1>
-      <div className="flex flex-wrap w-full justify-center px-11">
-        <div className="p-6">
+      <div className="flex flex-wrap justify-center px-9">
+        <div className="px-6">
           <SpotifyLink />
         </div>
-        <div className="p-6">
+        <div className="px-6">
           <AppleMusic /> 
         </div>
-        <div className="p-6">
+        <div className="px-6">
           <YoutubeLink />
         </div>
-        <div className="p-6">
+        <div className="px-6">
           <InstagramLogo />
         </div>
-        <div className="p-6">
+        <div className="px-6">
           <GmailLogo />
         </div>
       </div>   

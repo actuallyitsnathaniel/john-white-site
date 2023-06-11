@@ -6,8 +6,8 @@ import { MusicLinks } from ".//../../components/music-embeds";
 const Home = () => {
   return (
     <div className="text-white justify-items-center">
-      <div className="pt-24"/>
-      <div className="grid justify-center h-screen">
+      <div className="pt-28"/>
+      <div className="grid justify-center">
         <JohnWhiteLogo />
         <p className="text-center text-8xl bottom-0 animate-bounce">↡</p>
       </div>
