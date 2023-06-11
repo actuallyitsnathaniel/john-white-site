@@ -1,4 +1,4 @@
-export default function AppleMusicEmbed() {
+const AppleMusicEmbed = () => {
   return (
     <iframe
       title="apple-music-embedded"
@@ -18,3 +18,5 @@ export default function AppleMusicEmbed() {
     />
   );
 }
+
+export default AppleMusicEmbed;

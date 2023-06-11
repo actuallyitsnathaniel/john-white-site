@@ -10,7 +10,7 @@ export function MusicLinks() {
       <div className="p-6 text-center whitespace-nowrap">
         listen to the fake smiles ep
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center drop-shadow-xl">
         <SpotifyEmbed />
         <AppleMusicEmbed />
         <SoundcloudEmbed />

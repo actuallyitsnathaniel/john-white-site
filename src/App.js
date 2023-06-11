@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter forceRefresh>
     <FilmGrainEffect />
     <VideoBackground /> 
-      <div className="flex flex-col h-screen w-screen -z-10 justify-between">
+      <div className="flex flex-col h-screen w-screen justify-between">
         <NavBar />
         <Switch>
           <Route exact path="/">

@@ -1,7 +1,6 @@
 .grain-background {
   position: fixed;
   height: 1600px;
-
 }
 
 .outer-scratch, .inner-scratch {
@@ -27,8 +26,8 @@
   height: 110%;
   top: -5%;
   left: -5%;
-  opacity: .11;
-  filter: invert(1);
+  opacity: .1;
+  filter: invert(2) hue-rotate(.5) contrast(.4);
   background: url('./assets/images/background/grain.jpg') repeat center center; /*TODO: try to recreate this with 'repeatable' edges? */
 }
 

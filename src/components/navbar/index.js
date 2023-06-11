@@ -40,7 +40,7 @@ function NavBar() {
 
   return (
     <nav
-      className={`text-white p-2.5 font-semibold ${
+      className={`text-white p-2.5 font-semibold drop-shadow-xl ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
     >
