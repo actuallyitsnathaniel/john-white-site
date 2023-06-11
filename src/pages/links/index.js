@@ -11,15 +11,15 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
 const Links = () => {
   return (
     // TODO: fix centering fit
-    <div className="flex flex-wrap text-center mx-auto w-fit min-h-screen text-white overflow-hidden">
-      <div className="pb-3">
+    <div className="text-center min-h-screen text-white overflow-hidden">
+      <div className="grid pb-3 justify-center">
         <Link exact to={"/home"}>
-          <JohnWhiteLogo className='-pb-8'/>
+          <JohnWhiteLogo/>
         </Link>
-        <div className="space-y-10">
-          <h1 className="text-[150%] md:text-6xl pb-2 font-semibold italic">
+        <h1 className="text-[175%] pb-8 md:text-6xl font-semibold italic">
           links
           </h1>
+        <div className="space-y-10">
           <div className="grid justify-center scale-150">
             <SpotifyLink />
           </div>
