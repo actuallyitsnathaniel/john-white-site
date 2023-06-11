@@ -32,7 +32,7 @@ module.exports = {
           '60%': { transform: 'translate(4%, 4%)'},
           '70%': { transform: 'translate(-4%, -4%)'},
           '80%': { transform: 'translate(2%, 2%)'},
-          '90%': { transform: 'translate(-5%, -5%)'},
+          '90%': { transform: 'translate(-3%, -3%)'},
         },
         'scratch': {
           '0%, 100%': { transform: 'translateX(0)'},
@@ -96,8 +96,8 @@ module.exports = {
         }
       },
       animation: {
-        'scratch': 'scratch-transform 0.45s steps(1) infinite', // todo: fix this implementaion. check syntax?
-        'grain': 'grain 0.75s steps(1) infinite',
+        'scratch': 'scratch 0.45s steps(1) infinite', // todo: fix this implementaion. check syntax?
+        'grain': 'grain 1.5s steps(1) infinite',
         'inner-scratch': 'inner-scratch 2s infinite' // todo: fix this implementaion. check syntax?
       }
     },

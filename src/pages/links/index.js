@@ -19,7 +19,7 @@ const Links = () => {
         <h1 className="text-[175%] pb-8 md:text-6xl font-semibold italic">
           links
           </h1>
-        <div className="space-y-10">
+        <div className="space-y-10 pb-4">
           <div className="grid justify-center scale-150">
             <SpotifyLink />
           </div>
