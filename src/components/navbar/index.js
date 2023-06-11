@@ -97,15 +97,6 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "Links" ? "nav-item-active" : ""
-            }`}
-            to="/links"
-            onClick={() => setExpanded(false)}
-          >
-            Contact & Links
-          </Link>
-          <Link
-            className={`nav-item ${
               pageTitle === "About" ? "nav-item-active" : ""
             }`}
             to="/about"
@@ -121,6 +112,15 @@ function NavBar() {
             onClick={() => setExpanded(false)}
           >
             Merch
+          </Link>
+          <Link
+            className={`nav-item ${
+              pageTitle === "Links" ? "nav-item-active" : ""
+            }`}
+            to="/links"
+            onClick={() => setExpanded(false)}
+          >
+            Contact & Links
           </Link>
           <Link
             className={`hidden nav-item ${
