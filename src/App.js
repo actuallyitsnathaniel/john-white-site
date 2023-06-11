@@ -21,8 +21,6 @@ import ErrorPage from "./pages/error";
 function App() {
   return (
     <BrowserRouter forceRefresh>
-    { /** TODO: add FILM grain and burn overlay */}
-    { /** May need to go on the bottom? could be a modal of some sort. */} 
     <FilmGrainEffect />
     <VideoBackground /> 
           <div className="h-screen w-screen -z-10">

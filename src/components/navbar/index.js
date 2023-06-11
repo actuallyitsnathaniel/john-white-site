@@ -88,12 +88,12 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "About" ? "nav-item-active" : ""
+              pageTitle === "Music" ? "nav-item-active" : ""
             }`}
-            to="/about"
+            to="/music"
             onClick={() => setExpanded(false)}
           >
-            About
+            Music
           </Link>
           <Link
             className={`nav-item ${
@@ -106,12 +106,12 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "Music" ? "nav-item-active" : ""
+              pageTitle === "About" ? "nav-item-active" : ""
             }`}
-            to="/music"
+            to="/about"
             onClick={() => setExpanded(false)}
           >
-            Music
+            About
           </Link>
           <Link
             className={`nav-item ${
