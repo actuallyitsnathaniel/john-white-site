@@ -1,6 +1,6 @@
 import React from "react";
 
-// TODO: integrate eCommerce page.
+// TODO: integrate eCommerce components.
 // will most likely be some form of shopify
 function Merch() {
   return (

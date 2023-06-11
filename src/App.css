@@ -1,3 +1,40 @@
+.grain-background {
+  position: absolute;
+  width: 130vw;
+  height: 1600px;
+}
+
+
+.outer-scratch, .inner-scratch {
+  height: inherit;
+  opacity: 1;
+}
+
+.outer-scratch:after, .inner-scratch:after {
+  content: '';
+  width: 120%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 100px;
+  background: url('./assets/images/background/scratch.png') repeat center center;
+}
+
+.inner-scratch:after {
+  left: 30%;
+}
+
+.grain:after {
+  content: '';
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  opacity: .11;
+  background: url('./assets/images/background/grain.jpg') repeat center center; /*TODO: try to recreate this with 'repeatable' edges? */
+}
 
 .video {
  filter: brightness(0.40) blur(10px) sepia(0.5);
@@ -18,7 +55,9 @@
   z-index: -1;
 }
 
-@media  and min-width(600px) {
+
+
+@media and min-width(600px) {
   .video {
     filter: brightness(0.75) blur(10px);
     /* The min width had to be set for both */
@@ -28,5 +67,8 @@
     overflow: hidden;
     object-fit: fill;
    }
-  
+   .grain-background: {
+      object-fit: fill;
+      min-height: 100vw;
+   }
 }

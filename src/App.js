@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import VideoBackground from "./components/video-background";
+import FilmGrainEffect from "./components/film-grain-effect";
 import { SocialLinks } from "./components/social-links";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
@@ -21,9 +22,10 @@ function App() {
   return (
     <BrowserRouter forceRefresh>
     { /** TODO: add FILM grain and burn overlay */}
-    { /** May need to go on the bottom? could be a modal of some sort. */}
-      <VideoBackground />
-      <div className="h-screen w-screen">
+    { /** May need to go on the bottom? could be a modal of some sort. */} 
+    <VideoBackground />
+    <FilmGrainEffect /> 
+          <div className="h-screen w-screen -z-10">
         <NavBar />
         <Switch>
           <Route exact path="/">
