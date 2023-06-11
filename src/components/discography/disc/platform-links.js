@@ -13,34 +13,49 @@ const MusicPlatformLinks = (props) => {
       } justify-items-center items-center -translate-x-1 -translate-y-1 p-4
       `}
     >
-      <a href={props.spotifyLink} rel="noopener noreferrer" target="_blank">
+      <a 
+        href={props.spotifyLink}
+        className={`${props.spotifyLink === '' ? 'hidden' : ''}`}  
+        rel="noopener noreferrer" 
+        target="_blank">
         <img
           className="transition-all duration-75 h-[75px] hover:scale-110"
-          alt="music-link"
+          alt="spotify-link"
           src={spotify}
         />
       </a>
 
-      <a href={props.appleMusicLink} rel="noopener noreferrer" target="_blank">
+      <a 
+        href={props.appleMusicLink}
+        className={`${props.appleMusicLink === '' ? 'hidden' : ''}`} 
+        rel="noopener noreferrer"
+        target="_blank">
         <img
           className="transition-all duration-75 h-[75px] hover:scale-110"
-          alt="music-link"
+          alt="apple-music-link"
           src={appleMusic}
         />
       </a>
 
-      <a href={props.soundcloudLink} rel="noopener noreferrer" target="_blank">
+      <a href={props.soundcloudLink} 
+        className={`${props.soundcloudLink === '' ? 'hidden' : ''}`} 
+        rel="noopener noreferrer" 
+        target="_blank">
         <img
-          className="transition-all duration-75 h-[75px] hover:scale-110"
-          alt="music-link"
+          className={`transition-all duration-75 h-[75px] scale-110 hover:scale-125`}
+          alt="soundcloud-link"
           src={soundcloud}
         />
       </a>
 
-      <a href={props.youtubeLink} rel="noopener noreferrer" target="_blank">
+      <a 
+        href={props.youtubeLink}
+        className={`${props.youtubeLink === '' ? 'hidden' : ''}`} 
+        rel="noopener noreferrer" 
+        target="_blank">
         <img
           className="transition-all duration-75 h-[75px] hover:scale-110"
-          alt="music-link"
+          alt="youtube-link"
           src={youtube}
         />
       </a>

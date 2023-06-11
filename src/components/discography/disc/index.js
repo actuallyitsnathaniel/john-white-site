@@ -2,7 +2,8 @@ import { useState } from "react";
 
 import MusicPlatformLinks from "./platform-links";
 
-function Disc(props) {
+// TODO: turn the disc links into 'polaroids'
+const Disc = (props) => {
   const [expanded, setExpanded] = useState(-1);
 
   const setActiveDisc = (i) => {
@@ -30,7 +31,7 @@ function Disc(props) {
           }`}
           appleMusicLink={props.appleMusicLink}
           spotifyLink={props.spotifyLink}
-          tidalLink={props.soundcloudLink}
+          soundcloudLink={props.soundcloudLink}
           youtubeLink={props.youtubeLink}
         />
         <img className="h-[300px]" src={props.artwork} alt={props.title} />
