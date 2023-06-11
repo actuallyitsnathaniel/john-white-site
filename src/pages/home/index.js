@@ -3,13 +3,13 @@ import React from "react";
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
 import { MusicLinks } from ".//../../components/music-embeds";
 
-function Home() {
+const Home = () => {
   return (
     <div className="text-white justify-items-center">
-      <div className="pt-32"/>
-      <div className="grid justify-center">
+      <div className="pt-24"/>
+      <div className="grid justify-center h-screen">
         <JohnWhiteLogo />
-        <p className="text-center text-8xl bottom-0 scr animate-bounce">↡</p>
+        <p className="text-center text-8xl bottom-0 animate-bounce">↡</p>
       </div>
       
       <div>

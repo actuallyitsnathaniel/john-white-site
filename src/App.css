@@ -35,8 +35,8 @@
 .video {
  filter: brightness(0.40) blur(10px) sepia(0.5);
  /* The min width had to be set for both */
- min-width: 230vh;
- transform: translateY(-50px) translateX(-245px);
+ min-width: 250vh;
+ transform: translateY(-50px) translateX(-375px);
  justify-content: center;
  align-content: center;
 
@@ -57,7 +57,7 @@
   .video {
     filter: brightness(0.75) blur(10px);
     /* The min width had to be set for both */
-    min-width: 60vw;
+    min-width: 70vw;
     justify-content: center;
     align-content: center;
     overflow: hidden;

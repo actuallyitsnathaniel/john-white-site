@@ -12,7 +12,7 @@ const Links = () => {
   return (
     <div className="text-center mb-auto h-auto text-white">
       <Link exact to={"/home"}>
-      <div className="max-w-md mx-auto d:-my-10 self-center">
+      <div className="mx-auto">
         <JohnWhiteLogo/>
       </div>
       </Link>
