@@ -14,7 +14,9 @@ const Links = () => {
     <div className="text-center min-h-screen text-white overflow-hidden">
       <div className="grid pb-3 justify-center">
         <Link exact to={"/home"}>
+        <div className="md:scale-75 md:-my-10 -mb-16">
           <JohnWhiteLogo/>
+        </div>
         </Link>
         <h1 className="text-[175%] pb-8 md:text-6xl font-semibold italic">
           links
