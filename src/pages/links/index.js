@@ -12,14 +12,14 @@ const Links = () => {
   return (
     <div className="text-center  text-white">
       <Link exact to={"/home"}>
-      <div className="mx-auto">
+      <div className="mx-auto w-3/4 md:w-1/4 pt-16">
         <JohnWhiteLogo/>
       </div>
       </Link>
       <h1 className="text-[200%] md:text-6xl py-6 font-semibold italic">
         links
       </h1>
-      <div className="flex flex-wrap justify-center px-9 scale-125 md:scale-0">
+      <div className="flex flex-wrap justify-center px-9 scale-125 md:scale-100">
         <div className="px-6">
           <SpotifyLink />
         </div>
