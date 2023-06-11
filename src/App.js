@@ -23,24 +23,24 @@ function App() {
     <BrowserRouter forceRefresh>
     <FilmGrainEffect />
     <VideoBackground /> 
-          <div className="h-screen w-screen -z-10">
-          <NavBar />
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-            <Route path="/home" render={() => <Home />} />
-            <Route path="/about" render={() => <About />} />
-            <Route path="/contact" render={() => <Contact />} />
-            <Route path="/links" render={() => <Links />} />
-            <Route path="/merch" render={() => <Merch />} />
-            <Route path="/music" render={() => <Music />} />
-            <Route path="/shows" render={() => <Shows />} />
-            <Route path="/secret" render={() => <Secret />} />
-            <Route path="*" render={() => <ErrorPage />} />
-          </Switch>
-          <SocialLinks />
-          <Footer />
+      <div className="h-screen w-screen flex flex-col -z-10 justify-between">
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home" render={() => <Home />} />
+          <Route path="/about" render={() => <About />} />
+          <Route path="/contact" render={() => <Contact />} />
+          <Route path="/links" render={() => <Links />} />
+          <Route path="/merch" render={() => <Merch />} />
+          <Route path="/music" render={() => <Music />} />
+          <Route path="/shows" render={() => <Shows />} />
+          <Route path="/secret" render={() => <Secret />} />
+          <Route path="*" render={() => <ErrorPage />} />
+        </Switch>
+        <SocialLinks />
+        <Footer />
       </div>
     </BrowserRouter>
   );
