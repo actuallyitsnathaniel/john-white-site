@@ -22,11 +22,13 @@
 
 .grain {
   content: '';
+  scale: 2;
   width: 110%;
   height: 110%;
   top: -5%;
   left: -5%;
   opacity: .11;
+  filter: invert(1);
   background: url('./assets/images/background/grain.jpg') repeat center center; /*TODO: try to recreate this with 'repeatable' edges? */
 }
 
