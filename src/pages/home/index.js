@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="text-white justify-items-center">
       <div className="pt-28"/>
-      <div className="grid justify-center">
+      <div className="grid justify-center h-[90%] lg:h-auto">
         <JohnWhiteLogo />
         <p className="text-center text-8xl bottom-0 animate-bounce">↡</p>
       </div>
