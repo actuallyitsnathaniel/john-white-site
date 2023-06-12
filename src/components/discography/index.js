@@ -26,7 +26,7 @@ function Discography() {
     <div>
       <div>
         <h2 className="flex text-6xl font-semibold italic justify-center p-10">
-          Singles/EPs
+          singles/EPs
         </h2>
         <div className="flex flex-wrap w-full justify-center">
           <Disc 
@@ -39,7 +39,7 @@ function Discography() {
           />
           <Disc
             artwork={starsRemix}
-            title={'Stars (riley remix)'}
+            title={'stars (riley remix)'}
             spotifyLink='https://open.spotify.com/track/29NlMvw2a5h7o5sCqgJ7K3?si=4c5c7aacc383407a'
             appleMusicLink='https://music.apple.com/us/album/stars-riley-remix-single/1660688944'
             soundcloudLink=''
@@ -47,7 +47,7 @@ function Discography() {
           />
           <Disc
             artwork={familySingle}
-            title={'Family - single'}
+            title={'family - single'}
             spotifyLink='https://open.spotify.com/track/0wyOZ8cDS8LzGn4uG2JdhF?si=d4a2fa2edb844179'
             appleMusicLink='https://music.apple.com/us/album/family-single/1649899410'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-family-5-up230ct'
@@ -55,7 +55,7 @@ function Discography() {
           />
           <Disc 
             artwork={momentsWillSingle}
-            title={'Moments Will - single'}
+            title={'moments will - single'}
             spotifyLink='https://open.spotify.com/track/2nTRXnb4AeM3IFWdEYHBUY?si=a7d9b2e430674ba3'
             appleMusicLink='https://music.apple.com/us/album/moments-will-single/1642081668'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-momentswill-6-4'
@@ -63,7 +63,7 @@ function Discography() {
           />
           <Disc
             artwork={wrongIntentionsSingle}
-            title={'Wrong Intentions - single'}
+            title={'wrong intentions - single'}
             spotifyLink='https://open.spotify.com/track/667IbZFF4vadYIqo5EVsAh?si=9bb0f03e66064dac'
             appleMusicLink='https://music.apple.com/us/album/wrong-intentions-single/1636433723'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-wrongintentions-2'
@@ -71,7 +71,7 @@ function Discography() {
           />
           <Disc
             artwork={whoeverYouWantToBeSingle}
-            title={'Whoever You Want to Be - single'}
+            title={'whoever you want to be - single'}
             spotifyLink='https://open.spotify.com/track/42W4JMlVCjf41SmqcimLhz?si=e40a72ca719e4625'
             appleMusicLink='https://music.apple.com/us/album/whoever-you-want-to-be-single/1630867196'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-whoeveryouwanttobe'
@@ -79,7 +79,7 @@ function Discography() {
           />
           <Disc
             artwork={betterDaysSingle}
-            title={'Better Days - single'}
+            title={'better days - single'}
             spotifyLink='https://open.spotify.com/track/2VbvWM9HqFsCBHM46CfmS2?si=aeab1263485343b5'
             appleMusicLink='https://music.apple.com/us/album/better-days-single/1624621356'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/johnwhite-better-days-mix'
@@ -87,7 +87,7 @@ function Discography() {
           />
           <Disc
             artwork={everWantSingle}
-            title={'Ever Want (with OKO) - single'}
+            title={'ever want (with OKO) - single'}
             spotifyLink='https://open.spotify.com/track/3l60FtfpRHi2TSPSyeT6lz?si=d9b0101660b14dca'
             appleMusicLink='https://music.apple.com/us/album/ever-want-single/1580378453'
             soundcloudLink=''
@@ -95,7 +95,7 @@ function Discography() {
           />
           <Disc
             artwork={better2021Single}
-            title={'Better (with Sam Denton & Riley) - single (2021)'}
+            title={'better (with sam denton & riley) - single (2021)'}
             spotifyLink='https://open.spotify.com/track/52lu5hXrnYdWtPb90ImyA6?si=112307d4c45a4830'
             appleMusicLink='https://music.apple.com/us/album/better-single/1556313448'
             soundcloudLink=''
@@ -103,7 +103,7 @@ function Discography() {
           />
           <Disc
             artwork={timeSingle}
-            title={'Time - single'}
+            title={'time - single'}
             spotifyLink='https://open.spotify.com/track/09srn4UeMI8gSZxWKYpepL?si=af3f0cfb1b444730'
             appleMusicLink='https://music.apple.com/us/album/time-single/1526426740'
             soundcloudLink=''
@@ -111,7 +111,7 @@ function Discography() {
           />
           <Disc
             artwork={breakingSingle}
-            title={'Breaking - single'}
+            title={'breaking - single'}
             spotifyLink='https://open.spotify.com/track/3W3oKk7R3ap2cyn8O144Ix?si=abb77701f05b42f7'
             appleMusicLink='https://music.apple.com/us/album/breaking-single/1481706722'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/breaking'
@@ -119,7 +119,7 @@ function Discography() {
           />
           <Disc
             artwork={better2019Single}
-            title={'Better - single (2019)'}
+            title={'better - single (2019)'}
             spotifyLink='https://open.spotify.com/track/4rYhOltj2L4IE6OWGM9s5C?si=05d2650b7c4b4ba5'
             appleMusicLink='https://music.apple.com/us/album/better-single/1477648616'
             soundcloudLink='https://soundcloud.com/johnwhitesmusic/better'
@@ -130,12 +130,12 @@ function Discography() {
 
       <div>
         <h2 className="flex text-6xl font-semibold italic justify-center p-10">
-          Albums
+          albums
         </h2>
         <div className="flex flex-row flex-wrap w-full justify-center">  
           <Disc 
             artwork={family} 
-            title={'Family'}
+            title={'family'}
             spotifyLink="https://open.spotify.com/album/2aiffqHp78KvYRJj1eP6wR?si=Qv4C-MqaTVCnOSuttE4Dag"
             appleMusicLink="https://music.apple.com/us/album/family/1653342726"
             soundcloudLink="https://soundcloud.com/johnwhitesmusic/sets/family"

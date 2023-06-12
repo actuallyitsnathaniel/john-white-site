@@ -48,11 +48,13 @@ function NavBar() {
         <a
           id="home-icon"
           href="/home"
-          className="md:hidden p-3.5 text-6xl -translate-y-1 align-middle"
+          className={`md:hidden ${
+            pageTitle.includes("Home") && "pointer-events-none opacity-0"
+          } p-3.5 text-6xl -translate-y-1 align-middle`}
         >
           ⌂
         </a>
-        <div className="md:hidden p-3 justify-center text-5xl whitespace-nowrap">
+        <div className="md:hidden p-5 justify-center text-5xl whitespace-nowrap">
           {pageTitle}
         </div>
         <button
@@ -84,7 +86,7 @@ function NavBar() {
             aria-current="page"
             onClick={() => setExpanded(false)}
           >
-            Home
+            home
           </Link>
           <Link
             className={`nav-item ${
@@ -93,7 +95,7 @@ function NavBar() {
             to="/music"
             onClick={() => setExpanded(false)}
           >
-            Music
+            music
           </Link>
           <Link
             className={`nav-item ${
@@ -102,7 +104,7 @@ function NavBar() {
             to="/about"
             onClick={() => setExpanded(false)}
           >
-            About
+            about
           </Link>
           <Link
             className={`nav-item ${
@@ -111,9 +113,9 @@ function NavBar() {
             to="/merch"
             onClick={() => setExpanded(false)}
           >
-            Merch
+            merch
           </Link>
-          <Link
+          {/** <Link
             className={`nav-item ${
               pageTitle === "Links" ? "nav-item-active" : ""
             }`}
@@ -121,7 +123,7 @@ function NavBar() {
             onClick={() => setExpanded(false)}
           >
             Contact & Links
-          </Link>
+          </Link> */}
           <Link
             className={`hidden nav-item ${
               pageTitle === "Shows" ? "nav-item-active" : ""
@@ -129,7 +131,7 @@ function NavBar() {
             to="/shows"
             onClick={() => setExpanded(false)}
           >
-            Shows
+            shows
           </Link>
         </ul>
       </div>
