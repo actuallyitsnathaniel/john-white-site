@@ -1,8 +1,8 @@
 .video {
- filter: brightness(0.40) blur(10px) sepia(0.5);
+ filter: brightness(0.50) blur(10px) sepia(0.5);
  /* The min width had to be set for both */
- min-width: 250vh;
- transform: translateY(-50px) translateX(-375px);
+ min-width: 240vh;
+ transform: translateY(-35px) translateX(-265px);
  justify-content: center;
  align-content: center;
 
@@ -12,7 +12,7 @@
   background-color: #000;
   position: fixed;
   display: flex;
-  min-width: 230vh;
+  min-width: 235vh;
   z-index: -1;
   overflow: clip;
 }
@@ -21,15 +21,10 @@
   .video {
     filter: brightness(0.75) blur(10px);
     /* The min width had to be set for both */
-    min-width: 70vw;
+    min-width: 80vw;
     justify-content: center;
     align-content: center;
     overflow: hidden;
     object-fit: fill;
-   }
-
-   .grain-background {
-      object-fit: fill;
-      min-height: 100vw;
    }
 }
