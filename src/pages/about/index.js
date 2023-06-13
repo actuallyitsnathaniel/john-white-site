@@ -1,7 +1,8 @@
 import React from "react";
 import oneSheet from '../../assets/images/john_white_one_sheet.png'
 
-// TODO: carousel-type component with all images shared from daniel
+// TODO: take copy from one-sheet and convert to sweet, sweet page.
+// TODO: carousel-type component with all images shared from daniel to compliment copy
 // TODO: implement resizeable 'pinch-to-zoom' for one sheet
 function About() {
   return (

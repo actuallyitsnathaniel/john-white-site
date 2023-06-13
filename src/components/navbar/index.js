@@ -11,16 +11,16 @@ function usePageTitle(location) {
 
   useEffect(() => {
     const titleMap = [
-      { path: "/", title: "Home" },
-      { path: "/home", title: "Home" },
-      { path: "/home/", title: "Home" },
-      { path: "/about", title: "About" },
-      { path: "/contact", title: "Contact" },
-      { path: "/music", title: "Music" },
-      { path: "/merch", title: "Merch" },
-      { path: "/shows", title: "Shows" },
-      { path: "/secret", title: "Secret" },
-      { path: "/links", title: "Links" },
+      { path: "/", title: "home" },
+      { path: "/home", title: "home" },
+      { path: "/home/", title: "home" },
+      { path: "/about", title: "about" },
+      { path: "/contact", title: "contact" },
+      { path: "/music", title: "music" },
+      { path: "/merch", title: "merch" },
+      { path: "/shows", title: "shows" },
+      { path: "/secret", title: "secret" },
+      { path: "/links", title: "links" },
     ];
 
     const curTitle = titleMap.find((item) => item.path === location);
@@ -41,7 +41,7 @@ function NavBar() {
   return (
     <nav
       className={`text-white p-2.5 font-semibold drop-shadow-xl ${
-        pageTitle.includes("Links") ? "hidden" : ""
+        pageTitle.includes("links") ? "hidden" : ""
       }`}
     >
       <div className="flex justify-between">
@@ -49,7 +49,7 @@ function NavBar() {
           id="home-icon"
           href="/home"
           className={`md:hidden ${
-            pageTitle.includes("Home") && "pointer-events-none opacity-0"
+            pageTitle.includes("home") && "pointer-events-none opacity-0"
           } p-3.5 text-6xl -translate-y-1 align-middle`}
         >
           ⌂
@@ -80,7 +80,7 @@ function NavBar() {
         <ul id="nav-bar" className={`nav-bar`}>
           <Link
             className={`nav-item ${
-              pageTitle === "Home" ? "nav-item-active" : ""
+              pageTitle === "home" ? "nav-item-active" : ""
             }`}
             to="/home"
             aria-current="page"
@@ -90,7 +90,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "Music" ? "nav-item-active" : ""
+              pageTitle === "music" ? "nav-item-active" : ""
             }`}
             to="/music"
             onClick={() => setExpanded(false)}
@@ -99,7 +99,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "About" ? "nav-item-active" : ""
+              pageTitle === "about" ? "nav-item-active" : ""
             }`}
             to="/about"
             onClick={() => setExpanded(false)}
@@ -108,7 +108,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "Merch" ? "nav-item-active" : ""
+              pageTitle === "merch" ? "nav-item-active" : ""
             }`}
             to="/merch"
             onClick={() => setExpanded(false)}
@@ -117,16 +117,16 @@ function NavBar() {
           </Link>
           {/** <Link
             className={`nav-item ${
-              pageTitle === "Links" ? "nav-item-active" : ""
+              pageTitle === "links" ? "nav-item-active" : ""
             }`}
             to="/links"
             onClick={() => setExpanded(false)}
           >
-            Contact & Links
+            contact & links
           </Link> */}
           <Link
             className={`hidden nav-item ${
-              pageTitle === "Shows" ? "nav-item-active" : ""
+              pageTitle === "shows" ? "nav-item-active" : ""
             }`}
             to="/shows"
             onClick={() => setExpanded(false)}
