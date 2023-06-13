@@ -26,7 +26,7 @@ function usePageTitle(location) {
     const curTitle = titleMap.find((item) => item.path === location);
     if (curTitle && curTitle.title) {
       setPageTitle(curTitle.title);
-      document.title = "John White - " + curTitle.title;
+      document.title = "john white - " + curTitle.title;
     }
   }, [location]);
 
