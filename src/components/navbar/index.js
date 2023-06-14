@@ -106,7 +106,7 @@ function NavBar() {
           >
             about
           </Link>
-          <Link
+          {/**  <Link
             className={`nav-item ${
               pageTitle === "merch" ? "nav-item-active" : ""
             }`}
@@ -114,7 +114,7 @@ function NavBar() {
             onClick={() => setExpanded(false)}
           >
             merch
-          </Link>
+          </Link> */}
           {/** <Link
             className={`nav-item ${
               pageTitle === "links" ? "nav-item-active" : ""
