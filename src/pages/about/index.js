@@ -6,9 +6,6 @@ import profile3 from "../../assets/images/profiles/profile-3.jpeg";
 import profile4 from "../../assets/images/profiles/profile-4.jpeg";
 import profile5 from "../../assets/images/profiles/profile-5.jpeg";
 
-// TODO: take copy from one-sheet and convert to sweet, sweet page.
-// TODO: carousel-type component with all images shared from daniel to compliment copy
-// TODO: implement resizeable 'pinch-to-zoom' for one sheet
 const About = () => {
   return (
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">

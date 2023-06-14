@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import MusicPlatformLinks from "./platform-links";
 
-// TODO: turn the disc links into 'polaroids'
 const Disc = (props) => {
   const [expanded, setExpanded] = useState(-1);
 
