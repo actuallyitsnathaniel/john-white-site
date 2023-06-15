@@ -1,4 +1,4 @@
-function ShowLink(props) {
+const ShowLink = (props) => {
   return (
     <a href={props.link} className="text-center p-3">
       <div className="sm:mb-20 md:mb-10">

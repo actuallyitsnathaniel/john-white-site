@@ -6,7 +6,7 @@ import { ReactComponent as CloseIcon } from "../../assets/images/icons/navbar/cl
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
-function usePageTitle(location) {
+const usePageTitle = (location) => {
   const [pageTitle, setPageTitle] = useState("");
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function usePageTitle(location) {
   return pageTitle;
 }
 
-function NavBar() {
+const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
 
   let pageTitle = usePageTitle(useLocation().pathname);

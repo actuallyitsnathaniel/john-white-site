@@ -1,6 +1,6 @@
 import { ReactComponent as GmailColor } from "../../../assets/images/icons/gmail-color.svg";
 
-function GmailLogo() {
+const GmailLogo = () => {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2 group"

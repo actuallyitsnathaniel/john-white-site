@@ -1,6 +1,6 @@
 import { ReactComponent as InstagramSVG } from "../../../assets/images/icons/instagram-logo.svg";
 
-function InstagramLogo() {
+const InstagramLogo = () => {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2"

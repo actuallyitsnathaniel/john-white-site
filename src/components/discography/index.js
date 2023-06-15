@@ -21,7 +21,7 @@ import timeSingle from '../../assets/images/discography/Singles_EPs/time_single_
 import breakingSingle from '../../assets/images/discography/Singles_EPs/breaking_single_600x600bb.jpeg'
 import better2019Single from '../../assets/images/discography/Singles_EPs/better_2019_single_600x600bb.jpeg'
 
-function Discography() {
+const Discography = () => {
   return (
     <div>
       <div>

@@ -1,6 +1,6 @@
 import JohnWhiteVideo from '../../assets/videos/johnwhite-video-bg.mp4';
 
-function VideoBackground() {
+const VideoBackground = () => {
   return (
     <div className="video-wrapper">
       <video
