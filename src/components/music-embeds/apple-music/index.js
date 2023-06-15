@@ -4,7 +4,7 @@ const AppleMusicEmbed = () => {
       title="apple-music-embedded"
       className="h-[470px]"
       style={{
-        borderRadius: "18px",
+        borderRadius: "26px",
         padding: "1vh",
       }}
       src={

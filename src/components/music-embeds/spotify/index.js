@@ -4,7 +4,7 @@ export default function SpotifyEmbed() {
       className="h-[418px] sm:h-[470px] md:h-[470px]"
       title="spotify-embedded"
       style={{
-        borderRadius: "18px",
+        borderRadius: "26px",
         padding: "1vh",
       }}
       src={
