@@ -11,8 +11,13 @@ const About = () => {
       <div className="md:flex md:flex-wrap p-8">
         <div className="flex flex-wrap md:justify-between md:pb-10 w-fit">
           <div className="text-justify text-4xl first-line:italic lg:w-2/5 px-5 pb-10">
-            <span className="font-extrabold text-6xl">J</span>ohn <span className="font-extrabold text-6xl">W</span>hite is an up-and-coming artist born and raised in South LA. Exploring the sounds of the bands he listened to with his father, John writes about love, loss, and acceptance in a way that can be understood by all. At the end of the day. his message is about embracing one another regardless of race, class, sexuality, and coming together through music to understand that we are not alone.
-            As he prepares to roll out his debut album, John looks forward to bringing his music into a live setting. One of his favorite memories is seeing Oasis with his dad and taking in how much it meant to experience the songs he knew well, but with someone that loved him deeply. He hopes to bring audiences that same love and comfort. His debut album, Through the Trees, will be released on September 22, 2023.
+            <span className="font-extrabold text-6xl">J</span>ohn <span className="font-extrabold text-6xl">W</span>hite is an up-and-coming artist born and raised in South LA. 
+            Exploring the sounds of the bands he listened to with his father, John writes about love, loss, and acceptance in a way that can be 
+            understood by all. At the end of the day. his message is about embracing one another regardless of race, class, sexuality, and 
+            coming together through music to understand that we are not alone.
+            As he prepares to roll out his debut album, John looks forward to bringing his music into a live setting. One of his favorite memories is 
+            seeing Oasis with his dad and taking in how much it meant to experience the songs he knew well, but with someone that loved him deeply. 
+            He hopes to bring audiences that same love and comfort. His debut album, Through the Trees, will be released on September 22, 2023.
           </div>
           <div id='carousel' className="flex flex-row rounded-xl overflow-scroll lg:w-2/4">
             <img className="object-cover"  src={profile3} alt='profile-img-3'/>
