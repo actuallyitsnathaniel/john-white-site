@@ -1,6 +1,6 @@
 import { ReactComponent as YouTubeSVG } from "../../../assets/images/icons/music-platforms/youtube.svg";
 
-function YoutubeLink() {
+export const YoutubeLink = () => {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2"
