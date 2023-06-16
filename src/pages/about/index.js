@@ -12,7 +12,6 @@ import YoutubeLink from "../../components/social-links/youtube-link/index.js";
 
 const About = () => {
   return (
-    <>
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
       <div className="md:flex md:flex-wrap p-8">
         <div className="flex flex-wrap md:justify-between md:pb-10">
@@ -96,7 +95,6 @@ const About = () => {
         </div> 
       </div>
     </div>
-  </>
   );
 }
 

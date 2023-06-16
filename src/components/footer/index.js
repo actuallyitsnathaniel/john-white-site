@@ -1,8 +1,12 @@
+import whiteNoiseRecordsPNG from '../../assets/images/icons/white-noise-records-logo.png';
+
 const Footer = () => {
   // TODO: add White Noise Records LOGO!!
   return (
-    <footer className="bg-black text-md text-white text-center p-7">
-      copyright © {(new Date().getFullYear())} white noise records, nathaniel bowman
+    <footer className="bg-black text-md text-white text-center p-3">
+    
+    <img className='mx-auto h-28 p-3' src={whiteNoiseRecordsPNG} alt='white-noise-records-logo'/>
+    copyright © {(new Date().getFullYear())}. powered by <a className='underline underline-offset-8' href='mailto:nathanielrbowman@gmail.com'>nathaniel bowman</a>
     </footer>
   );
 }
