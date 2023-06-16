@@ -11,6 +11,7 @@ import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLink from "../../components/social-links/youtube-link/index.js";
 
 const About = () => {
+
   return (
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
       <div className="md:flex md:flex-wrap p-8">
@@ -25,8 +26,8 @@ const About = () => {
             He hopes to bring audiences that same love and comfort. His debut album, Through the Trees, will be released on September 22, 2023.
           </div>
           <div id='carousel' className="flex rounded-xl overflow-scroll h-fit lg:w-1/2">
-            <img className="object-cover"  src={profile3} alt='profile-img-3'/>
-            <img className="object-cover" src={profile4} alt='profile-img-4'/>
+            <img className="object-cover animate-hint-scrollable"  src={profile3} alt='profile-img-3'/>
+            <img className="object-cover animate-hint-scrollable" src={profile4} alt='profile-img-4'/>
             <img className="object-cover" src={profile1} alt='profile-img-1'/>
             <img className="object-cover" src={profile2} alt='profile-img-2'/>
             <img className="object-cover"  src={profile5} alt='profile-img-5'/>

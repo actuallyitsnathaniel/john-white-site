@@ -63,14 +63,29 @@ module.exports = {
           '81%': { opacity: '0.03' },
           '90%': { transform: 'translateX(20%)'},
           '100%': { transform: 'translateX(30%)'}
+        },
+        'bounce-x': {
+          "0%, 50%, 100%": {
+            transform: "translateX(0)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "25%": {
+            transform: "translateX(-10%)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
+
+          },
+          "75%": {
+            transform: "translateX(-2%)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0, 1)",
+          }
         }
       },
       animation: {    
         'grain': 'grain 0.45s steps(1) infinite',
         'scratch': 'scratch 0.45s steps(1) infinite', 
-        'innerScratch': 'innerScratch 2s infinite'
+        'innerScratch': 'innerScratch 2s infinite',
+        'hint-scrollable': 'bounce-x 1s ease-in-out'
       }
     },
   },
-  plugins: [require("daisyui")]
 };
