@@ -1,7 +1,6 @@
 import whiteNoiseRecordsPNG from '../../assets/images/icons/white-noise-records-logo.png';
 
 const Footer = () => {
-  // TODO: add White Noise Records LOGO!!
   return (
     <footer className="bg-black text-md text-white text-center p-3">
     
