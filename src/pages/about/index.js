@@ -41,24 +41,32 @@ const About = () => {
             <div className="text-center py-5 underline text-5xl font-extrabold">
               press highlights
             </div>
-            <a className="font-extrabold p-5 text-2xl" href='https://boldjourney.com/news/meet-john-white/'>
+            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
+              <a className="font-extrabold p-5 text-2xl" href='https://boldjourney.com/news/meet-john-white/'>
               "meet john white"
-            </a>
+              </a>  
+            </div>
             <p className="text-lg">write-up by Bold Journey</p>
             <br/>
-            <a className="font-extrabold p-5 text-2xl" href='https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review'>
-              "FAMILY EP"
-            </a>
+            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
+              <a className="font-extrabold p-5 text-2xl" href='https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review'>
+                "FAMILY EP"
+              </a>
+            </div>
             <p className="text-lg"> review by The Permanent Rain Press</p>
             <br/>
-            <a className="font-extrabold p-5 text-2xl" href='http://voyagela.com/interview/conversations-with-john-white/'>
-              "Conversations with John White"
-            </a>
+            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
+              <a className="font-extrabold p-5 text-2xl" href='http://voyagela.com/interview/conversations-with-john-white/'>
+                "Conversations with John White"
+              </a>
+            </div>
             <p className="text-lg"> write-up by Voyage LA</p>
             <br/>
-            <a className="font-extrabold p-5 text-2xl" href='http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/'>
-              "Meet John Dominguez"
-            </a>
+            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
+              <a className="font-extrabold p-5 text-2xl" href='http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/'>
+                "Meet John Dominguez"
+              </a>
+            </div>
             <p className="text-lg"> interview with Voyage LA</p>
             <br/>
             <div className="text-center">
@@ -66,13 +74,13 @@ const About = () => {
                 <div className="underline text-4xl pb-5 font-extrabold">contact:</div>
                 <div className="pb-2">
                   <p>Daniel Espitia</p>
-                  <p>
+                  <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
                     <a className="italic underline font-extrabold" href="mailto:copamgmtt@gmail.com">copamgmtt@gmail.com</a>
                   </p>
                 </div>
                 <div className="pb-2">
-                  <p>Victor M. Rocha</p>
-                  <p>
+                  <p >Victor M. Rocha</p>
+                  <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
                     <a className="italic underline font-extrabold" href="mailto:victor@245management.com">victor@245management.com</a>
                   </p>
                 </div>
