@@ -1,6 +1,6 @@
 import { ReactComponent as YouTubeSVG } from "../../../assets/images/icons/music-platforms/youtube.svg";
 
-export const YoutubeLink = () => {
+export const YoutubeLogo = () => {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2"
@@ -16,4 +16,4 @@ export const YoutubeLink = () => {
   );
 }
 
-export default YoutubeLink;
+export default YoutubeLogo;
