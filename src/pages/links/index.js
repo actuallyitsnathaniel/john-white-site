@@ -11,7 +11,7 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
 const Links = () => {
   return (
     <div className="text-center text-white">
-      <Link exact to={"/home"}>
+      <Link exact='true' to={"/home"}>
       <div className="mx-auto md:w-1/4 pt-16">
         <JohnWhiteLogo/>
       </div>
