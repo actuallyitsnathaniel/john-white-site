@@ -35,7 +35,7 @@ const About = () => {
         </div>
         <br/>
       </div>
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-wrap flex-row justify-center">
         <div className="text-center">
           <div>
             <div className="text-center py-5 underline text-5xl font-extrabold">
@@ -87,17 +87,17 @@ const About = () => {
               </div>  
             </div>
           </div>
-          <div className="flex flex-wrap justify-between px-6">
-            <div className="px-3">
+          <div className="flex flex-wrap justify-center gap-x-3">
+            <div className="">
               <SpotifyLink />
             </div>
-            <div className="px-3">
+            <div className="">
               <AppleMusic /> 
             </div>
-            <div className="px-3">
+            <div className="">
               <YoutubeLogo />
             </div>
-            <div className="px-3">
+            <div className="">
               <InstagramLogo />
             </div>
           </div> 
