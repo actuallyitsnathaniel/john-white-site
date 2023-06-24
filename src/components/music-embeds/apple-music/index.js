@@ -2,7 +2,7 @@ const AppleMusicEmbed = () => {
   return (
     <iframe
       title="apple-music-embedded"
-      className="h-[470px]"
+      height={"470px"}
       style={{
         borderRadius: "26px",
         padding: "1vh",
@@ -10,7 +10,7 @@ const AppleMusicEmbed = () => {
       src={
         "https://embed.music.apple.com/us/album/fake-smiles-ep/1678254661"
       }
-      frameBorder={0}
+      loading="lazy"
       sandbox={
         "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
       }

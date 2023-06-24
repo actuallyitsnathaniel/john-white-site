@@ -9,6 +9,7 @@ const SpotifyLink = () =>{
       rel="noopener noreferrer"
     >
       <SpotifySVG
+        loading="lazy"
         className="transition-all duration-75 h-16 rounded-full hover:scale-110 hover:fill-[#1DB954]"
         alt="spotify-alt"
       />

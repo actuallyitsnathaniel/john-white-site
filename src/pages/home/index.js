@@ -15,6 +15,7 @@ const Home = () => {
         <p className="text-center text-8xl bottom-0 py-2 animate-bounce">↡</p>
       </div>
         <iframe 
+          height={'315px'}
           className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105" 
           src={`https://www.youtube-nocookie.com/embed/${youtubeID}?rel=0`} 
           title='youtube embed' 

@@ -1,8 +1,9 @@
 export default function SpotifyEmbed() {
   return (
     <iframe
-      className="h-[418px] sm:h-[470px] md:h-[470px]"
+      height="470px]"
       title="spotify-embedded"
+      loading="lazy"
       style={{
         borderRadius: "26px",
         padding: "1vh",
@@ -10,7 +11,6 @@ export default function SpotifyEmbed() {
       src={
         "https://open.spotify.com/embed/album/5xG9WKhRF1ve48GMnDdInB?utm_source=generator"
       }
-      frameBorder={0}
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       }

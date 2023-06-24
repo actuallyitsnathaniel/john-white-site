@@ -10,7 +10,7 @@ const Footer = () => {
       rel="noopener noreferrer"
       target="_blank"
     >
-      <img className='mx-auto h-28 p-3' src={whiteNoiseRecordsPNG} alt='white-noise-records-logo'/>
+      <img className='mx-auto h-28 p-3' src={whiteNoiseRecordsPNG} loading="lazy" alt='white-noise-records-logo'/>
     </a>
     copyright © {(new Date().getFullYear())}. powered by <a className='underline underline-offset-8' href='mailto:nathanielrbowman@gmail.com'>nathaniel bowman</a>
     </footer>

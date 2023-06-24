@@ -6,6 +6,7 @@ const VideoBackground = () => {
       <video
         src={JohnWhiteVideo}
         id="video"
+        rel='preload'
         autoPlay
         loop
         muted

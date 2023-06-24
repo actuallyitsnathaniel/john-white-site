@@ -35,7 +35,7 @@ const About = () => {
         </div>
         <br/>
       </div>
-      <div className="flex flex-wrap flex-row justify-center">
+      <div className="flex flex-wrap flex-row justify-center" loading="lazy">
         <div className="text-center">
           <div>
             <div className="text-center py-5 underline text-5xl font-extrabold">
