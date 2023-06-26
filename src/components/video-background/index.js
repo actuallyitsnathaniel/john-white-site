@@ -1,12 +1,14 @@
-import JohnWhiteVideo from '../../assets/videos/johnwhite-video-bg.mp4';
+import JohnWhiteVideo from "../../assets/videos/johnwhite-video-bg.mp4";
 
 const VideoBackground = () => {
   return (
     <div className="video-wrapper">
       <video
         src={JohnWhiteVideo}
+        height={"110%"}
+        width={"auto"}
         id="video"
-        rel='preload'
+        rel="preload"
         autoPlay
         loop
         muted
@@ -16,6 +18,6 @@ const VideoBackground = () => {
       />
     </div>
   );
-}
+};
 
 export default VideoBackground;

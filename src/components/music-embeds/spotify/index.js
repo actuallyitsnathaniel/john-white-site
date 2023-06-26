@@ -1,7 +1,7 @@
 export default function SpotifyEmbed() {
   return (
     <iframe
-      height="470px]"
+      height="470px"
       title="spotify-embedded"
       loading="lazy"
       style={{

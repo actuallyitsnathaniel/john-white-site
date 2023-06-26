@@ -6,12 +6,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Lusitana', serif;
+  font-family: "Lusitana", serif;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -20,8 +19,9 @@ code {
   height: 1600px;
 }
 
-.outer-scratch, .inner-scratch {
-  content: '';
+.outer-scratch,
+.inner-scratch {
+  content: "";
   width: 120%;
   opacity: 0.7;
   height: 100%;
@@ -29,7 +29,7 @@ code {
   top: -5%;
   left: -5%;
   padding-left: 100px;
-  background: url('./assets/images/background/scratch.png') repeat center center;
+  background: url("./assets/images/background/scratch.png") repeat center center;
 }
 
 .inner-scratch {
@@ -37,25 +37,25 @@ code {
 }
 
 .grain {
-  content: '';
+  content: "";
   scale: 2;
   width: 110%;
   height: 110%;
   top: -5%;
   left: -5%;
-  opacity: .11;
-  filter: invert(1) hue-rotate(.5) contrast(.4);
-  background: url('./assets/images/background/grain.jpg') repeat center center;
+  opacity: 0.11;
+  filter: invert(1) hue-rotate(0.5) contrast(0.4);
+  background: url("./assets/images/background/grain.jpg") repeat center center;
 }
 
 .nav-bar {
-  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap
+  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap;
 }
 
 .nav-item {
-  @apply transition ease-in-out p-4 duration-150 hover:scale-110 hover:text-orange-200
+  @apply transition ease-in-out p-4 duration-150 hover:scale-110 hover:text-orange-200;
 }
 
 .nav-item-active {
-  @apply transition ease-in hidden md:block text-orange-300 md:scale-110
+  @apply transition ease-in hidden md:block text-orange-300 md:scale-110;
 }

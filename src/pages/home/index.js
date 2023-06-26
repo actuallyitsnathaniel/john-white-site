@@ -21,7 +21,7 @@ const Home = () => {
           src={`https://www.youtube.com/embed/${youtubeID}?rel=0`} 
           title='youtube embed' 
           allowFullScreen 
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"/>
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"/>
       <div>
         <MusicLinks />
       </div>
