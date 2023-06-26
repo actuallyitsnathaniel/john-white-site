@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
 import { MusicLinks } from ".//../../components/music-embeds";
 
 const Home = () => {
 
-  const [youtubeID,] = useState('CUzc9Dn4sx4')
+  const youtubeID = 'CUzc9Dn4sx4'
 
   return (
     <div className="text-white justify-items-center">
