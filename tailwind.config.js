@@ -81,7 +81,7 @@ module.exports = {
         }
       },
       animation: {    
-        'grain': 'grain 0.45s steps(1) infinite',
+        'grain': 'grain 0.8s steps(1) infinite',
         'scratch': 'scratch 0.45s steps(1) infinite', 
         'innerScratch': 'innerScratch 2s infinite',
         'hint-scrollable': 'bounce-x 1s ease-in-out'
