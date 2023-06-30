@@ -8,7 +8,7 @@ const AppleMusicEmbed = () => {
         padding: "1vh",
       }}
       src={
-        "https://embed.music.apple.com/us/album/fake-smiles-ep/1678254661"
+        "https://embed.music.apple.com/us/album/blink-of-an-eye/1690896426"
       }
       loading="lazy"
       sandbox={

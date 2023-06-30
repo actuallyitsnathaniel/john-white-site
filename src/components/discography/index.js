@@ -10,6 +10,7 @@ import starsRemix from '../../assets/images/discography/Singles_EPs/stars_remix_
 
 
 // Singles
+import blinkOfAnEye from '../../assets/images/discography/Singles_EPs/blink_of_an_eye_600x600bb.jpg';
 import familySingle from '../../assets/images/discography/Singles_EPs/family_single_600x600bb.jpeg'
 import momentsWillSingle from '../../assets/images/discography/Singles_EPs/moments_will_single_600x600bb.jpeg'
 import wrongIntentionsSingle from '../../assets/images/discography/Singles_EPs/wrong_intentions_single_600x600bb.jpeg'
@@ -29,6 +30,14 @@ const Discography = () => {
           singles/EPs
         </h2>
         <div className="flex flex-wrap w-full justify-center">
+          <Disc
+            artwork={blinkOfAnEye}
+            title={'blink of an eye - single'}
+            spotifyLink="https://open.spotify.com/album/32wHTMdUrD7a0aqko0xIqX?si=Hnap6g3iQDqwGCkOnOO5eQ"
+            appleMusicLink="https://music.apple.com/us/album/blink-of-an-eye-single/1690896426"
+            soundcloudLink="https://soundcloud.com/johnwhitesmusic/blink-of-an-eye-single"
+            youtubeLink="https://youtu.be/uqjtowybhv0"
+          />
           <Disc 
             artwork={fakeSmilesEP}
             title={'fake smiles EP'}
