@@ -9,6 +9,8 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    outDir: './build'
+    
   },
   optimizeDeps: {
     esbuildOptions: {
