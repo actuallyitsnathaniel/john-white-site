@@ -3,9 +3,7 @@ const JohnWhiteLogo = () => {
   return (
     <div>
       <img
-        width="600px"
-        height="auto"
-        className="mx-auto px-12 md:px-0 mb-10"
+        className="mx-auto px-12 w-[700px] h-auto md:px-0 mb-10"
         alt="john-white-logo"
         aria-label="john-white-logo"
         src={JohnWhiteSignature}

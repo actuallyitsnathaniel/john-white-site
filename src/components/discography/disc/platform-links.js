@@ -19,7 +19,8 @@ const MusicPlatformLinks = (props) => {
         rel="noopener noreferrer" 
         target="_blank">
         <img
-          className="transition-all duration-75 h-[75px] hover:scale-110"
+          className="transition-all duration-75 hover:scale-110"
+          height={'75px'}
           alt="spotify-link"
           src={spotify}
         />
@@ -31,7 +32,8 @@ const MusicPlatformLinks = (props) => {
         rel="noopener noreferrer"
         target="_blank">
         <img
-          className="transition-all duration-75 h-[75px] hover:scale-110"
+          className="transition-all duration-75 hover:scale-110"
+          height={'75px'}
           alt="apple-music-link"
           src={appleMusic}
         />
@@ -42,7 +44,8 @@ const MusicPlatformLinks = (props) => {
         rel="noopener noreferrer" 
         target="_blank">
         <img
-          className={`transition-all duration-75 h-[75px] scale-110 hover:scale-125`}
+          className={`transition-all duration-75 scale-110 hover:scale-125`}
+          height={'75px'}
           alt="soundcloud-link"
           src={soundcloud}
         />
@@ -54,7 +57,8 @@ const MusicPlatformLinks = (props) => {
         rel="noopener noreferrer" 
         target="_blank">
         <img
-          className="transition-all duration-75 h-[75px] hover:scale-110"
+          className="transition-all duration-75 hover:scale-110"
+          height={'75px'}
           alt="youtube-link"
           src={youtube}
         />

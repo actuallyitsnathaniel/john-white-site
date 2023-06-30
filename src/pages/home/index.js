@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
 import { MusicLinks } from ".//../../components/music-embeds";
 
 const Home = () => {
 
-  const [youtubeID,] = useState('CUzc9Dn4sx4')
+  const youtubeID = 'UqjtOwyBHv0'
 
   return (
     <div className="text-white justify-items-center">
@@ -18,10 +18,10 @@ const Home = () => {
           height={'315px'}
           rel="preload prefetch"
           className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105" 
-          src={`https://www.youtube.com/embed/${youtubeID}?rel=0`} 
+          src={`https://www.youtube-nocookie.com/embed/${youtubeID}?rel=0`} 
           title='youtube embed' 
           allowFullScreen 
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"/>
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"/>
       <div>
         <MusicLinks />
       </div>
