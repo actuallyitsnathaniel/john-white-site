@@ -32,6 +32,7 @@ const Disc = (props) => {
           spotifyLink={props.spotifyLink}
           soundcloudLink={props.soundcloudLink}
           youtubeLink={props.youtubeLink}
+          album={props.album}
         />
         <img height={"300px"} width={"300px"} src={props.artwork} alt={props.title} />
       </div>
