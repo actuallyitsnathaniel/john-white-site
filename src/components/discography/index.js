@@ -23,7 +23,7 @@ import better2019Single from "../../assets/images/discography/Singles_EPs/better
 
 const Discography = () => {
   return (
-    <div>
+    <>
       <div>
         <h2 className={"flex text-6xl font-semibold italic justify-center p-10"}>
           singles/EPs
@@ -151,7 +151,7 @@ const Discography = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
