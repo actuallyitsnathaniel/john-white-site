@@ -1,3 +1,5 @@
+import React from 'react';
+
 import JohnWhiteVideo from "../../assets/videos/johnwhite-video-bg.mp4";
 
 const VideoBackground = () => {

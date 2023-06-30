@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ReactComponent as GmailColor } from "../../../assets/images/icons/gmail-color.svg";
 
 const GmailLogo = () => {

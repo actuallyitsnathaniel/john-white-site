@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ReactComponent as InstagramSVG } from "../../../assets/images/icons/instagram-logo.svg";
 
 const InstagramLogo = () => {

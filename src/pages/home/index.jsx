@@ -1,7 +1,7 @@
 import React from "react";
 
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
-import { MusicLinks } from ".//../../components/music-embeds";
+import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Icons
 import appleMusic from "../../../assets/images/icons/music-platforms/apple-music.svg";
 import spotify from "../../../assets/images/icons/music-platforms/spotify.svg";

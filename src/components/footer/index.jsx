@@ -1,3 +1,5 @@
+import React from 'react';
+
 import whiteNoiseRecordsPNG from "../../assets/images/icons/white-noise-records-logo.png";
 
 const Footer = () => {

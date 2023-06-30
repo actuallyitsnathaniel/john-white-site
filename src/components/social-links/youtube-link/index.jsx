@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ReactComponent as YouTubeSVG } from "../../../assets/images/icons/music-platforms/youtube.svg";
 
 export const YoutubeLogo = () => {

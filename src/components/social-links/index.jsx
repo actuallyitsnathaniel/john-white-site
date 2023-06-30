@@ -1,10 +1,11 @@
+import React from 'react';
+import { useLocation } from 'react-router-dom'
+
 import InstagramLogo from "./instagram-link";
 import GmailLogo from "./gmail-link";
 import SpotifyLink from "./spotify-link";
 import AppleMusic from "./apple-music-link";
 import YoutubeLogo from "./youtube-link";
-
-import { useLocation } from 'react-router-dom'
 
 export const SocialLinks = () => {
   let location = useLocation();

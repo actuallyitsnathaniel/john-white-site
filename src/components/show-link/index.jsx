@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ShowLink = (props) => {
   return (
     <a href={props.link} className="text-center p-3">

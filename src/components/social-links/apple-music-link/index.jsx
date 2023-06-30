@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ReactComponent as AppleMusicSVG } from "../../../assets/images/icons/music-platforms/apple-music.svg";
 
 const AppleMusicLink = () => {

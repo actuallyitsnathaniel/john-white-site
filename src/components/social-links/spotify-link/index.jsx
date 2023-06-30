@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ReactComponent as SpotifySVG } from "../../../assets/images/icons/music-platforms/spotify.svg";
 
 const SpotifyLink = () =>{
