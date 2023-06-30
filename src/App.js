@@ -19,6 +19,7 @@ import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 
 function App() {
+  // TODO: migrate to Next.js or Vite
   return (
     <BrowserRouter forceRefresh>
     <FilmGrainEffect />

@@ -15,7 +15,7 @@ const MusicPlatformLinks = (props) => {
     >
       <a 
         href={props.spotifyLink}
-        // className={`${props.spotifyLink === '' ? 'hidden' : ''}`}  
+        className={`${props.spotifyLink === '' && 'hidden'}`}  
         rel="noopener noreferrer" 
         target="_blank">
         <img
@@ -28,7 +28,7 @@ const MusicPlatformLinks = (props) => {
 
       <a 
         href={props.appleMusicLink}
-        // className={`${props.appleMusicLink === '' ? 'hidden' : ''}`} 
+        className={`${props.appleMusicLink === '' && 'hidden'}`} 
         rel="noopener noreferrer"
         target="_blank">
         <img
@@ -40,7 +40,7 @@ const MusicPlatformLinks = (props) => {
       </a>
 
       <a href={props.soundcloudLink} 
-        // className={`${props.soundcloudLink === '' ? 'hidden' : ''}`} 
+        className={`${props.soundcloudLink === '' && 'hidden'}`} 
         rel="noopener noreferrer" 
         target="_blank">
         <img
@@ -53,7 +53,7 @@ const MusicPlatformLinks = (props) => {
 
       <a 
         href={props.youtubeLink}
-        // className={`${props.youtubeLink === '' ? 'hidden' : ''}`} 
+        className={`${props.youtubeLink === '' && 'hidden'}`} 
         rel="noopener noreferrer" 
         target="_blank">
         <img
