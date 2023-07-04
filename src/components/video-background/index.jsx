@@ -1,6 +1,6 @@
 import React from "react";
 
-import JohnWhiteVideo from "../../assets/videos/johnwhite-video-bg.mp4";
+import JohnWhiteVideo from "../../assets/videos/john-white-bg.mp4";
 
 const VideoBackground = () => {
   return (
