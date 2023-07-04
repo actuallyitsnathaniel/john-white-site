@@ -1,11 +1,16 @@
 .video {
   filter: brightness(0.50) blur(10px) sepia(0.5);
   /* The min width had to be set for both */
-  min-width: 240vh;
-  transform: translateY(-35px) translateX(-265px);
-  justify-content: center;
-  align-content: center;
- 
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(110%);
+  position: fixed;
+  z-index: -1;
+  background-color: #000;
+  overflow: clip;
+  display: flex;
  }
  
  .video-wrapper {
