@@ -13,15 +13,6 @@
   display: flex;
  }
  
- .video-wrapper {
-   background-color: #000;
-   position: fixed;
-   display: flex;
-   min-width: 235vh;
-   z-index: -1;
-   overflow: clip;
- }
- 
  @media and min-width(600px) {
    .video {
      filter: brightness(0.75) blur(10px);
