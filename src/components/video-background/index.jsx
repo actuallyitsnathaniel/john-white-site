@@ -15,7 +15,7 @@ const VideoBackground = () => {
       muted
       playsInline
       disablePictureInPicture
-      className="video"
+      className="video animate-appear"
     />
   );
 };

@@ -78,13 +78,18 @@ export default {
             transform: "translateX(-2%)",
             animationTimingFunction: "cubic-bezier(0, 0, 0, 1)",
           }
+        },
+        appear: {
+          "0%": { filter: "opacity(0.0)" },
+          "100%": {filter: "opacity(1)"}
         }
       },
       animation: {    
         'grain': 'grain 0.8s steps(1) infinite',
         'scratch': 'scratch 0.45s steps(1) infinite', 
         'innerScratch': 'innerScratch 2s infinite',
-        'hint-scrollable': 'bounce-x 1s ease-in-out'
+        'hint-scrollable': 'bounce-x 1s ease-in-out',
+        appear: "appear .35s ease-in"
       }
     },
   },
