@@ -1,6 +1,11 @@
-import React from 'react'
-import './App.css'
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import React from "react";
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
 import VideoBackground from "./components/video-background";
 import FilmGrainEffect from "./components/film-grain-effect";
@@ -20,32 +25,33 @@ import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 
 function App() {
-// TODO: implement intersection observer for more efficient lazy-loading...
-// https://www.youtube.com/watch?v=aUjBvuUdkhg
+  // TODO: wait-to-load or something. currently everything still loads in a messy way. intersection observer MIGHT... help with that.
+  // TODO: implement intersection observer for more efficient lazy-loading...
+  // https://www.youtube.com/watch?v=aUjBvuUdkhg
 
   return (
     <Router forceRefresh>
-    <FilmGrainEffect />
-    <VideoBackground /> 
+      <FilmGrainEffect />
+      <VideoBackground />
       <div className="flex flex-col h-screen w-screen justify-between [&>*]:animate-appear">
         <NavBar />
         <Routes>
-        <Route index element={<Navigate replace to="/home" />}/>
-          <Route path="/home" element={ <Home />} />
-          <Route path="/about" element={ <About />} />
-          <Route path="/contact" element={ <Contact />} />
-          <Route path="/links" element={ <Links />} />
-          <Route path="/merch" element={ <Merch />} />
-          <Route path="/music" element={ <Music />} />
-          <Route path="/shows" element={ <Shows />} />
-          <Route path="/secret" element={ <Secret />} />
-          <Route path="*" element={ <ErrorPage />} />
+          <Route index element={<Navigate replace to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/links" element={<Links />} />
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/shows" element={<Shows />} />
+          <Route path="/secret" element={<Secret />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <SocialLinks />
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
