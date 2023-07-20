@@ -20,6 +20,8 @@ import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 
 function App() {
+// TODO: implement intersection observer for more efficient lazy-loading...
+// https://www.youtube.com/watch?v=aUjBvuUdkhg
 
   return (
     <Router forceRefresh>
