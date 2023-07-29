@@ -9,6 +9,7 @@ import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smile
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
 
 // Singles
+import somethingBeautiful from '../../assets/images/discography/Singles_EPs/something_beautiful_single_600x600bb.jpeg';
 import blinkOfAnEye from "../../assets/images/discography/Singles_EPs/blink_of_an_eye_600x600bb.jpg";
 import familySingle from "../../assets/images/discography/Singles_EPs/family_single_600x600bb.jpeg";
 import momentsWillSingle from "../../assets/images/discography/Singles_EPs/moments_will_single_600x600bb.jpeg";
@@ -25,6 +26,22 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
+      <Discography.Disc
+          artwork={somethingBeautiful}
+          title={"something beautiful - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/0Hqnu8niXo1vxKoJM2AydW?si=7310543374d3406e"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/something-beautiful/1690900934?i=1690900935"
+          }
+          soundcloudLink={
+            "https://soundcloud.com/johnwhitesmusic/something-beautiful-single?si=87fbced791ea4ff3a393a0ef50634f79&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+          }
+          youtubeLink={
+            "https://www.youtube.com/watch?v=lgys2P18gPo"
+          }
+        />
         <Discography.Disc
           artwork={blinkOfAnEye}
           title={"blink of an eye - single"}

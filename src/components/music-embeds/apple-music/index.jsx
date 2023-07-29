@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const AppleMusicEmbed = () => {
   return (
@@ -10,7 +10,7 @@ const AppleMusicEmbed = () => {
         padding: "1vh",
       }}
       src={
-        "https://embed.music.apple.com/us/album/blink-of-an-eye/1690896426"
+        "https://embed.music.apple.com/us/album/something-beautiful-single/1690900934"
       }
       loading="lazy"
       sandbox={
@@ -19,6 +19,6 @@ const AppleMusicEmbed = () => {
       allow={"autoplay *; encrypted-media *; fullscreen *; clipboard-write"}
     />
   );
-}
+};
 
 export default AppleMusicEmbed;

@@ -11,7 +11,7 @@ export default function SpotifyEmbed() {
         padding: "1vh",
       }}
       src={
-        "https://open.spotify.com/embed/album/32wHTMdUrD7a0aqko0xIqX?utm_source=generator"
+        "https://open.spotify.com/embed/album/5XAnwFv8I9GauT6ZOWQCth?utm_source=generator"
       }
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
