@@ -1,11 +1,11 @@
 import React from "react";
 
-import JohnWhiteVideo from "../../assets/videos/john-white-bg.mp4";
+import JohnWhiteVideoMP4 from "../../assets/videos/john-white-bg.mp4";
+import JohnWhiteVideoWEBM from "../../assets/videos/john-white-bg.webm";
 
 const VideoBackground = () => {
   return (
     <video
-      src={JohnWhiteVideo}
       height={"110%"}
       width={"auto"}
       id="video"
@@ -16,7 +16,10 @@ const VideoBackground = () => {
       playsInline
       disablePictureInPicture
       className="video animate-appear"
-    />
+    >
+    <source src={JohnWhiteVideoMP4} type="video/MP4"/>
+    <source src={JohnWhiteVideoWEBM} type="video/webm"/>
+    </video>
   );
 };
 
