@@ -6,13 +6,13 @@ import GmailLogo from "../../components/social-links/gmail-link";
 import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLogo from "../../components/social-links/youtube-link";
-import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
+import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-logo";
 
 const Links = () => {
   return (
     <div className="text-center text-white">
       <Link exact='true' to={"/home"}>
-      <div className="mx-auto md:w-1/4 pt-16">
+      <div className="mx-auto my-auto md:w-1/4 pt-16">
         <JohnWhiteLogo/>
       </div>
       </Link>

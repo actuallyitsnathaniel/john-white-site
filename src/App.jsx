@@ -33,7 +33,7 @@ function App() {
     <Router forceRefresh>
       <FilmGrainEffect />
       <VideoBackground />
-      <div className="flex flex-col h-screen w-screen justify-between [&>*]:animate-appear">
+      <div className="flex flex-col h-screen w-auto justify-between [&>*]:animate-appear">
         <NavBar />
         <Routes>
           <Route index element={<Navigate replace to="/home" />} />

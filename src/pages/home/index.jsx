@@ -1,32 +1,33 @@
 import React from "react";
 
-import JohnWhiteLogo from "../../assets/images/icons/john-white-logo";
+import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-logo";
 import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
-
-  const youtubeID = 'lgys2P18gPo'
+  const youtubeID = "lgys2P18gPo";
 
   return (
-    <div className="text-white justify-items-center">
-      <div className="pt-28"/>
-      <div className="grid justify-center">
-        <JohnWhiteLogo />
-        <p rel="preload prefetch" className="text-center text-8xl bottom-0 py-2 animate-bounce">↡</p>
+    <div className="grid text-white text-center">
+      <div className="grid h-screen justify-self-center">
+        <JohnWhiteLogo className="sm:my-auto" />
+        <p className="grid absolute bottom-0 m-auto left-0 right-0 text-5xl py-2 animate-bounce">
+          ↡
+        </p>
       </div>
-        <iframe 
-          height={'315px'}
-          rel="preload prefetch"
-          className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105" 
-          src={`https://www.youtube-nocookie.com/embed/${youtubeID}?rel=0`} 
-          title='youtube embed' 
-          allowFullScreen 
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"/>
+      <iframe
+        height={"315px"}
+        rel="preload prefetch"
+        className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105"
+        src={`https://www.youtube-nocookie.com/embed/${youtubeID}?rel=0`}
+        title="youtube embed"
+        allowFullScreen
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+      />
       <div>
         <MusicLinks />
       </div>
     </div>
   );
-}
+};
 
 export default Home;
