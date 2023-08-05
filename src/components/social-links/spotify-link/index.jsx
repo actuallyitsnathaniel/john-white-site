@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 import { ReactComponent as SpotifySVG } from "../../../assets/images/icons/music-platforms/spotify.svg";
 
-const SpotifyLink = () =>{
+const SpotifyLink = () => {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2"
@@ -17,6 +17,6 @@ const SpotifyLink = () =>{
       />
     </a>
   );
-}
+};
 
 export default SpotifyLink;

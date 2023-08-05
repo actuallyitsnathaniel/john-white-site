@@ -10,7 +10,7 @@ const Footer = () => {
         alt="white-noise-ig-link"
         rel="noopener noreferrer"
         target="_blank"
-      >
+      > 
         <img
           width={'265px'}
           height={'auto'}
