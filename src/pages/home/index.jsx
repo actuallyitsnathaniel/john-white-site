@@ -8,8 +8,8 @@ const Home = () => {
 
   return (
     <div className="grid text-white text-center">
-      <div className="grid h-screen justify-self-center">
-        <JohnWhiteLogo className="sm:my-auto" />
+      <div className="flex items-center justify-center h-screen">
+        <JohnWhiteLogo />
         <p className="grid absolute bottom-0 m-auto left-0 right-0 text-5xl py-2 animate-bounce">
           ↡
         </p>
