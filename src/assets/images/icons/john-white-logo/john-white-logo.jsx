@@ -1,6 +1,6 @@
 import * as React from "react";
 const JohnWhiteLogo = (props) => (
-  <div className={`mx-auto px-8 md:px-0 mb-4 ${props.className}`}>
+  <div className={`grid p-8 -mt-48 md:-mt-0 items-center justify-center ${props.className}`}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       alt="john-white-logo"

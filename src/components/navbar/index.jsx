@@ -31,7 +31,7 @@ const usePageTitle = (location) => {
   }, [location]);
 
   return pageTitle;
-}
+};
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -40,7 +40,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`text-white p-2.5 font-semibold drop-shadow-xl ${
+      className={`text-white font-semibold p-2.5  ${
         pageTitle.includes("links") ? "hidden" : ""
       }`}
     >
@@ -73,7 +73,7 @@ const NavBar = () => {
       </div>
       <div
         id="nav-wrapper"
-        className={`transition-all h-0 origin-top duration-100 md:block
+        className={`transition-all h-0 origin-top duration-100
       ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
       `}
       >
@@ -137,6 +137,6 @@ const NavBar = () => {
       </div>
     </nav>
   );
-}
+};
 
 export default NavBar;
