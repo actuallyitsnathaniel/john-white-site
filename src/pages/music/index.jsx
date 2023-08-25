@@ -9,6 +9,7 @@ import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smile
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
 
 // Singles
+import greenLights from "../../assets/images/discography/Singles_EPs/green_lights_single_600x600bb.jpeg";
 import somethingBeautiful from "../../assets/images/discography/Singles_EPs/something_beautiful_single_600x600bb.jpeg";
 import blinkOfAnEye from "../../assets/images/discography/Singles_EPs/blink_of_an_eye_600x600bb.jpg";
 import familySingle from "../../assets/images/discography/Singles_EPs/family_single_600x600bb.jpeg";
@@ -26,6 +27,20 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
+        <Discography.Disc
+          artwork={greenLights}
+          title={"green lights - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/7uogoMK8FcWnxEOm2hbsCa?si=92a421f669544240"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/green-lights-single/1690900837"
+          }
+          soundcloudLink={
+            "https://soundcloud.com/johnwhitesmusic/green-lights-single"
+          }
+          youtubeLink={"https://youtu.be/IsMQ8WhefCw"}
+        />
         <Discography.Disc
           artwork={somethingBeautiful}
           title={"something beautiful - single"}
