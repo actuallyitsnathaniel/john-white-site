@@ -10,7 +10,7 @@ const AppleMusicEmbed = () => {
         padding: "1vh",
       }}
       src={
-        "https://embed.music.apple.com/us/album/something-beautiful-single/1690900934"
+        "https://embed.music.apple.com/us/album/green-lights-single/1690900837"
       }
       loading="lazy"
       sandbox={
@@ -22,3 +22,4 @@ const AppleMusicEmbed = () => {
 };
 
 export default AppleMusicEmbed;
+
