@@ -1,6 +1,8 @@
 import React from "react";
 import Discography from "../../components/discography";
 
+import { mapAlbums } from "../../api/backend";
+
 // Albums
 import family from "../../assets/images/discography/LPs/family_600x600bb.jpeg";
 import throughTheTrees from "../../assets/images/discography/LPs/through-the-trees.jpeg";
@@ -24,11 +26,15 @@ import better2021Single from "../../assets/images/discography/Singles_EPs/better
 import timeSingle from "../../assets/images/discography/Singles_EPs/time_single_600x600bb.jpeg";
 import breakingSingle from "../../assets/images/discography/Singles_EPs/breaking_single_600x600bb.jpeg";
 import better2019Single from "../../assets/images/discography/Singles_EPs/better_2019_single_600x600bb.jpeg";
+import Disc from "../../components/discography/disc";
 
 const Music = () => {
+  let albums = mapAlbums;
+
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
-      <Discography>
+      {/*
+        <Discography>
         <Discography.Disc
           artwork={soBeItSingle}
           title={"so be it - single"}
@@ -272,8 +278,23 @@ const Music = () => {
           youtubeLink={
             "https://youtube.com/playlist?list=pltfqr4ebunuoo5lfawivu4ihuvnohvxog"
           }
-        />
+        /> 
       </Discography>
+    */}
+      {albums.map((album) => {
+        let albumCoverData = album.cover.data.attributes;
+        return (
+          <Discography.Disc
+            title={album.ReleaseTitle}
+            album={album.ReleaseType == "LP"}
+            spotifyLink={album.SpotifyURL}
+            appleMusicLink={album.AppleMusicURL}
+            soundcloudLink={album.SoundcloudURL}
+            youtubeLink={album.YoutubeURL}
+            artwork={albumCoverData}
+          />
+        );
+      })}
     </div>
   );
 };
