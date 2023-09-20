@@ -18,7 +18,7 @@ const Disc = (props) => {
       onClick={() => {
         setActiveDisc(props.i);
       }}
-      className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group"
+      className={`${props.className} transition-scale duration-100 text-8xl p-6 hover:scale-110 group`}
     >
       <div className={"h-[300px] w-[300px]"}>
         <MusicPlatformLinks
@@ -34,13 +34,18 @@ const Disc = (props) => {
           youtubeLink={props.youtubeLink}
           album={props.album}
         />
-        <img height={"300px"} width={"300px"} src={props.artwork} alt={props.title} />
+        <img
+          height={"300px"}
+          width={"300px"}
+          src={props.artwork}
+          alt={props.title}
+        />
       </div>
       <div className="flex flex-row w-[300px] flex-wrap text-center justify-center transition-scale duration-100 origin-top text-xl pt-2 scale-0 group-hover:scale-90">
         {props.title}
       </div>
     </div>
   );
-}
+};
 
 export default Disc;

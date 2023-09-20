@@ -230,19 +230,18 @@ const Music = () => {
           soundcloudLink={"https://soundcloud.com/johnwhitesmusic/better"}
           youtubeLink={"https://youtu.be/eoxzjq5brza"}
         />
+
         <Discography.Disc
           album
+          className="blur-sm"
           artwork={throughTheTrees}
           title={"through the trees"}
-          spotifyLink={
-            ""
-          }
+          spotifyLink={""}
           appleMusicLink={""}
           soundcloudLink={""}
-          youtubeLink={
-            ""
-          }
+          youtubeLink={""}
         />
+
         <Discography.Disc
           album
           artwork={family}
