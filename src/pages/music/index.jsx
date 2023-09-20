@@ -1,7 +1,7 @@
 import React from "react";
 import Discography from "../../components/discography";
 
-import { mapAlbums } from "../../api/backend";
+import { mapAlbums } from "../../api/getMusicData";
 
 // Albums
 import family from "../../assets/images/discography/LPs/family_600x600bb.jpeg";
