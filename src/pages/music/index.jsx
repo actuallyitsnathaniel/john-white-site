@@ -34,7 +34,7 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
-        {albums.map(({ album, coverURL }) => {
+        {albums.toReversed().map(({ album, coverURL }) => {
           //  console.log(album)
           return (
             <Discography.Disc
