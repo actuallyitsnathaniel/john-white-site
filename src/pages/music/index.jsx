@@ -3,6 +3,7 @@ import Discography from "../../components/discography";
 
 // Albums
 import family from "../../assets/images/discography/LPs/family_600x600bb.jpeg";
+import throughTheTrees from "../../assets/images/discography/LPs/through-the-trees.jpeg";
 
 // EPs
 import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smiles_ep600x600bb.jpeg";
@@ -228,6 +229,19 @@ const Music = () => {
           }
           soundcloudLink={"https://soundcloud.com/johnwhitesmusic/better"}
           youtubeLink={"https://youtu.be/eoxzjq5brza"}
+        />
+        <Discography.Disc
+          album
+          artwork={throughTheTrees}
+          title={"through the trees"}
+          spotifyLink={
+            ""
+          }
+          appleMusicLink={""}
+          soundcloudLink={""}
+          youtubeLink={
+            ""
+          }
         />
         <Discography.Disc
           album
