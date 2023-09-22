@@ -235,10 +235,16 @@ const Music = () => {
           album
           artwork={throughTheTrees}
           title={"through the trees"}
-          spotifyLink={"https://open.spotify.com/album/6ie2fGRbDUcfIpYIVUEfxf?si=lyHDoJPtQnqFNvyM9Oit1Q"}
-          appleMusicLink={"https://music.apple.com/us/album/through-the-trees/1690890513"}
+          spotifyLink={
+            "https://open.spotify.com/album/6ie2fGRbDUcfIpYIVUEfxf?si=lyHDoJPtQnqFNvyM9Oit1Q"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/through-the-trees/1690890513"
+          }
           soundcloudLink={""}
-          youtubeLink={"https://www.youtube.com/watch?v=8To1fW1zaYE&list=OLAK5uy_lZhMgNp39JdVzrBRExMzOrjY5WOtBe0XQ"}
+          youtubeLink={
+            "https://www.youtube.com/watch?v=8To1fW1zaYE&list=OLAK5uy_lZhMgNp39JdVzrBRExMzOrjY5WOtBe0XQ"
+          }
         />
 
         <Discography.Disc
