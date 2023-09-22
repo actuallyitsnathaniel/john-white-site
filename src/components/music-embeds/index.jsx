@@ -11,9 +11,7 @@ export function MusicLinks() {
       <div className="flex flex-wrap justify-center drop-shadow-xl">
         <SpotifyEmbed />
         <AppleMusicEmbed />
-        {
-          // <SoundcloudEmbed />
-        }
+        <SoundcloudEmbed />
       </div>
     </div>
   );
