@@ -233,13 +233,12 @@ const Music = () => {
 
         <Discography.Disc
           album
-          className="blur-sm"
           artwork={throughTheTrees}
           title={"through the trees"}
-          spotifyLink={""}
-          appleMusicLink={""}
+          spotifyLink={"https://open.spotify.com/album/6ie2fGRbDUcfIpYIVUEfxf?si=lyHDoJPtQnqFNvyM9Oit1Q"}
+          appleMusicLink={"https://music.apple.com/us/album/through-the-trees/1690890513"}
           soundcloudLink={""}
-          youtubeLink={""}
+          youtubeLink={"https://www.youtube.com/watch?v=8To1fW1zaYE&list=OLAK5uy_lZhMgNp39JdVzrBRExMzOrjY5WOtBe0XQ"}
         />
 
         <Discography.Disc

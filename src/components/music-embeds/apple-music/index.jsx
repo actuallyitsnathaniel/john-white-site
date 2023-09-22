@@ -10,7 +10,7 @@ const AppleMusicEmbed = () => {
         padding: "1vh",
       }}
       src={
-        "https://embed.music.apple.com/us/album/green-lights-single/1690900837"
+        "https://embed.music.apple.com/us/album/through-the-trees/1690890513"
       }
       loading="lazy"
       sandbox={
