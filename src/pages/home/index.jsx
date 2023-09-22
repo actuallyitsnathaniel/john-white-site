@@ -5,7 +5,6 @@ import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
   const youtubeID = "PzOtwJA61pU";
-  // https://www.youtube.com/watch?v=PzOtwJA61pU&ab_channel=JohnWhite
   return (
     <div className="grid text-white text-center">
       <div className="flex items-center justify-center h-screen">
