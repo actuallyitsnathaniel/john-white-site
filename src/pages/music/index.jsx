@@ -241,7 +241,7 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/through-the-trees/1690890513"
           }
-          soundcloudLink={""}
+          soundcloudLink={"https://on.soundcloud.com/Q9agCrzPv1qj1vzWA"}
           youtubeLink={
             "https://www.youtube.com/watch?v=8To1fW1zaYE&list=OLAK5uy_lZhMgNp39JdVzrBRExMzOrjY5WOtBe0XQ"
           }
