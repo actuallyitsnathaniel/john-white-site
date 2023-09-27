@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function SpotifyEmbed() {
+  // TODO: migrate embed to strapi, or at least just the url
   return (
     <iframe
       height="470px"

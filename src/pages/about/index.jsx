@@ -16,6 +16,10 @@ const About = () => {
       <div className="md:flex md:flex-wrap p-8">
         <div className="flex flex-wrap md:justify-between md:pb-10">
           <div className="lg:px-5 pb-10 lg:pb-0 text-justify lg:w-1/2 md:text-3xl first-line:italic">
+          {
+            // TODO: migrate this to strapi. 
+            //  figure out how to add spans there as well to maintain the capitalization look.
+          }
             <span className="font-extrabold text-4xl md:text-6xl">J</span>ohn{" "}
             <span className="font-extrabold text-4xl md:text-6xl">W</span>hite
             is an up-and-coming artist born and raised in South LA. Exploring
@@ -39,6 +43,9 @@ const About = () => {
             id="carousel"
             className="flex rounded-xl overflow-scroll h-fit lg:w-1/2"
           >
+          {
+            // TODO: migrate photos to Strapi
+          }
             <img
               className="object-cover animate-hint-scrollable"
               src={profile3}

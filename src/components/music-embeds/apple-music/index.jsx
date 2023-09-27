@@ -1,6 +1,7 @@
 import React from "react";
 
 const AppleMusicEmbed = () => {
+  // TODO: migrate embed to strapi, or at least just the url
   return (
     <iframe
       title="apple-music-embedded"

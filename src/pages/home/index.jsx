@@ -13,6 +13,9 @@ const Home = () => {
           ↡
         </p>
       </div>
+      {
+        // TODO: migrate embed to strapi, or at least just the youtubeID
+      }
       <iframe
         height={"315px"}
         rel="preload prefetch"
