@@ -40,7 +40,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`text-white p-2.5  ${
+      className={`text-white p-2.5 py-2 ${
         pageTitle.includes("links") ? "hidden" : ""
       }`}
     >
@@ -125,7 +125,7 @@ const NavBar = () => {
             contact & links
           </Link> */}
           <Link
-            className={`hidden nav-item ${
+            className={`nav-item ${
               pageTitle === "shows" ? "nav-item-active" : ""
             }`}
             to="/shows"
