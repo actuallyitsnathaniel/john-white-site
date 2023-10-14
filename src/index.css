@@ -49,13 +49,13 @@ code {
 }
 
 .nav-bar {
-  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap;
+  @apply transition-all duration-100 ease-in-out flex flex-col font-semibold md:flex-row items-center justify-end md:mx-14 text-2xl whitespace-nowrap;
 }
 
 .nav-item {
-  @apply transition ease-in-out p-4 duration-150 hover:scale-110 hover:text-orange-200;
+  @apply transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-orange-200 hover:underline underline-offset-4;
 }
 
 .nav-item-active {
-  @apply transition ease-in hidden md:block text-orange-300 md:scale-110;
+  @apply transition ease-in hidden md:block text-orange-300 md:scale-110 underline;
 }

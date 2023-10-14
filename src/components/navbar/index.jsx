@@ -40,11 +40,11 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`text-white font-semibold p-2.5  ${
+      className={`text-white p-2.5  ${
         pageTitle.includes("links") ? "hidden" : ""
       }`}
     >
-      <div className="flex justify-between">
+      <div className="flex font-semibold justify-between">
         <a
           id="home-icon"
           href="/home"
@@ -54,7 +54,7 @@ const NavBar = () => {
         >
           ⌂
         </a>
-        <div className="md:hidden p-5 justify-center text-5xl whitespace-nowrap">
+        <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap">
           {pageTitle}
         </div>
         <button
