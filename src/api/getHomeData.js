@@ -8,12 +8,6 @@ export const getMusicEmbedsData = await fetch(
   .then((data) => data.data.attributes)
   .catch((error) => console.log(error.stack));
 
-// export const mapMusicEmbeds = getMusicEmbedsData.map((embed) => {
-//   embed = embed.attributes;
-// //   console.log({ embed });
-//   return embed;
-// });
-
 export const getYoutubeID = await fetch(
   `${local_url}/api/youtube-music-video-url`,
   GET_options
