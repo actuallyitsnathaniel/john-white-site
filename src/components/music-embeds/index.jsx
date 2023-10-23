@@ -12,7 +12,6 @@ export function MusicLinks() {
   const AppleMusicEmbedURL = getMusicEmbedsData.appleMusicEmbedURL;
   const SoundcloudEmbedURL = getMusicEmbedsData.soundcloudEmbedURL;
 
-  console.log({ getMusicEmbedsData });
   return (
     <div className="text-white text-[150%] md:text-4xl font-semibold pl-2.6 pr-2.6 h-max">
       <div className="p-6 text-center">{EmbeddedText}</div>

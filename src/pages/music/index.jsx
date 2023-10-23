@@ -35,7 +35,6 @@ const Music = () => {
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
         {albums.toReversed().map(({ album, coverURL }) => {
-          //  console.log(album)
           return (
             <Discography.Disc
               title={album.ReleaseTitle}
