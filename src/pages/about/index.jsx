@@ -10,16 +10,18 @@ import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLogo from "../../components/social-links/youtube-link/index.jsx";
 
+import { PressHighlight } from "../../components/press-highlight";
+
 const About = () => {
   return (
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
       <div className="md:flex md:flex-wrap p-8">
         <div className="flex flex-wrap md:justify-between md:pb-10">
           <div className="lg:px-5 pb-10 lg:pb-0 text-justify lg:w-1/2 md:text-3xl first-line:italic">
-          {
-            // TODO: migrate this to strapi. 
-            //  figure out how to add spans there as well to maintain the capitalization look.
-          }
+            {
+              // TODO: migrate this to strapi.
+              //  figure out how to add spans there as well to maintain the capitalization look.
+            }
             <span className="font-extrabold text-4xl md:text-6xl">J</span>ohn{" "}
             <span className="font-extrabold text-4xl md:text-6xl">W</span>hite
             is an up-and-coming artist born and raised in South LA. Exploring
@@ -43,9 +45,9 @@ const About = () => {
             id="carousel"
             className="flex rounded-xl overflow-scroll h-fit lg:w-1/2"
           >
-          {
-            // TODO: migrate photos to Strapi
-          }
+            {
+              // TODO: migrate photos to Strapi
+            }
             <img
               className="object-cover animate-hint-scrollable"
               src={profile3}
@@ -69,56 +71,31 @@ const About = () => {
             <div className="text-center py-5 underline text-5xl font-extrabold">
               press highlights
             </div>
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="https://shoutoutla.com/meet-john-white-artist-record-label-founder/"
-              >
-                "john white | record label founder"
-              </a>
-            </div>
-            <p className="text-lg">write-up by Shoutout LA</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="https://boldjourney.com/news/meet-john-white/"
-              >
-                "meet john white"
-              </a>
-            </div>
-            <p className="text-lg">write-up by Bold Journey</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review"
-              >
-                "FAMILY EP"
-              </a>
-            </div>
-            <p className="text-lg"> review by The Permanent Rain Press</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="http://voyagela.com/interview/conversations-with-john-white/"
-              >
-                "Conversations with John White"
-              </a>
-            </div>
-            <p className="text-lg"> write-up by Voyage LA</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
-              >
-                "Meet John Dominguez"
-              </a>
-            </div>
-            <p className="text-lg"> interview with Voyage LA</p>
-            <br />
+            <PressHighlight
+              href="https://shoutoutla.com/meet-john-white-artist-record-label-founder/"
+              title={`"john white | record label founder"`}
+              desc={"write-up by Voyage LA"}
+            />
+            <PressHighlight
+              href="https://boldjourney.com/news/meet-john-white/"
+              title={`"meet john white"`}
+              desc={"write-up by Bold Journey"}
+            />
+            <PressHighlight
+              href="https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review"
+              title={`"FAMILY EP"`}
+              desc={"review by The Permanent Rain Press"}
+            />
+            <PressHighlight
+              href="http://voyagela.com/interview/conversations-with-john-white/"
+              title={`"Conversations with John White"`}
+              desc={"write-up by Voyage LA"}
+            />
+            <PressHighlight
+              href="http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
+              title={`"Meet John Dominguez"`}
+              desc={"interview with Voyage LA"}
+            />
             <div className="text-center">
               <div className="text-lg">
                 <div className="underline text-4xl pb-5 font-extrabold">
