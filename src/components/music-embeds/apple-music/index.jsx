@@ -1,7 +1,6 @@
 import React from "react";
 
-const AppleMusicEmbed = () => {
-  // TODO: migrate embed to strapi, or at least just the url
+const AppleMusicEmbed = (props) => {
   return (
     <iframe
       title="apple-music-embedded"
@@ -10,9 +9,7 @@ const AppleMusicEmbed = () => {
         borderRadius: "26px",
         padding: "1vh",
       }}
-      src={
-        "https://embed.music.apple.com/us/album/through-the-trees/1690890513"
-      }
+      src={props.AppleMusicEmbedURL}
       loading="lazy"
       sandbox={
         "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
@@ -23,4 +20,3 @@ const AppleMusicEmbed = () => {
 };
 
 export default AppleMusicEmbed;
-

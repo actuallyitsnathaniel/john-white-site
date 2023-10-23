@@ -32,7 +32,37 @@ yarn-error.log*
 
 # dependencies
 /node_modules
-/strapi/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# just for now, until stack is finished
+/backend/**
+/frontend/**
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+**/node_modules
 /.pnp
 .pnp.js
 
@@ -93,79 +123,79 @@ $RECYCLE.BIN/
 # Packages
 ############################
 
-/strapi/*.7z
-/strapi/*.csv
-/strapi/*.dat
-/strapi/*.dmg
-/strapi/*.gz
-/strapi/*.iso
-/strapi/*.jar
-/strapi/*.rar
-/strapi/*.tar
-/strapi/*.zip
-/strapi/*.com
-/strapi/*.class
-/strapi/*.dll
-/strapi/*.exe
-/strapi/*.o
-/strapi/*.seed
-/strapi/*.so
-/strapi/*.swo
-/strapi/*.swp
-/strapi/*.swn
-/strapi/*.swm
-/strapi/*.out
-/strapi/*.pid
+**/*.7z
+**/*.csv
+**/*.dat
+**/*.dmg
+**/*.gz
+**/*.iso
+**/*.jar
+**/*.rar
+**/*.tar
+**/*.zip
+**/*.com
+**/*.class
+**/*.dll
+**/*.exe
+**/*.o
+**/*.seed
+**/*.so
+**/*.swo
+**/*.swp
+**/*.swn
+**/*.swm
+**/*.out
+**/*.pid
 
 
 ############################
 # Logs and databases
 ############################
 
-/strapi/.tmp
-/strapi/*.log
-/strapi/*.sql
-/strapi/*.sqlite
-/strapi/*.sqlite3
+**/.tmp
+**/*.log
+**/*.sql
+**/*.sqlite
+**/*.sqlite3
 
 
 ############################
 # Misc.
 ############################
 
-/strapi/*#
-/strapi/ssl
-/strapi/.idea
-/strapi/nbproject
-/strapi/public/uploads/*
-/strapi/!public/uploads/.gitkeep
+**/*#
+**/ssl
+**/.idea
+**/nbproject
+**/public/uploads/*
+**/!public/uploads/.gitkeep
 
 ############################
 # Node.js
 ############################
 
-/strapi/lib-cov
-/strapi/lcov.info
-/strapi/pids
-/strapi/logs
-/strapi/results
-/strapi/node_modules
-/strapi/.node_history
+**/lib-cov
+**/lcov.info
+**/pids
+**/logs
+**/results
+**/node_modules
+**/.node_history
 
 ############################
 # Tests
 ############################
 
-/strapi/coverage
+**/coverage
 
 ############################
 # Strapi
 ############################
 
-/strapi/.env
-/strapi/license.txt
-/strapi/exports
-/strapi/*.cache
-/strapi/dist
-/strapi/build
-/strapi/.strapi-updater.json
+**/.env
+**/license.txt
+**/exports
+**/*.cache
+**/dist
+**/build
+**/.strapi-updater.json

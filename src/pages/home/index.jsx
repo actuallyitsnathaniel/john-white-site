@@ -3,8 +3,13 @@ import React from "react";
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-logo";
 import { MusicLinks } from "../../components/music-embeds";
 
+import { getYoutubeID } from "../../api/getHomeData";
+
 const Home = () => {
-  const youtubeID = "QadN2ps4cgQ";
+  // const youtubeID = "UkolMa5xwoM";
+
+  const youtubeID = getYoutubeID;
+
   return (
     <div className="grid text-white text-center">
       <div className="flex items-center justify-center h-screen">
@@ -13,9 +18,6 @@ const Home = () => {
           ↡
         </p>
       </div>
-      {
-        // TODO: migrate embed to strapi, or at least just the youtubeID
-      }
       <iframe
         height={"315px"}
         rel="preload prefetch"

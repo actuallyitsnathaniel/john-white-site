@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export default function SpotifyEmbed() {
-  // TODO: migrate embed to strapi, or at least just the url
+export default function SpotifyEmbed(props) {
   return (
     <iframe
       height="470px"
@@ -11,9 +10,7 @@ export default function SpotifyEmbed() {
         borderRadius: "26px",
         padding: "1vh",
       }}
-      src={
-        "https://open.spotify.com/embed/album/6ie2fGRbDUcfIpYIVUEfxf?utm_source=generator"
-      }
+      src={props.SpotifyEmbedURL}
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       }

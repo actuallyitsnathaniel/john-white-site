@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function SoundcloudEmbed() {
-  // TODO: migrate embed to strapi, or at least just the url
+export default function SoundcloudEmbed(props) {
   return (
     <iframe
       height="470px"
@@ -10,9 +9,7 @@ export default function SoundcloudEmbed() {
         borderRadius: "26px",
         padding: "1vh",
       }}
-      src={
-        "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1414477375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-      }
+      src={props.SoundcloudEmbedURL}
       loading="lazy"
     />
   );
