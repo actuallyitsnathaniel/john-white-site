@@ -14,7 +14,6 @@ import { PressHighlight } from "../../components/press-highlight";
 import { PressHighlightEntries } from "../../api/getAboutData";
 
 const About = () => {
-  console.log(PressHighlightEntries);
   return (
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
       <div className="md:flex md:flex-wrap p-8">
