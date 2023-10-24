@@ -11,8 +11,10 @@ import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLogo from "../../components/social-links/youtube-link/index.jsx";
 
 import { PressHighlight } from "../../components/press-highlight";
+import { PressHighlightEntries } from "../../api/getAboutData";
 
 const About = () => {
+  console.log(PressHighlightEntries);
   return (
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
       <div className="md:flex md:flex-wrap p-8">
@@ -71,31 +73,15 @@ const About = () => {
             <div className="text-center py-5 underline text-5xl font-extrabold">
               press highlights
             </div>
-            <PressHighlight
-              href="https://shoutoutla.com/meet-john-white-artist-record-label-founder/"
-              title={`"john white | record label founder"`}
-              desc={"write-up by Voyage LA"}
-            />
-            <PressHighlight
-              href="https://boldjourney.com/news/meet-john-white/"
-              title={`"meet john white"`}
-              desc={"write-up by Bold Journey"}
-            />
-            <PressHighlight
-              href="https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review"
-              title={`"FAMILY EP"`}
-              desc={"review by The Permanent Rain Press"}
-            />
-            <PressHighlight
-              href="http://voyagela.com/interview/conversations-with-john-white/"
-              title={`"Conversations with John White"`}
-              desc={"write-up by Voyage LA"}
-            />
-            <PressHighlight
-              href="http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
-              title={`"Meet John Dominguez"`}
-              desc={"interview with Voyage LA"}
-            />
+            {PressHighlightEntries.map(({ entry }) => {
+              return (
+                <PressHighlight
+                  title={entry.title}
+                  href={entry.href}
+                  desc={entry.desc}
+                />
+              );
+            })}
             <div className="text-center">
               <div className="text-lg">
                 <div className="underline text-4xl pb-5 font-extrabold">
