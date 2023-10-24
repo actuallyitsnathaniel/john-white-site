@@ -50,7 +50,7 @@ const About = () => {
             className="flex rounded-xl overflow-scroll h-fit lg:w-1/2"
           >
             {
-              // TODO: migrate photos to Strapi
+              // TODO: photos are in Strapi, create GET function for them
             }
             <img
               className="object-cover animate-hint-scrollable"

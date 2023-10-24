@@ -9,7 +9,7 @@ const Shows = () => {
       <div className="md:p-3 lowercase">
         <ShowLink
           link="https://new.hotelcafe.com/event/writers-block-147/"
-          // artists="john white"
+          artists="john white"
           date="nov 14th"
           venue="hotel café"
           thumbnail={writersBlockHotelCafe}
