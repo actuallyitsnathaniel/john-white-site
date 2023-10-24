@@ -25,7 +25,6 @@ const About = () => {
           >
             {
               // TODO: migrate this to strapi.
-              //  figure out how to add spans there as well to maintain the capitalization look.
             }
             John White is an up-and-coming artist born and raised in South LA.
             Exploring the sounds of the bands he listened to with his father,
