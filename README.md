@@ -1,5 +1,5 @@
 # John White Music Website 
-## The spot for everything John White. Music, merch, and much more. Come dream up some new tunes with us!!
+_The spot for everything John White. Music, merch, and much more. Come dream up some new tunes with us!!_
 
 <h3 align="center">Desktop</h3>
   <img width="1401" alt="Screenshot 2023-11-03 at 4 28 27 PM" src="https://github.com/actuallyitsnathaniel/john-white-site/assets/38742706/551fee0f-55cf-4f31-a252-a2166f36603c">
