@@ -31,6 +31,10 @@ const About = () => {
             bring audiences that same love and comfort. His debut album, Through
             the Trees, will be released on September 22, 2023.
           </div>
+          {/* 
+          TODO: refine carousel to be this.
+          https://stackoverflow.com/questions/59198952/using-document-queryselector-in-react-should-i-use-refs-instead-how
+           */}
           <div
             id="carousel"
             className="flex rounded-xl overflow-scroll h-fit lg:w-1/2"

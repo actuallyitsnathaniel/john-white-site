@@ -4,7 +4,7 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-
 import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
-  const youtubeID = "rG-Rj51mGfg";
+  const youtubeID = "ta4d8YReUyo";
   return (
     <div className="grid text-white text-center">
       <div className="flex items-center justify-center h-screen">
@@ -22,7 +22,7 @@ const Home = () => {
         allowFullScreen
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
       />
-      <div>
+      <div> 
         <MusicLinks />
       </div>
     </div>
