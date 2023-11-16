@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { ReactComponent as HamburgerIcon } from "../../assets/images/icons/navbar/hamburger-icon.svg";
-import { ReactComponent as CloseIcon } from "../../assets/images/icons/navbar/close-icon.svg";
+import { MobileNavButton } from "./mobile-nav-button";
+import { NavItem } from "./nav-item";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
@@ -34,7 +34,22 @@ const usePageTitle = (location) => {
 };
 
 const NavBar = () => {
+  const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimension(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const isMobile = windowDimension <= 640;
 
   let pageTitle = usePageTitle(useLocation().pathname);
 
@@ -44,31 +59,22 @@ const NavBar = () => {
         pageTitle.includes("links") ? "hidden" : ""
       }`}
     >
-      <div className="flex font-semibold justify-between">
-        <a
-          id="home-icon"
-          href="/home"
-          className={`md:hidden ${
-            pageTitle.includes("home") && "pointer-events-none opacity-0"
-          } p-3.5 text-6xl -translate-y-1 align-middle`}
-        >
-          ⌂
-        </a>
-        <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap">
+      <div className="flex font-semibold justify-center">
+        <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap underline">
           {pageTitle}
         </div>
         <button
           data-collapse-toggle="navbar"
           id="navbar-icon"
           type="button"
-          className={`md:hidden p-3 justify-end`}
+          className={`md:hidden justify-end`}
           aria-controls="navbar"
           aria-expanded="false"
           onClick={() => {
             setExpanded(!expanded);
           }}
         >
-          {expanded ? <CloseIcon /> : <HamburgerIcon />}
+          <MobileNavButton {...{ expanded, setExpanded }} />
         </button>
       </div>
       <div
@@ -78,61 +84,44 @@ const NavBar = () => {
       `}
       >
         <ul id="nav-bar" className={`nav-bar`}>
-          <Link
-            className={`nav-item ${
-              pageTitle === "home" ? "nav-item-active" : ""
-            }`}
+          <NavItem
             to="/home"
-            aria-current="page"
-            onClick={() => setExpanded(false)}
-          >
-            home
-          </Link>
-          <Link
-            className={`nav-item ${
-              pageTitle === "music" ? "nav-item-active" : ""
-            }`}
+            label={"home"}
+            setExpanded={setExpanded}
+            {...{ pageTitle }}
+          />
+          <NavItem
             to="/music"
-            onClick={() => setExpanded(false)}
-          >
-            music
-          </Link>
-          <Link
-            className={`nav-item ${
-              pageTitle === "about" ? "nav-item-active" : ""
-            }`}
+            label={"music"}
+            setExpanded={setExpanded}
+            {...{ pageTitle }}
+          />
+          <NavItem
             to="/about"
-            onClick={() => setExpanded(false)}
-          >
-            about
-          </Link>
-          {/**  <Link
-            className={`nav-item ${
-              pageTitle === "merch" ? "nav-item-active" : ""
-            }`}
+            label={"about"}
+            setExpanded={setExpanded}
+            {...{ pageTitle }}
+          />
+
+          {/**  
+           <NavItem
             to="/merch"
-            onClick={() => setExpanded(false)}
-          >
-            merch
-          </Link> */}
-          {/** <Link
-            className={`nav-item ${
-              pageTitle === "links" ? "nav-item-active" : ""
-            }`}
+            label={"merch"}
+            setExpanded={setExpanded}
+            {...{ pageTitle }}
+          />
+          */}
+          {/** <NavItem
             to="/links"
-            onClick={() => setExpanded(false)}
-          >
-            contact & links
-          </Link> */}
-          <Link
-            className={`nav-item ${
-              pageTitle === "shows" ? "nav-item-active" : ""
-            }`}
+            label={"contact & links"}
+            setExpanded={setExpanded}
+            {...{ pageTitle }} */}
+          <NavItem
             to="/shows"
-            onClick={() => setExpanded(false)}
-          >
-            shows
-          </Link>
+            label={"shows"}
+            setExpanded={setExpanded}
+            {...{ pageTitle }}
+          />
         </ul>
       </div>
     </nav>

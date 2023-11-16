@@ -13,7 +13,6 @@ import { SocialLinks } from "./components/social-links";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 
-import "./App.css";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import About from "./pages/about";
@@ -24,11 +23,7 @@ import Shows from "./pages/shows";
 import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 
-function App() {
-  // TODO: wait-to-load or something. currently everything still loads in a messy way. intersection observer MIGHT... help with that.
-  // TODO: implement intersection observer for more efficient lazy-loading...
-  // https://www.youtube.com/watch?v=aUjBvuUdkhg
-
+const App = () => {
   return (
     <Router forceRefresh>
       <FilmGrainEffect />
@@ -52,6 +47,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
