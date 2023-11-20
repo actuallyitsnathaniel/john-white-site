@@ -70,7 +70,7 @@ const About = () => {
                 "john white | record label founder"
               </a>
             </div>
-            <p className="text-lg">write-up by Voyage LA</p>
+            <p className="text-lg">write-up by Shoutout LA</p>
             <br />
             <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
               <a
