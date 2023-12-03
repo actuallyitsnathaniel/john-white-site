@@ -6,7 +6,7 @@ import SoundcloudEmbed from "./soundcloud";
 
 import { getMusicEmbedsData } from "../../api/getHomeData";
 
-export function MusicLinks() {
+export const MusicLinks = () => {
   const EmbeddedText = getMusicEmbedsData.Text;
   const SpotifyEmbedURL = getMusicEmbedsData.spotifyEmbedURL;
   const AppleMusicEmbedURL = getMusicEmbedsData.appleMusicEmbedURL;
@@ -22,4 +22,4 @@ export function MusicLinks() {
       </div>
     </div>
   );
-}
+};

@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "music_embedded_ids",
+  "info": {
+    "singularName": "music-embedded-id",
+    "pluralName": "music-embedded-ids",
+    "displayName": "MusicEmbeds",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "spotifyEmbedURL": {
+      "type": "string"
+    },
+    "soundcloudEmbedURL": {
+      "type": "string"
+    },
+    "appleMusicEmbedURL": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "string"
+    }
+  }
+}

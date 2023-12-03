@@ -1,4 +1,5 @@
-# John White Music Website 
+# John White Music Website
+
 _The spot for everything John White. Music, merch, and much more. Come dream up some new tunes with us!!_
 
 <h3 align="center">Desktop</h3>
@@ -13,3 +14,8 @@ _The spot for everything John White. Music, merch, and much more. Come dream up 
   <summary>Vite Help</summary>
 
 </details>
+
+## Commands
+
+To start up the dev env:
+`npm run dev`

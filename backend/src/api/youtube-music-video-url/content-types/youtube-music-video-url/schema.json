@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "youtube_music_video_urls",
+  "info": {
+    "singularName": "youtube-music-video-url",
+    "pluralName": "youtube-music-video-urls",
+    "displayName": "YoutubeMusicVideoURL",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "YoutubeID": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

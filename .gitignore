@@ -1,77 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-/dist
-
-# misc
-.DS_Store*
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# just for now, until stack is finished
-/backend/**
-/frontend/**
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-/dist
-
-# misc
-.DS_Store*
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# just for now, until stack is finished
-/backend/**
-/frontend/**
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
 **/node_modules
 /.pnp
 .pnp.js
 
 # testing
-/coverage
+**/coverage
 
 # production
-/build
-/dist
+**/build
+**/dist
 
 # misc
 .DS_Store*
@@ -109,10 +48,10 @@ Icon
 # Windows
 ############################
 
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+**Thumbs.db
+**ehthumbs.db
+**Desktop.ini
+**$RECYCLE.BIN/
 *.cab
 *.msi
 *.msm
@@ -123,29 +62,29 @@ $RECYCLE.BIN/
 # Packages
 ############################
 
-**/*.7z
-**/*.csv
-**/*.dat
-**/*.dmg
-**/*.gz
-**/*.iso
-**/*.jar
-**/*.rar
-**/*.tar
-**/*.zip
-**/*.com
-**/*.class
-**/*.dll
-**/*.exe
-**/*.o
-**/*.seed
-**/*.so
-**/*.swo
-**/*.swp
-**/*.swn
-**/*.swm
-**/*.out
-**/*.pid
+**.7z
+**.csv
+**.dat
+**.dmg
+**.gz
+**.iso
+**.jar
+**.rar
+**.tar
+**.zip
+**.com
+**.class
+**.dll
+**.exe
+**.o
+**.seed
+**.so
+**.swo
+**.swp
+**.swn
+**.swm
+**.out
+**.pid
 
 
 ############################
@@ -153,17 +92,17 @@ $RECYCLE.BIN/
 ############################
 
 **/.tmp
-**/*.log
-**/*.sql
-**/*.sqlite
-**/*.sqlite3
+**.log
+**.sql
+**.sqlite
+**.sqlite3
 
 
 ############################
 # Misc.
 ############################
 
-**/*#
+**#
 **/ssl
 **/.idea
 **/nbproject

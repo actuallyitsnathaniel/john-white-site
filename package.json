@@ -1,21 +1,16 @@
 {
   "name": "john-white-site",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "node server to startup fe and be concurrently",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --emptyOutDir",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && npm run dev"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.1",
-    "vite-plugin-preload": "^0.3.1",
-    "vite-plugin-svgr": "^4.2.0"
-  },
+  "author": "nate bowman",
+  "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.2.41",
     "@types/react-dom": "^18.2.17",
@@ -31,5 +26,6 @@
     "tailwindcss": "^3.3.5",
     "vite": "^5.0.4",
     "vite-plugin-image-optimizer": "^1.1.7"
+    "concurrently": "^8.2.2"
   }
 }

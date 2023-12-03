@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "press_highlights",
+  "info": {
+    "singularName": "press-highlight",
+    "pluralName": "press-highlights",
+    "displayName": "PressHighlight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "unique": true
+    },
+    "desc": {
+      "type": "string"
+    }
+  }
+}
