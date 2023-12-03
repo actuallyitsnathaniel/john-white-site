@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "frontend": "cd frontend && npm run dev",
-    "backend": "cd backend && npm run dev"
+    "dev": "concurrently \"npm:backend\" \"npm:frontend --success-first\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && wait-on http://localhost:1337/admin && npm run dev"
   },
   "author": "nate bowman",
   "license": "ISC",
@@ -27,5 +27,8 @@
     "vite": "^5.0.4",
     "vite-plugin-image-optimizer": "^1.1.7"
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "wait-on": "^7.2.0"
   }
 }
