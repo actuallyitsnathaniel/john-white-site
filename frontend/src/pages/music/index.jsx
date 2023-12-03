@@ -1,4 +1,3 @@
-import React from "react";
 import Discography from "../../components/discography";
 
 import { mapAlbums } from "../../api/getMusicData";

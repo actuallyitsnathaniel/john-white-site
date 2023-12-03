@@ -1,5 +1,3 @@
-import React from "react";
-
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-logo";
 import { MusicLinks } from "../../components/music-embeds";
 

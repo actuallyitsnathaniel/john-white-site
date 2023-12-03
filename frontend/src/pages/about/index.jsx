@@ -1,4 +1,3 @@
-import React from "react";
 import profile1 from "../../assets/images/profiles/profile-1.jpeg";
 import profile2 from "../../assets/images/profiles/profile-2.jpeg";
 import profile3 from "../../assets/images/profiles/profile-3.jpeg";
@@ -24,7 +23,7 @@ const About = () => {
                         first-letter:mr-4 first-letter:float-left"
           >
             {
-              // TODO: migrate this to strapi.
+              // TODO: migrate about body text to strapi.
             }
             John White is an up-and-coming artist born and raised in South LA.
             Exploring the sounds of the bands he listened to with his father,
@@ -41,7 +40,7 @@ const About = () => {
             2023.
           </div>
           {/* 
-          TODO: refine carousel to be this.
+          TODO: refine carousel to scroll seamlessy between items
           https://stackoverflow.com/questions/59198952/using-document-queryselector-in-react-should-i-use-refs-instead-how
            */}
           <div
@@ -83,6 +82,10 @@ const About = () => {
                 />
               );
             })}
+            {/*
+             * TODO:
+             * move these contacts into strapi
+             * */}
             <div className="text-center">
               <div className="text-lg">
                 <div className="underline text-4xl pb-5 font-extrabold">
