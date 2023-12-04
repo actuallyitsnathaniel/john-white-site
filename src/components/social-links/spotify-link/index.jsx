@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ReactComponent as SpotifySVG } from "../../../assets/images/icons/music-platforms/spotify.svg";
+import SpotifySVG from "../../../assets/images/icons/music-platforms/spotify.svg";
 
 const SpotifyLink = () => {
   return (
@@ -10,7 +10,8 @@ const SpotifyLink = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <SpotifySVG
+      <img
+        src={SpotifySVG}
         loading="lazy"
         className="transition-all duration-75 h-16 rounded-full hover:scale-110 hover:fill-[#1DB954]"
         alt="spotify-alt"
