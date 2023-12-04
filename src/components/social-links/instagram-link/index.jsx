@@ -1,5 +1,3 @@
-import InstagramSVG from "../../../assets/images/icons/instagram-logo.svg";
-
 const InstagramLogo = () => {
   return (
     <a
@@ -11,7 +9,6 @@ const InstagramLogo = () => {
       <svg
         viewBox="-3 -3 30 30"
         className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] bg-white hover:fill-white hover:scale-110 hover:bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#962fbf]"
-        src={InstagramSVG}
         alt="ig-logo"
       >
         <path
