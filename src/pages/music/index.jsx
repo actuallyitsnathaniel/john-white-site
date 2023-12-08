@@ -10,6 +10,7 @@ import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smile
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
 
 // Singles
+import soBeItSingle from "../../assets/images/discography/Singles_EPs/so_be_it_single_600x600bb.jpg";
 import greenLights from "../../assets/images/discography/Singles_EPs/green_lights_single_600x600bb.jpeg";
 import somethingBeautiful from "../../assets/images/discography/Singles_EPs/something_beautiful_single_600x600bb.jpeg";
 import blinkOfAnEye from "../../assets/images/discography/Singles_EPs/blink_of_an_eye_600x600bb.jpg";
@@ -28,6 +29,18 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
+        <Discography.Disc
+          artwork={soBeItSingle}
+          title={"so be it - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/0LD68z4X9NoFXyK52tOidz?si=7fd0f150b4244dcf"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/so-be-it-single/1719456370"
+          }
+          soundcloudLink={""}
+          youtubeLink={"https://youtu.be/QadN2ps4cgQ?si=TFBOB19uiolrW5Sr"}
+        />
         <Discography.Disc
           artwork={greenLights}
           title={"green lights - single"}
