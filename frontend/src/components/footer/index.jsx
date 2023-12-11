@@ -4,7 +4,7 @@ import whiteNoiseRecordsPNG from "../../assets/images/icons/white-noise-records-
 
 const Footer = () => {
   return (
-    <footer className="grid bg-black text-md text-white w-screen h-full">
+    <footer className="grid bg-black text-md text-white w-screen">
       <a
         className="-mb-9"
         href="https://www.instagram.com/whitenoisercrds/"
