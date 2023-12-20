@@ -1,9 +1,10 @@
 import React from "react";
 
-import JohnWhiteVideoMP4 from "../../assets/videos/john-white-bg.mp4";
-import JohnWhiteVideoWEBM from "../../assets/videos/john-white-bg.webm";
+import { getVideoBGs } from "../../api/getVideoData";
 
 const VideoBackground = () => {
+  const videos = getVideoBGs;
+
   return (
     <video
       height={"110%"}
@@ -17,8 +18,8 @@ const VideoBackground = () => {
       disablePictureInPicture
       className="video animate-appear"
     >
-    <source src={JohnWhiteVideoMP4} type="video/MP4"/>
-    <source src={JohnWhiteVideoWEBM} type="video/webm"/>
+      <source src={videos.mp4} type="video/MP4" />
+      <source src={videos.webm} type="video/webm" />
     </video>
   );
 };
