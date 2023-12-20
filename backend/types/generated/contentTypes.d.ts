@@ -781,6 +781,37 @@ export interface ApiPressHighlightPressHighlight extends Schema.CollectionType {
   };
 }
 
+export interface ApiVideoBgVideoBg extends Schema.SingleType {
+  collectionName: 'video_bgs';
+  info: {
+    singularName: 'video-bg';
+    pluralName: 'video-bgs';
+    displayName: 'VideoBG';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    webm: Attribute.Media;
+    mp4: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::video-bg.video-bg',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::video-bg.video-bg',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiYoutubeMusicVideoUrlYoutubeMusicVideoUrl
   extends Schema.SingleType {
   collectionName: 'youtube_music_video_urls';
@@ -832,6 +863,7 @@ declare module '@strapi/types' {
       'api::album.album': ApiAlbumAlbum;
       'api::music-embedded-id.music-embedded-id': ApiMusicEmbeddedIdMusicEmbeddedId;
       'api::press-highlight.press-highlight': ApiPressHighlightPressHighlight;
+      'api::video-bg.video-bg': ApiVideoBgVideoBg;
       'api::youtube-music-video-url.youtube-music-video-url': ApiYoutubeMusicVideoUrlYoutubeMusicVideoUrl;
     }
   }

@@ -10,11 +10,9 @@ const getAlbumMetaData = await fetch(
 
 export const mapAlbums = getAlbumMetaData.map((album) => {
   album = album.attributes; // dig into response data
-  const coverHash = album.cover.data.attributes.hash; // get hash from response data
-  const coverURL = `http://localhost:1337/uploads/${coverHash}.jpeg`; // append hash to a URL
+  const coverURL = album.cover.data.attributes.url;
 
   // console.log(album);
-  // console.log(coverHash);
 
   return { album, coverURL };
 });

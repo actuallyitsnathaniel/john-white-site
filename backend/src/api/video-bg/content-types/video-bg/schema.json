@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "video_bgs",
+  "info": {
+    "singularName": "video-bg",
+    "pluralName": "video-bgs",
+    "displayName": "VideoBG"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "webm": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mp4": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
