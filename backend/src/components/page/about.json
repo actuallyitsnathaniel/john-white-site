@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_abouts",
+  "info": {
+    "displayName": "About"
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Pictures": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "PressHighlights": {
+      "type": "blocks"
+    }
+  }
+}
