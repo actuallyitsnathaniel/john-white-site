@@ -715,6 +715,37 @@ export interface ApiAlbumAlbum extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMusicEmbeddedIdMusicEmbeddedId extends Schema.SingleType {
   collectionName: 'music_embedded_ids';
   info: {
@@ -861,6 +892,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::album.album': ApiAlbumAlbum;
+      'api::contact.contact': ApiContactContact;
       'api::music-embedded-id.music-embedded-id': ApiMusicEmbeddedIdMusicEmbeddedId;
       'api::press-highlight.press-highlight': ApiPressHighlightPressHighlight;
       'api::video-bg.video-bg': ApiVideoBgVideoBg;
