@@ -10,7 +10,8 @@ import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLogo from "../../components/social-links/youtube-link/index.jsx";
 
 import { PressHighlight } from "../../components/press-highlight";
-import { PressHighlightEntries } from "../../api/getAboutData";
+import { PressHighlightEntries, Contacts } from "../../api/getAboutData";
+import { Contact } from "../../components/contact/index.jsx";
 
 const About = () => {
   return (
@@ -91,28 +92,9 @@ const About = () => {
                 <div className="underline text-4xl pb-5 font-extrabold">
                   contact:
                 </div>
-                <div className="pb-2">
-                  <p>Daniel Espitia</p>
-                  <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-                    <a
-                      className="italic underline font-extrabold"
-                      href="mailto:copamgmtt@gmail.com"
-                    >
-                      copamgmtt@gmail.com
-                    </a>
-                  </p>
-                </div>
-                <div className="pb-2">
-                  <p>Victor M. Rocha</p>
-                  <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-                    <a
-                      className="italic underline font-extrabold"
-                      href="mailto:victor@245management.com"
-                    >
-                      victor@245management.com
-                    </a>
-                  </p>
-                </div>
+                {Contacts.map(({ entry }) => {
+                  return <Contact name={entry.name} email={entry.email} />;
+                })}
               </div>
             </div>
           </div>
