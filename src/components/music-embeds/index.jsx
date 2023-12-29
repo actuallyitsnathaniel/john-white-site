@@ -4,10 +4,10 @@ import SpotifyEmbed from "./spotify";
 import AppleMusicEmbed from "./apple-music";
 import SoundcloudEmbed from "./soundcloud";
 
-export function MusicLinks() {
+export const MusicLinks = () => {
   return (
     <div className="text-white text-[150%] md:text-4xl font-semibold pl-2.6 pr-2.6 h-max">
-      <div className="p-6 text-center">'through the trees' out now</div>
+      <div className="p-6 text-center">'someone new' out now</div>
       <div className="flex flex-wrap justify-center drop-shadow-xl">
         <SpotifyEmbed />
         <AppleMusicEmbed />
@@ -15,4 +15,4 @@ export function MusicLinks() {
       </div>
     </div>
   );
-}
+};
