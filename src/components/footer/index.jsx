@@ -21,7 +21,7 @@ const Footer = () => {
           alt="white-noise-records-logo"
         />
       </a>
-      <div className="text-end pb-3">
+      <div className="text-end pb-3 pr-3">
         copyright © {new Date().getFullYear()}. powered by{" "}
         <a
           className="underline underline-offset-8"
