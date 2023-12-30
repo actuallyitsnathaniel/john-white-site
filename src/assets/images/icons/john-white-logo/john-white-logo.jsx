@@ -1,6 +1,7 @@
-import * as React from "react";
 const JohnWhiteLogo = (props) => (
-  <div className={`grid p-8 -mt-48 md:-mt-0 items-center justify-center ${props.className}`}>
+  <div
+    className={`grid p-8 -mt-48 md:-mt-0 items-center justify-center ${props.className}`}
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       alt="john-white-logo"
