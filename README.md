@@ -15,6 +15,11 @@ _The spot for everything John White. Music, merch, and much more. Come dream up 
 
 </details>
 
+<details> 
+  <summary>Strapi Help</summary>
+
+</details>
+
 ## Commands
 
 To start up the dev env:
