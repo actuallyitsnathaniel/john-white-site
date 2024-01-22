@@ -1,5 +1,3 @@
-import React from "react";
-
 const AppleMusicEmbed = () => {
   return (
     <iframe
@@ -22,4 +20,3 @@ const AppleMusicEmbed = () => {
 };
 
 export default AppleMusicEmbed;
-

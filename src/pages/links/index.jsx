@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import InstagramLogo from "../../components/social-links/instagram-link";
@@ -11,10 +10,10 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-
 const Links = () => {
   return (
     <div className="text-center text-white">
-      <Link exact='true' to={"/home"}>
-      <div className="mx-auto my-auto md:w-1/4 pt-16">
-        <JohnWhiteLogo/>
-      </div>
+      <Link exact="true" to={"/home"}>
+        <div className="mx-auto my-auto md:w-1/4 pt-16">
+          <JohnWhiteLogo />
+        </div>
       </Link>
       <h1 className="text-[200%] md:text-6xl py-6 font-semibold italic">
         links
@@ -24,7 +23,7 @@ const Links = () => {
           <SpotifyLink />
         </div>
         <div className="px-6">
-          <AppleMusic /> 
+          <AppleMusic />
         </div>
         <div className="px-6">
           <YoutubeLogo />
@@ -35,9 +34,9 @@ const Links = () => {
         <div className="px-6">
           <GmailLogo />
         </div>
-      </div>   
+      </div>
     </div>
   );
-}
+};
 
 export default Links;

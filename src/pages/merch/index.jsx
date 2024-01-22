@@ -1,5 +1,3 @@
-import React from "react";
-
 // TODO: integrate eCommerce components.
 // will most likely be some form of shopify
 const Merch = () => {
@@ -8,6 +6,6 @@ const Merch = () => {
       <div className="">👕🧢</div>
     </div>
   );
-}
+};
 
 export default Merch;

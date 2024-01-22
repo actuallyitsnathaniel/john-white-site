@@ -1,5 +1,3 @@
-import React from "react";
-
 import SpotifyEmbed from "./spotify";
 import AppleMusicEmbed from "./apple-music";
 import SoundcloudEmbed from "./soundcloud";

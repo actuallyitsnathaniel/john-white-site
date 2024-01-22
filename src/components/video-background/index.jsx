@@ -1,5 +1,3 @@
-import React from "react";
-
 import JohnWhiteVideoMP4 from "../../assets/videos/john-white-bg.mp4";
 import JohnWhiteVideoWEBM from "../../assets/videos/john-white-bg.webm";
 
@@ -17,8 +15,8 @@ const VideoBackground = () => {
       disablePictureInPicture
       className="video animate-appear"
     >
-    <source src={JohnWhiteVideoMP4} type="video/MP4"/>
-    <source src={JohnWhiteVideoWEBM} type="video/webm"/>
+      <source src={JohnWhiteVideoMP4} type="video/MP4" />
+      <source src={JohnWhiteVideoWEBM} type="video/webm" />
     </video>
   );
 };

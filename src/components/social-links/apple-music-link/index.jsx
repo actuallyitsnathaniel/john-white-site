@@ -1,5 +1,3 @@
-import React from "react";
-
 import AppleMusicSVG from "../../../assets/images/icons/music-platforms/apple-music.svg";
 
 const AppleMusicLink = () => {

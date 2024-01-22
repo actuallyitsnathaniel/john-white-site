@@ -1,4 +1,4 @@
-import React from "react";
+import { Children, cloneElement } from "react";
 import Disc from "./disc";
 
 const Discography = ({ children }) => {
@@ -11,8 +11,8 @@ const Discography = ({ children }) => {
           albums
         </h2>
         <div className={"flex flex-row flex-wrap w-full justify-center"}>
-          {React.Children.map(children, (child) => {
-            if (child.props.album) return React.cloneElement(child);
+          {Children.map(children, (child) => {
+            if (child.props.album) return cloneElement(child);
           })}
         </div>
       </div>
@@ -23,8 +23,8 @@ const Discography = ({ children }) => {
           singles/EPs
         </h2>
         <div className={"flex flex-wrap w-full justify-center"}>
-          {React.Children.map(children, (child) => {
-            if (!child.props.album) return React.cloneElement(child);
+          {Children.map(children, (child) => {
+            if (!child.props.album) return cloneElement(child);
           })}
         </div>
       </div>

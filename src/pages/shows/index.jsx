@@ -1,4 +1,3 @@
-import React from "react";
 import ShowLink from "../../components/show-link";
 import writersBlockHotelCafe from "../../assets/images/thumbnails/hotelcafe_writersblock.jpeg";
 
