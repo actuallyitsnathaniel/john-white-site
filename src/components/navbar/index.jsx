@@ -12,8 +12,6 @@ const usePageTitle = (location) => {
   useEffect(() => {
     const titleMap = [
       { path: "/", title: "home" },
-      { path: "/home", title: "home" },
-      { path: "/home/", title: "home" },
       { path: "/about", title: "about" },
       { path: "/contact", title: "contact" },
       { path: "/music", title: "music" },
@@ -85,7 +83,7 @@ const NavBar = () => {
       >
         <ul id="nav-bar" className={`nav-bar`}>
           <NavItem
-            to="/home"
+            to="/"
             label={"home"}
             setExpanded={setExpanded}
             {...{ pageTitle }}

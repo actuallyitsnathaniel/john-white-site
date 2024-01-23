@@ -10,7 +10,7 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-
 const Links = () => {
   return (
     <div className="text-center text-white">
-      <Link exact="true" to={"/home"}>
+      <Link exact="true" to={"/"}>
         <div className="mx-auto my-auto md:w-1/4 pt-16">
           <JohnWhiteLogo />
         </div>
