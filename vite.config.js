@@ -5,7 +5,7 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import preload from "vite-plugin-preload";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, node }) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
     define: {
