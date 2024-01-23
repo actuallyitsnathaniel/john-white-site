@@ -30,7 +30,7 @@ const App = () => {
       <div className="flex flex-col h-screen w-auto justify-between [&>*]:animate-appear">
         <NavBar />
         <Routes>
-          <Route index element={<Navigate replace to="/home" />} />
+          <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
