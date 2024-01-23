@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import { MobileNavButton } from "./mobile-nav-button";
 import { NavItem } from "./nav-item";
@@ -32,22 +32,7 @@ const usePageTitle = (location) => {
 };
 
 const NavBar = () => {
-  const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimension(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  const isMobile = windowDimension <= 640;
 
   let pageTitle = usePageTitle(useLocation().pathname);
 

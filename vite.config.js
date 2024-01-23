@@ -5,7 +5,8 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import preload from "vite-plugin-preload";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
+  // eslint-disable-next-line no-undef
   const env = loadEnv(mode, process.cwd(), "");
   return {
     define: {
