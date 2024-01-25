@@ -9,6 +9,7 @@ import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smile
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
 
 // Singles
+import thisTime from "../../assets/images/discography/Singles_EPs/this_time_single_720x720.jpeg";
 import someoneNew from "../../assets/images/discography/Singles_EPs/someone_new_single_600x600bb.jpg";
 import soBeItSingle from "../../assets/images/discography/Singles_EPs/so_be_it_single_600x600bb.jpg";
 import greenLights from "../../assets/images/discography/Singles_EPs/green_lights_single_600x600bb.jpeg";
@@ -29,6 +30,17 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
+        <div className="blur-sm">
+          <Discography.Disc
+            artwork={thisTime}
+            title={"this time - single"}
+            spotifyLink={""}
+            appleMusicLink={""}
+            soundcloudLink={""}
+            youtubeLink={""}
+          />
+        </div>
+
         <Discography.Disc
           artwork={someoneNew}
           title={"someone new - single"}
