@@ -1,5 +1,5 @@
 .video {
-  filter: brightness(0.50) blur(10px) sepia(0.5);
+  filter: brightness(0.5) blur(10px) sepia(0.5) saturate(0);
   /* The min width had to be set for both */
   min-width: 100%;
   width: 100%;
@@ -11,16 +11,16 @@
   background-color: #000;
   overflow: clip;
   display: flex;
- }
- 
- @media and min-width(600px) {
-   .video {
-     filter: brightness(0.75) blur(10px);
-     /* The min width had to be set for both */
-     min-width: 80vw;
-     justify-content: center;
-     align-content: center;
-     overflow: hidden;
-     object-fit: fill;
-    }
- }
+}
+
+@media and min-width(600px) {
+  .video {
+    filter: brightness(0.75) blur(10px);
+    /* The min width had to be set for both */
+    min-width: 80vw;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    object-fit: fill;
+  }
+}

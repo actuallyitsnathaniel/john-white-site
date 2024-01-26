@@ -53,9 +53,9 @@ code {
 }
 
 .nav-item {
-  @apply transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-orange-200 hover:underline underline-offset-4;
+  @apply transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-yellow-200 hover:underline underline-offset-4;
 }
 
 .nav-item-active {
-  @apply transition ease-in hidden md:block text-orange-300 md:scale-110 underline;
+  @apply transition ease-in hidden md:block text-yellow-100 md:scale-110 underline;
 }
