@@ -30,16 +30,22 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
-        <div className="blur-sm">
-          <Discography.Disc
-            artwork={thisTime}
-            title={"this time - single"}
-            spotifyLink={""}
-            appleMusicLink={""}
-            soundcloudLink={""}
-            youtubeLink={""}
-          />
-        </div>
+        <Discography.Disc
+          artwork={thisTime}
+          title={"this time - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/2HqaQn45274SgOEnkMIKmI?si=0abbfd1549f94e91"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/this-time/1725625251?i=1725625252"
+          }
+          soundcloudLink={
+            "https://soundcloud.com/johnwhitesmusic/johnwhite-thistime-dflatminor-107-master-1"
+          }
+          youtubeLink={
+            "https://www.youtube.com/watch?v=LNMY5lbuij4&ab_channel=JohnWhite"
+          }
+        />
 
         <Discography.Disc
           artwork={someoneNew}
