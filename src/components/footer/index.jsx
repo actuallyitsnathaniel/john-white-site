@@ -1,4 +1,6 @@
+import { footerData } from "../../api/getFooter";
 const Footer = () => {
+  console.log("FOOTER DATA: ", footerData);
   return (
     <footer className="grid bg-black text-md text-white w-screen h-full">
       <a
@@ -29,9 +31,9 @@ const Footer = () => {
         copyright © {new Date().getFullYear()}. powered by{" "}
         <a
           className="underline underline-offset-8"
-          href="mailto:nathanielrbowman@gmail.com"
+          href={`${footerData.copyrightNameLink}`}
         >
-          nathaniel bowman
+          {footerData.copyrightName}
         </a>
       </div>
     </footer>
