@@ -9,6 +9,8 @@ import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLogo from "../../components/social-links/youtube-link/index.jsx";
 
+import PressHighlight from "../../components/press-highlight/index.jsx";
+
 const About = () => {
   return (
     <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
@@ -61,56 +63,40 @@ const About = () => {
             <div className="text-center py-5 underline text-5xl font-extrabold">
               press highlights
             </div>
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="https://shoutoutla.com/meet-john-white-artist-record-label-founder/"
-              >
-                "john white | record label founder"
-              </a>
-            </div>
-            <p className="text-lg">write-up by Shoutout LA</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="https://boldjourney.com/news/meet-john-white/"
-              >
-                "meet john white"
-              </a>
-            </div>
-            <p className="text-lg">write-up by Bold Journey</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review"
-              >
-                "FAMILY EP"
-              </a>
-            </div>
-            <p className="text-lg"> review by The Permanent Rain Press</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="http://voyagela.com/interview/conversations-with-john-white/"
-              >
-                "Conversations with John White"
-              </a>
-            </div>
-            <p className="text-lg"> write-up by Voyage LA</p>
-            <br />
-            <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-              <a
-                className="font-extrabold p-5 text-2xl"
-                href="http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
-              >
-                "Meet John Dominguez"
-              </a>
-            </div>
-            <p className="text-lg"> interview with Voyage LA</p>
-            <br />
+            <PressHighlight
+              title={`"john white | record label founder"`}
+              subtitle={"write-up by Shoutout LA"}
+              url={
+                "https://shoutoutla.com/meet-john-white-artist-record-label-founder/"
+              }
+            />
+            <PressHighlight
+              title={`"meet john white"`}
+              subtitle={"write-up by Bold Journey"}
+              url={"https://boldjourney.com/news/meet-john-white/"}
+            />
+            <PressHighlight
+              title={`"FAMILY EP"`}
+              subtitle={"review by The Permanent Rain Press"}
+              url={
+                "https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review"
+              }
+            />
+            <PressHighlight
+              title={`"Conversations with John White"`}
+              subtitle={"write-up by Voyage LA"}
+              url={
+                "http://voyagela.com/interview/conversations-with-john-white/"
+              }
+            />
+            <PressHighlight
+              title={`"Meet John Dominguez"`}
+              subtitle={"interview with Voyage LA"}
+              url={
+                "http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
+              }
+            />
+
             <div className="text-center">
               <div className="text-lg">
                 <div className="underline text-4xl pb-5 font-extrabold">
@@ -141,19 +127,11 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-x-3">
-            <div className="">
-              <SpotifyLink />
-            </div>
-            <div className="">
-              <AppleMusic />
-            </div>
-            <div className="">
-              <YoutubeLogo />
-            </div>
-            <div className="">
-              <InstagramLogo />
-            </div>
+          <div className="flex flex-wrap justify-center">
+            <SpotifyLink />
+            <AppleMusic />
+            <YoutubeLogo />
+            <InstagramLogo />
           </div>
         </div>
       </div>

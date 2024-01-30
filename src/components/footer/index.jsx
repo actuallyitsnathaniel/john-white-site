@@ -1,6 +1,5 @@
 import { footerData } from "../../api/getFooter";
 const Footer = () => {
-  console.log("FOOTER DATA: ", footerData);
   return (
     <footer className="grid bg-black text-md text-white w-screen h-full">
       <a
