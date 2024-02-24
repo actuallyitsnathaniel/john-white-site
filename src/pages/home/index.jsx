@@ -2,7 +2,7 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-
 import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
-  const youtubeID = "LNMY5lbuij4";
+  const youtubeID = "pecqODTKxLg";
   return (
     <div className="grid text-white text-center">
       <div className="flex items-center justify-center h-screen">

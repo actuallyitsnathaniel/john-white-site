@@ -9,6 +9,7 @@ import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smile
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
 
 // Singles
+import iWontAsk from "../../assets/images/discography/Singles_EPs/i_wont_ask_single_600x600bb.jpg";
 import thisTime from "../../assets/images/discography/Singles_EPs/this_time_single_720x720.jpeg";
 import someoneNew from "../../assets/images/discography/Singles_EPs/someone_new_single_600x600bb.jpg";
 import soBeItSingle from "../../assets/images/discography/Singles_EPs/so_be_it_single_600x600bb.jpg";
@@ -30,6 +31,18 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
+        <Discography.Disc
+          artwork={iWontAsk}
+          title={"i won't ask - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/648Y363O3zGY6RM41FutLS?si=8696c4a8ecae443b"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/i-wont-ask/1726188766?i=1726188858"
+          }
+          soundcloudLink={""}
+          youtubeLink={"https://www.youtube.com/watch?v=pecqODTKxLg"}
+        />
         <Discography.Disc
           artwork={thisTime}
           title={"this time - single"}
