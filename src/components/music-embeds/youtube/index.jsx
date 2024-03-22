@@ -1,15 +1,15 @@
-export default function SpotifyEmbed() {
+export default function YoutubePlayistEmbed() {
   return (
     <iframe
       height="470px"
-      title="spotify-embedded"
+      title="youtube-playlist-embedded"
       loading="lazy"
       style={{
         borderRadius: "26px",
         padding: "1vh",
       }}
       src={
-        "https://open.spotify.com/embed/album/1dLNd4Wc73gCllxNwFGUvG?utm_source=generator"
+        "https://www.youtube.com/embed/videoseries?list=PLTfQR4eBUNuqxf7aJrCKtXmy1gCG25Tje"
       }
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"

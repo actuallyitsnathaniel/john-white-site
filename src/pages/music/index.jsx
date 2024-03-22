@@ -7,6 +7,7 @@ import throughTheTrees from "../../assets/images/discography/LPs/through-the-tre
 // EPs
 import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smiles_ep600x600bb.jpeg";
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
+import forAWhileEP from "../../assets/images/discography/Singles_EPs/for_a_while_ep.jpg";
 
 // Singles
 import iWontAsk from "../../assets/images/discography/Singles_EPs/i_wont_ask_single_600x600bb.jpg";
@@ -31,6 +32,20 @@ const Music = () => {
   return (
     <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography>
+        <Discography.Disc
+          artwork={forAWhileEP}
+          title={"for a while - ep"}
+          spotifyLink={
+            "https://open.spotify.com/album/1dLNd4Wc73gCllxNwFGUvG?si=tyFvK733QumUM_QB2kW-Zw"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/for-a-while-ep/1726240724"
+          }
+          soundcloudLink={""}
+          youtubeLink={
+            "https://youtube.com/playlist?list=PLTfQR4eBUNuqxf7aJrCKtXmy1gCG25Tje&si=oGf3wOx8hxlkBHKl"
+          }
+        />
         <Discography.Disc
           artwork={iWontAsk}
           title={"i won't ask - single"}

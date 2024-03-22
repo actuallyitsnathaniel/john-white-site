@@ -7,9 +7,7 @@ const AppleMusicEmbed = () => {
         borderRadius: "26px",
         padding: "1vh",
       }}
-      src={
-        "https://embed.music.apple.com/us/album/through-the-trees/1690890513"
-      }
+      src={"https://embed.music.apple.com/us/album/for-a-while-ep/1726240724"}
       loading="lazy"
       sandbox={
         "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
