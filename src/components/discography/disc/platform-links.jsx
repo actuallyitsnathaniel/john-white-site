@@ -1,75 +1,70 @@
+import { PropTypes } from "prop-types";
 // Icons
-import appleMusic from "../../../assets/images/icons/music-platforms/apple-music.svg";
-import spotify from "../../../assets/images/icons/music-platforms/spotify.svg";
-import soundcloud from "../../../assets/images/icons/music-platforms/soundcloud.svg";
-import youtube from "../../../assets/images/icons/music-platforms/youtube.svg";
+import appleMusic from "/src/assets/images/icons/music-platforms/apple-music.svg";
+import spotify from "/src/assets/images/icons/music-platforms/spotify.svg";
+import soundcloud from "/src/assets/images/icons/music-platforms/soundcloud.svg";
+import youtube from "/src/assets/images/icons/music-platforms/youtube.svg";
+import tidal from "/src/assets/images/icons/music-platforms/tidal.svg";
+import hyperlinkIcon from "/src/assets/images/icons/shop-icon.svg";
 
-const MusicPlatformLinks = (props) => {
+const Link = ({ href, image }) => {
+  return (
+    <a
+      href={href}
+      className={`flex p-4 ${!href && "hidden"}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        className={"transition-all duration-75 md:hover:scale-110"}
+        height={"75px"}
+        width={"75px"}
+        alt="music-link"
+        src={image}
+      />
+    </a>
+  );
+};
+
+const MusicPlatformLinks = ({
+  className,
+  spotifyLink,
+  appleMusicLink,
+  soundcloudLink,
+  tidalLink,
+  youtubeLink,
+  webLink,
+}) => {
   return (
     <div
-      className={`absolute grid grid-cols-2 
-      ${props.className} h-[305px]  ${
-        props.width ? props.width : "w-[305px]"
-      } justify-items-center items-center -translate-x-1 -translate-y-1 p-4
+      className={`absolute flex flex-wrap justify-around
+      ${className} h-72 w-72 items-center
       `}
     >
-      <a
-        href={props.spotifyLink}
-        className={`${props.spotifyLink === "" && "hidden"}`}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <img
-          className="transition-all duration-75 hover:scale-110"
-          height={"75px"}
-          alt="spotify-link"
-          src={spotify}
-        />
-      </a>
-
-      <a
-        href={props.appleMusicLink}
-        className={`${props.appleMusicLink === "" && "hidden"}`}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <img
-          className="transition-all duration-75 hover:scale-110"
-          height={"75px"}
-          alt="apple-music-link"
-          src={appleMusic}
-        />
-      </a>
-
-      <a
-        href={props.soundcloudLink}
-        className={`${props.soundcloudLink === "" && "hidden"}`}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <img
-          className={`transition-all duration-75 scale-110 hover:scale-125`}
-          height={"75px"}
-          alt="soundcloud-link"
-          src={soundcloud}
-        />
-      </a>
-
-      <a
-        href={props.youtubeLink}
-        className={`${props.youtubeLink === "" && "hidden"}`}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <img
-          className="transition-all duration-75 hover:scale-110"
-          height={"75px"}
-          alt="youtube-link"
-          src={youtube}
-        />
-      </a>
+      {spotifyLink && <Link href={spotifyLink} image={spotify} />}
+      {appleMusicLink && <Link href={appleMusicLink} image={appleMusic} />}
+      {soundcloudLink && <Link href={soundcloudLink} image={soundcloud} />}
+      {tidalLink && <Link href={tidalLink} image={tidal} />}
+      {youtubeLink && <Link href={youtubeLink} image={youtube} />}
+      {webLink && <Link href={webLink} image={hyperlinkIcon} />}
     </div>
   );
+};
+
+Link.propTypes = {
+  href: PropTypes.string,
+  image: PropTypes.string,
+};
+
+MusicPlatformLinks.propTypes = {
+  className: PropTypes.string,
+  width: PropTypes.string,
+  spotifyLink: PropTypes.string,
+  appleMusicLink: PropTypes.string,
+  soundcloudLink: PropTypes.string,
+  tidalLink: PropTypes.string,
+  webLink: PropTypes.string,
+  youtubeLink: PropTypes.string,
 };
 
 export default MusicPlatformLinks;
