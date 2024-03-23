@@ -38,21 +38,33 @@ const About = () => {
            */}
           <div
             id="carousel"
-            className="flex rounded-xl overflow-scroll h-fit lg:w-1/2"
+            className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-1/2"
           >
             <img
-              className="object-cover animate-hint-scrollable"
+              className="object-cover snap-center"
               src={profile3}
               alt="profile-img-3"
             />
             <img
-              className="object-cover animate-hint-scrollable"
+              className="object-cover snap-center"
               src={profile4}
               alt="profile-img-4"
             />
-            <img className="object-cover" src={profile1} alt="profile-img-1" />
-            <img className="object-cover" src={profile2} alt="profile-img-2" />
-            <img className="object-cover" src={profile5} alt="profile-img-5" />
+            <img
+              className="object-cover snap-center"
+              src={profile1}
+              alt="profile-img-1"
+            />
+            <img
+              className="object-cover snap-center"
+              src={profile2}
+              alt="profile-img-2"
+            />
+            <img
+              className="object-cover snap-center"
+              src={profile5}
+              alt="profile-img-5"
+            />
           </div>
         </div>
         <br />
