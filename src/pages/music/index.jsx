@@ -25,6 +25,9 @@ import whoeverYouWantToBeSingle from "../../assets/images/discography/Singles_EP
 import betterDaysSingle from "../../assets/images/discography/Singles_EPs/better_days_single_600x600bb.jpeg";
 import everWantSingle from "../../assets/images/discography/Singles_EPs/ever_want_single_600x600bb.jpeg";
 import better2021Single from "../../assets/images/discography/Singles_EPs/better_2021_single_600x600bb.jpeg";
+import natixxCheersToYou from "../../assets/images/discography/Singles_EPs/natixx_cheers_to_you_600x600bb.jpg";
+import genAlbifindMyWay from "../../assets/images/discography/Singles_EPs/gen_albi_find_my_way_600x600bb.jpg";
+import okoMoments from "../../assets/images/discography/Singles_EPs/oko_moments_600x600bb.jpg";
 import timeSingle from "../../assets/images/discography/Singles_EPs/time_single_600x600bb.jpeg";
 import breakingSingle from "../../assets/images/discography/Singles_EPs/breaking_single_600x600bb.jpeg";
 import better2019Single from "../../assets/images/discography/Singles_EPs/better_2019_single_600x600bb.jpeg";
@@ -85,7 +88,6 @@ const Music = () => {
             "https://www.youtube.com/watch?v=LNMY5lbuij4&ab_channel=JohnWhite"
           }
         />
-
         <Discography.Disc
           artwork={someoneNew}
           title={"someone new - single"}
@@ -272,6 +274,42 @@ const Music = () => {
           youtubeLink={"https://youtu.be/yktwodhhm0o"}
         />
         <Discography.Disc
+          artwork={natixxCheersToYou}
+          appearsOn
+          title={"natixx - cheers to you (feat. john white)"}
+          spotifyLink={
+            "https://open.spotify.com/track/1qti9RHpAvD6QWOEwbe1Uk?si=ffafef3a316c409f"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/cheers-to-you-feat-john-white-single/1735948953"
+          }
+          youtubeLink={"https://youtu.be/u6wEltHBvIw?si=Os9vdZqi1YmontCM"}
+        />
+        <Discography.Disc
+          title={"gen albi - find my way (feat. john white)"}
+          appearsOn
+          artwork={genAlbifindMyWay}
+          spotifyLink={
+            "https://open.spotify.com/track/09F9FNCZY1WfeGibwawkh0?si=985c880bd5d94842"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/find-my-way-feat-john-white/1452845962?i=1452846074"
+          }
+          youtubeLink={"https://youtu.be/J--SAicviuA?si=Jny-kJjy3vYhtlpJ"}
+        />
+        <Discography.Disc
+          title={"oko - moments (feat. john white)"}
+          appearsOn
+          artwork={okoMoments}
+          spotifyLink={
+            "https://open.spotify.com/album/055lD4khK0r3HBDDx5UR3Y?si=S_iENOgURCaFy9ShXEvDRg"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/moments-feat-john-white-single/1496126326"
+          }
+          youtubeLink={"https://youtu.be/tOPKbPbl1z8?si=ehssEXGX-Xugjuth"}
+        />
+        <Discography.Disc
           artwork={timeSingle}
           title={"time - single"}
           spotifyLink={
@@ -322,7 +360,6 @@ const Music = () => {
             "https://www.youtube.com/watch?v=8To1fW1zaYE&list=OLAK5uy_lZhMgNp39JdVzrBRExMzOrjY5WOtBe0XQ"
           }
         />
-
         <Discography.Disc
           album
           artwork={family}
