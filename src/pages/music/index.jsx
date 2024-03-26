@@ -29,6 +29,7 @@ import natixxCheersToYou from "../../assets/images/discography/Singles_EPs/natix
 import genAlbifindMyWay from "../../assets/images/discography/Singles_EPs/gen_albi_find_my_way_600x600bb.jpg";
 import okoMoments from "../../assets/images/discography/Singles_EPs/oko_moments_600x600bb.jpg";
 import timeSingle from "../../assets/images/discography/Singles_EPs/time_single_600x600bb.jpeg";
+import losingHearts from "../../assets/images/discography/Singles_EPs/losing-hearts_single.jpg";
 import breakingSingle from "../../assets/images/discography/Singles_EPs/breaking_single_600x600bb.jpeg";
 import better2019Single from "../../assets/images/discography/Singles_EPs/better_2019_single_600x600bb.jpeg";
 
@@ -273,6 +274,7 @@ const Music = () => {
           }
           youtubeLink={"https://youtu.be/yktwodhhm0o"}
         />
+
         <Discography.Disc
           artwork={natixxCheersToYou}
           appearsOn
@@ -319,6 +321,14 @@ const Music = () => {
             "https://music.apple.com/us/album/time-single/1526426740"
           }
           youtubeLink={"https://youtu.be/sbyoa5wmln8"}
+        />
+        <Discography.Disc
+          artwork={losingHearts}
+          title="john white x riley - losing hearts"
+          appleMusicLink="https://music.apple.com/us/album/losing-hearts-feat-john-white/1509147409?i=1509147412"
+          spotifyLink="https://open.spotify.com/track/3lLtkLtBztQd8DiLCAORH5?si=f55f60cc305049c8"
+          youtubeLink="https://youtu.be/AloaubmwGEA?si=Mn_ZeImQwfpXb_z8"
+          soundcloudLink="https://on.soundcloud.com/qEY7u"
         />
         <Discography.Disc
           artwork={breakingSingle}
