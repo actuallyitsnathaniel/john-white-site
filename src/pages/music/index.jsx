@@ -10,6 +10,7 @@ import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_
 import forAWhileEP from "../../assets/images/discography/Singles_EPs/for_a_while_ep.jpg";
 
 // Singles
+import sweetWord from "../../assets/images/discography/Singles_EPs/sweet_word_feat_john_white_600x600bb.jpg";
 import iWontAsk from "../../assets/images/discography/Singles_EPs/i_wont_ask_single_600x600bb.jpg";
 import thisTime from "../../assets/images/discography/Singles_EPs/this_time_single_720x720.jpeg";
 import someoneNew from "../../assets/images/discography/Singles_EPs/someone_new_single_600x600bb.jpg";
@@ -33,6 +34,18 @@ const Music = () => {
     <div className="flex md:mt-14 flex-wrap justify-center text-white">
       <Discography>
         <Discography.Disc
+          artwork={sweetWord}
+          appearsOn
+          title={"dept - sweet word (feat. john white)"}
+          spotifyLink={
+            "https://open.spotify.com/track/7Fu2Vgp1murV2bf2JkneX4?si=3b45de2d017243dd"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/sweet-word-feat-john-white/1736523995?i=1736523997"
+          }
+          youtubeLink={"https://youtu.be/MR3pNgafYx8?si=I4UsowzK_WgpDDZG"}
+        />
+        <Discography.Disc
           artwork={forAWhileEP}
           title={"for a while - ep"}
           spotifyLink={
@@ -41,7 +54,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/for-a-while-ep/1726240724"
           }
-          soundcloudLink={""}
           youtubeLink={
             "https://youtube.com/playlist?list=PLTfQR4eBUNuqxf7aJrCKtXmy1gCG25Tje&si=oGf3wOx8hxlkBHKl"
           }
@@ -55,7 +67,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/i-wont-ask/1726188766?i=1726188858"
           }
-          soundcloudLink={""}
           youtubeLink={"https://www.youtube.com/watch?v=pecqODTKxLg"}
         />
         <Discography.Disc
@@ -84,7 +95,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/someone-new/1722836081?i=1722836082"
           }
-          soundcloudLink={""}
           youtubeLink={"https://youtu.be/9zcsybQqZfI?si=ug5LWCpZGrpExOFT"}
         />
         <Discography.Disc
@@ -96,7 +106,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/so-be-it-single/1719456370"
           }
-          soundcloudLink={""}
           youtubeLink={"https://youtu.be/QadN2ps4cgQ?si=TFBOB19uiolrW5Sr"}
         />
         <Discography.Disc
@@ -168,7 +177,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/stars-riley-remix-single/1660688944"
           }
-          soundcloudLink={""}
           youtubeLink={"https://youtu.be/9z8t3nt7zma"}
         />
         <Discography.Disc
@@ -250,7 +258,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/ever-want-single/1580378453"
           }
-          soundcloudLink={""}
           youtubeLink={"https://youtu.be/eoxpheyksdg"}
         />
         <Discography.Disc
@@ -262,7 +269,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/better-single/1556313448"
           }
-          soundcloudLink={""}
           youtubeLink={"https://youtu.be/yktwodhhm0o"}
         />
         <Discography.Disc
@@ -274,7 +280,6 @@ const Music = () => {
           appleMusicLink={
             "https://music.apple.com/us/album/time-single/1526426740"
           }
-          soundcloudLink={""}
           youtubeLink={"https://youtu.be/sbyoa5wmln8"}
         />
         <Discography.Disc

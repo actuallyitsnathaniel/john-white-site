@@ -75,6 +75,7 @@ Disc.propTypes = {
   youtubeLink: PropTypes.string,
   webLink: PropTypes.string,
   album: PropTypes.string,
+  appearsOn: PropTypes.boolean,
   artwork: PropTypes.string,
   title: PropTypes.string,
 };
