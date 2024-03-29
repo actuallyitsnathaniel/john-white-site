@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer className="grid bg-black text-md text-white w-screen h-full">
       <a
-        className="-mb-7"
+        className="-mb-2"
         href="https://www.instagram.com/whitenoisercrds/"
         alt="white-noise-ig-link"
         rel="noopener noreferrer"

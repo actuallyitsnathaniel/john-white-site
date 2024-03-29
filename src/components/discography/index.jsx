@@ -6,7 +6,7 @@ import Disc from "./disc";
 const Discography = ({ children }) => {
   const [expanded, setExpanded] = useState(-1);
   return (
-    <div className="flex flex-col md:px-28 pb-10 p-5">
+    <div className="flex flex-col md:px-28 pb-10 p-4">
       <div id="albums">
         <h2 className={"flex text-6xl font-semibold italic justify-center p-5"}>
           albums

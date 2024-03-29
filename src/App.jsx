@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import VideoBackground from "./components/video-background";
@@ -18,6 +17,7 @@ import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 
 const App = () => {
+  // todo: fix dimensions on mobile for music page
   return (
     <Router forceRefresh>
       <FilmGrainEffect />

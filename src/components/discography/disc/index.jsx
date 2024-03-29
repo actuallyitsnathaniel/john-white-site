@@ -34,7 +34,7 @@ const Disc = ({
         setActiveDisc(-1);
       }}
       onMouseEnter={() => setActiveDisc(i)}
-      className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}
+      className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group py-3`}
     >
       <div className={"relative h-72 w-72 mx-auto"}>
         <MusicPlatformLinks
