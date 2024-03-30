@@ -17,7 +17,7 @@ const InstagramLogo = () => {
         version="1.0"
         viewBox="4.99 4.41 137.17 136.3"
         xmlns="http://www.w3.org/2000/svg"
-        className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] fill-white hover:scale-110 blur-[0.4px]"
+        className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] fill-white hover:scale-110 "
         alt="ig-logo"
       >
         <metadata>

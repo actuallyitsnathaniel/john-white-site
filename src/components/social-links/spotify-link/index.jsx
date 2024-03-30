@@ -10,7 +10,7 @@ const SpotifyLink = () => {
         version="1.0"
         viewBox="7.37 7.31 135.84 135.5"
         xmlns="http://www.w3.org/2000/svg"
-        className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] fill-white hover:scale-110 blur-[0.4px]"
+        className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] fill-white hover:scale-110 "
       >
         <metadata>
           Created by potrace 1.10, written by Peter Selinger 2001-2011
