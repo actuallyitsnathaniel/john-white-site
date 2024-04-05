@@ -17,12 +17,11 @@ import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 
 const App = () => {
-  // todo: fix dimensions on mobile for music page
   return (
     <Router forceRefresh>
       <FilmGrainEffect />
       <VideoBackground />
-      <div className="flex flex-col h-screen w-auto justify-between [&>*]:animate-appear">
+      <div className="flex flex-col h-screen w-screen justify-between [&>*]:animate-appear mt-24 mb-24">
         <NavBar />
         <Routes>
           <Route index element={<Home />} />

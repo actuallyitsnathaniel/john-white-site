@@ -13,7 +13,7 @@ const VideoBackground = () => {
       muted
       playsInline
       disablePictureInPicture
-      className="brightness-50 md:translate-x-14 blur saturate-0 w-full h-full object-cover scale-[120%] fixed z-[-1] bg-black overflow-clip md:overflow-hidden flex md:align-middle md:content-center"
+      className="brightness-50 md:translate-x-14 -translate-y-14 blur saturate-0 w-full h-full object-cover scale-[120%] fixed z-[-1] bg-black overflow-clip md:overflow-hidden flex md:align-middle md:content-center"
     >
       <source src={JohnWhiteVideoMP4} type="video/MP4" />
       <source src={JohnWhiteVideoWEBM} type="video/webm" />

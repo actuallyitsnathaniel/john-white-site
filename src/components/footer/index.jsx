@@ -26,7 +26,7 @@ const Footer = () => {
           />
         </svg>
       </a>
-      <div className="text-end pb-3 pr-3">
+      <div className="text-end pb-8 pr-4">
         copyright © {new Date().getFullYear()}. powered by{" "}
         <a
           className="underline underline-offset-8"

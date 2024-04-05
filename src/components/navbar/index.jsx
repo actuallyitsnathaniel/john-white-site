@@ -38,11 +38,11 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`text-white p-2.5 py-2 ${
-        pageTitle.includes("links") ? "hidden" : ""
-      }`}
+      className={`overflow-clip overscroll-y-none text-white fixed top-0 h-screen w-screen z-[1] py-1 ${
+        expanded && "bg-black bg-opacity-75"
+      } md:bg-transparent ${pageTitle.includes("links") ? "hidden" : ""}`}
     >
-      <div className="flex font-semibold justify-center">
+      <div className="absolute flex font-semibold mx-auto w-full justify-center">
         <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap underline">
           {pageTitle}
         </div>
@@ -60,33 +60,34 @@ const NavBar = () => {
           <MobileNavButton {...{ expanded, setExpanded }} />
         </button>
       </div>
-      <div
-        id="nav-wrapper"
-        className={`transition-all h-0 origin-top duration-100
-      ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
-      `}
+      <ul
+        id="nav-bar"
+        className={`origin-top mt-20 md:mt-auto md:scale-100 md:justify-end ${
+          expanded ? "scale-100" : "scale-0"
+        } w-screen h-4/5 transition-all duration-100 absolute flex flex-col 
+        mx-auto ease-in-out justify-around md:h-auto font-semibold 
+        md:flex-row items-center text-2xl whitespace-nowrap`}
       >
-        <ul id="nav-bar" className={`nav-bar`}>
-          <NavItem
-            to="/"
-            label={"home"}
-            setExpanded={setExpanded}
-            {...{ pageTitle }}
-          />
-          <NavItem
-            to="/music"
-            label={"music"}
-            setExpanded={setExpanded}
-            {...{ pageTitle }}
-          />
-          <NavItem
-            to="/about"
-            label={"about"}
-            setExpanded={setExpanded}
-            {...{ pageTitle }}
-          />
+        <NavItem
+          to="/"
+          label={"home"}
+          setExpanded={setExpanded}
+          {...{ pageTitle }}
+        />
+        <NavItem
+          to="/music"
+          label={"music"}
+          setExpanded={setExpanded}
+          {...{ pageTitle }}
+        />
+        <NavItem
+          to="/about"
+          label={"about"}
+          setExpanded={setExpanded}
+          {...{ pageTitle }}
+        />
 
-          {/**  
+        {/**  
            <NavItem
             to="/merch"
             label={"merch"}
@@ -94,19 +95,18 @@ const NavBar = () => {
             {...{ pageTitle }}
           />
           */}
-          {/** <NavItem
+        {/** <NavItem
             to="/links"
             label={"contact & links"}
             setExpanded={setExpanded}
             {...{ pageTitle }} */}
-          <NavItem
-            to="/shows"
-            label={"shows"}
-            setExpanded={setExpanded}
-            {...{ pageTitle }}
-          />
-        </ul>
-      </div>
+        <NavItem
+          to="/shows"
+          label={"shows"}
+          setExpanded={setExpanded}
+          {...{ pageTitle }}
+        />
+      </ul>
     </nav>
   );
 };
