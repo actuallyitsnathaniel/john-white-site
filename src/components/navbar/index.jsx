@@ -38,9 +38,9 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`text-white fixed top-0 h-screen w-screen py-1 ${
-        expanded && "bg-black bg-opacity-75"
-      } md:bg-transparent ${pageTitle.includes("links") ? "hidden" : ""}`}
+      className={`z-[1] text-white fixed top-0 w-screen py-1 bg-none ${
+        expanded && "h-screen bg-black bg-opacity-75"
+      }`}
     >
       <div className="absolute flex font-semibold mx-auto w-full justify-center">
         <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap underline">
@@ -63,7 +63,7 @@ const NavBar = () => {
       <ul
         id="nav-bar"
         className={`origin-top mt-20 md:mt-auto md:scale-100 md:justify-end ${
-          expanded ? "scale-100" : "scale-0 !md:hidden"
+          expanded ? "scale-100" : "scale-0"
         } w-screen h-4/5 transition-all duration-100 absolute flex flex-col 
         mx-auto ease-in-out justify-around md:h-auto font-semibold 
         md:flex-row items-center text-2xl whitespace-nowrap`}
