@@ -1,7 +1,7 @@
 import { footerData } from "../../api/getFooter";
 const Footer = () => {
   return (
-    <footer className="grid bg-black text-md text-white w-screen h-full pb-3">
+    <footer className="grid bg-black text-md text-white w-screen pb-3 bottom-0">
       <a
         className="md:-mb-6"
         href="https://www.instagram.com/whitenoisercrds/"

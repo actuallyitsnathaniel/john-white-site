@@ -21,7 +21,7 @@ const App = () => {
     <Router forceRefresh>
       <FilmGrainEffect />
       <VideoBackground />
-      <div className="flex flex-col h-screen w-screen justify-between [&>*]:animate-appear mt-24 mb-24">
+      <div className="flex flex-col max-h-screen w-screen justify-between [&>*]:animate-appear">
         <NavBar />
         <Routes>
           <Route index element={<Home />} />

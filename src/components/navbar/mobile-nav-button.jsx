@@ -4,7 +4,7 @@ export const MobileNavButton = (props) => {
       data-collapse-toggle="navbar"
       id="navbar-icon"
       type="button"
-      className={`flex flex-col fixed top-3 right-3 m-4 z-[1] select-none duration-200 ${
+      className={`flex flex-col fixed top-3 right-3 m-4 select-none duration-200 ${
         props.expanded && "translate-x-2.5"
       }`}
       aria-controls="navbar"

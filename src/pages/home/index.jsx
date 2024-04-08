@@ -5,7 +5,7 @@ const Home = () => {
   const youtubeID = "N8D4TXOn2Eg";
   return (
     <div className="grid text-white text-center">
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex justify-center items-center h-screen">
         <JohnWhiteLogo />
         <p className="grid absolute bottom-0 m-auto left-0 right-0 text-5xl py-2 animate-bounce">
           ↡
