@@ -97,12 +97,12 @@ const NavBar = () => {
             label={"contact & links"}
             setExpanded={setExpanded}
             {...{ pageTitle }} */}
-        <NavItem
+        {/* <NavItem
           to="/shows"
           label={"shows"}
           setExpanded={setExpanded}
           {...{ pageTitle }}
-        />
+        /> */}
       </ul>
     </nav>
   );
