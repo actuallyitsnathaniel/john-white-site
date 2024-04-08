@@ -15,7 +15,7 @@ const usePageTitle = (location) => {
       { path: "/about", title: "about" },
       { path: "/contact", title: "contact" },
       { path: "/music", title: "music" },
-      { path: "/merch", title: "merch" },
+      { path: "/digital", title: "digitals" },
       { path: "/shows", title: "shows" },
       { path: "/secret", title: "secret" },
       { path: "/links", title: "links" },
@@ -75,20 +75,20 @@ const NavBar = () => {
           {...{ pageTitle }}
         />
         <NavItem
-          to="/music"
-          label={"music"}
-          setExpanded={setExpanded}
-          {...{ pageTitle }}
-        />
-        <NavItem
           to="/about"
           label={"about"}
           setExpanded={setExpanded}
           {...{ pageTitle }}
         />
         <NavItem
-          to="/merch"
-          label={"merch"}
+          to="/music"
+          label={"music"}
+          setExpanded={setExpanded}
+          {...{ pageTitle }}
+        />
+        <NavItem
+          to="/digital"
+          label={"digitals"}
           setExpanded={setExpanded}
           {...{ pageTitle }}
         />
