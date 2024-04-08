@@ -13,10 +13,10 @@ import PressHighlight from "../../components/press-highlight/index.jsx";
 
 const About = () => {
   return (
-    <div className="md:flex md:flex-wrap -mt-10 md:mt-0 md:pt-14 justify-between text-2xl text-white">
-      <div className="md:flex md:flex-wrap p-8">
-        <div className="flex flex-wrap md:justify-between md:pb-10">
-          <div className="lg:px-5 pb-10 lg:pb-0 text-justify lg:w-1/2 md:text-3xl first-line:italic">
+    <div className="flex flex-col mt-14 justify-between text-2xl text-white">
+      <div className="flex flex-wrap p-8 mx-auto">
+        <div className="flex flex-wrap justify-around md:pb-10 items-center">
+          <div className="lg:px-14 pb-10 lg:pb-0 text-justify lg:w-1/2 md:text-3xl first-line:italic">
             <span className="font-extrabold text-4xl md:text-6xl">J</span>ohn{" "}
             <span className="font-extrabold text-4xl md:text-6xl">W</span>hite
             is an up-and-coming artist born and raised in South LA. Exploring
@@ -38,7 +38,7 @@ const About = () => {
            */}
           <div
             id="carousel"
-            className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-1/2"
+            className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-[45%]"
           >
             <img
               className="object-cover snap-center"
