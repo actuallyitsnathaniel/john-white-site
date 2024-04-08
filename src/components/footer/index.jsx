@@ -1,9 +1,9 @@
 import { footerData } from "../../api/getFooter";
 const Footer = () => {
   return (
-    <footer className="grid bg-black text-md text-white w-screen h-full">
+    <footer className="grid bg-black text-md text-white w-screen h-full pb-3">
       <a
-        className="-mb-2"
+        className="md:-mb-6"
         href="https://www.instagram.com/whitenoisercrds/"
         alt="white-noise-ig-link"
         rel="noopener noreferrer"
@@ -26,7 +26,7 @@ const Footer = () => {
           />
         </svg>
       </a>
-      <div className="text-end pb-8 pr-4">
+      <div className="text-end pr-4">
         copyright © {new Date().getFullYear()}. powered by{" "}
         <a
           className="underline underline-offset-8"
