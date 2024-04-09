@@ -87,7 +87,7 @@ const NavBar = () => {
           {...{ pageTitle }}
         />
         <NavItem
-          to="/digital"
+          to="/digitals"
           label={"digitals"}
           setExpanded={setExpanded}
           {...{ pageTitle }}
