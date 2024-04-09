@@ -13,10 +13,10 @@ import PressHighlight from "../../components/press-highlight/index.jsx";
 
 const About = () => {
   return (
-    <div className="flex flex-col mt-14 justify-between text-2xl text-white">
-      <div className="flex flex-wrap p-8 mx-auto">
+    <div className="flex flex-col mt-14 justify-center text-2xl text-white">
+      <div className="flex flex-wrap p-10 mx-auto">
         <div className="flex flex-wrap justify-around md:pb-10 items-center">
-          <div className="lg:px-14 pb-10 lg:pb-0 text-justify lg:w-1/2 md:text-3xl first-line:italic">
+          <div className="lg:px-14 pb-10 text-justify lg:w-[55%] md:text-3xl first-line:italic">
             <span className="font-extrabold text-4xl md:text-6xl">J</span>ohn{" "}
             <span className="font-extrabold text-4xl md:text-6xl">W</span>hite
             is an up-and-coming artist born and raised in South LA. Exploring
@@ -38,7 +38,7 @@ const About = () => {
            */}
           <div
             id="carousel"
-            className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-[45%]"
+            className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-[42vw] mx-auto"
           >
             <img
               className="object-cover snap-center"
@@ -69,7 +69,7 @@ const About = () => {
         </div>
         <br />
       </div>
-      <div className="flex flex-wrap flex-row justify-center" loading="lazy">
+      <div className="flex flex-wrap flex-row justify-center">
         <div className="text-center">
           <div>
             <div className="text-center py-5 underline text-5xl font-extrabold">

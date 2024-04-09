@@ -3,7 +3,7 @@
 import SoundXYZGallery from "../../components/sound-xyz";
 const Merch = () => {
   return (
-    <div className="flex flex-col lg:mt-14 xl:mt-0 xl:h-screen w-screen justify-center mx-auto text-center text-4xl text-white">
+    <div className="flex flex-col mt-14 xl:mt-0 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
       <SoundXYZGallery>
         <SoundXYZGallery.Item
           soundURL={
