@@ -13,6 +13,12 @@ const Item = ({ soundURL, id }) => {
   );
 };
 
+// TODO: figure out why suspense isn't working
+
+// const Loading = () => {
+//   return <h2>⏲ Loading...</h2>;
+// };
+
 const SoundXYZGallery = ({ children }) => {
   return (
     <div id="sound-xyz-releases" className="p-5 md:px-28">

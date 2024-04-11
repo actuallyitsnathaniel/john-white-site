@@ -1,10 +1,16 @@
 // TODO: integrate eCommerce components.
 // will most likely be some form of shopify
 import SoundXYZGallery from "../../components/sound-xyz";
+
 const Merch = () => {
   return (
     <div className="flex flex-col mt-14 xl:mt-0 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
       <SoundXYZGallery>
+        <SoundXYZGallery.Item
+          soundURL={
+            "https://embed.sound.xyz/v1/release/7f52344f-8cbd-4a1f-80a4-8e93a00a8894?referral=0x35493e493e0d2001eda31bd7fb8859f961a227ce&referral_source=embed-sound"
+          }
+        />
         <SoundXYZGallery.Item
           soundURL={
             "https://embed.sound.xyz/v1/release/92f1396a-5acb-4035-aab8-711099c8bb7c?referral=0x35493e493e0d2001eda31bd7fb8859f961a227ce&referral_source=embed-sound"
