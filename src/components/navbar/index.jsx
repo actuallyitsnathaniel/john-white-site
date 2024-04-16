@@ -15,7 +15,7 @@ const usePageTitle = (location) => {
       { path: "/about", title: "about" },
       { path: "/contact", title: "contact" },
       { path: "/music", title: "music" },
-      { path: "/digital", title: "digitals" },
+      { path: "/digitals", title: "digitals" },
       { path: "/shows", title: "shows" },
       { path: "/secret", title: "secret" },
       { path: "/links", title: "links" },
