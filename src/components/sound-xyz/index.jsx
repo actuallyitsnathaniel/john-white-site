@@ -8,13 +8,13 @@ const Item = ({ soundURL, id }) => {
       id={id}
       className="rounded-lg w-72 h-48"
       allow="clipboard-write"
-      sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+      sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
     ></iframe>
   );
 };
 
-// TODO: figure out why suspense isn't working
-
+// TODO: figure out why suspense isn't working ?
+// https://arc.net/l/quote/yurqdzxu
 // const Loading = () => {
 //   return <h2>⏲ Loading...</h2>;
 // };

@@ -11,6 +11,7 @@ export default function SoundcloudEmbed() {
         "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1414477375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
       }
       loading="lazy"
+      sandbox="allow-same-origin"
     />
   );
 }

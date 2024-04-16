@@ -14,6 +14,7 @@ export default function SpotifyEmbed() {
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       }
+      sandbox="allow-same-origin"
     />
   );
 }
