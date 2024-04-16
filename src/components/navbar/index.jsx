@@ -46,7 +46,7 @@ const NavBar = () => {
         <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap underline">
           {pageTitle}
         </div>
-        <button
+        <div
           data-collapse-toggle="navbar"
           id="navbar-icon"
           type="button"
@@ -58,7 +58,7 @@ const NavBar = () => {
           }}
         >
           <MobileNavButton {...{ expanded, setExpanded }} />
-        </button>
+        </div>
       </div>
       <ul
         id="nav-bar"
