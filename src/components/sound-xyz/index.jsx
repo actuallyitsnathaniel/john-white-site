@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { PropTypes } from "prop-types";
 
 const Item = ({ soundURL, id }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const iframeRef = useRef(null);
+
+  const handleIntersection = (entries) => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      setIsLoaded(true);
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection);
+    observer.observe(iframeRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <iframe
-      src={soundURL}
+      ref={iframeRef}
+      src={isLoaded ? soundURL : ""}
       id={id}
       className="rounded-lg w-72 h-48"
       allow="clipboard-write"
       sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
-    ></iframe>
+    />
   );
 };
 

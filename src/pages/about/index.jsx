@@ -17,7 +17,8 @@ const About = () => {
       <div className="flex flex-wrap p-10 mx-auto">
         <div className="flex flex-wrap justify-around md:pb-10 items-center">
           <div className="lg:px-14 pb-10 text-justify lg:w-[55%] md:text-3xl first-line:italic">
-            <span className="font-extrabold text-4xl md:text-6xl">J</span>ohn{" "}
+            <span className="font-extrabold text-4xl md:text-6xl">J</span>
+            ohn&nbsp;
             <span className="font-extrabold text-4xl md:text-6xl">W</span>hite
             is an up-and-coming artist born and raised in South LA. Exploring
             the sounds of the bands he listened to with his father, John writes
@@ -29,8 +30,8 @@ const About = () => {
             into a live setting. One of his favorite memories is seeing Oasis
             with his dad and taking in how much it meant to experience the songs
             he knew well, but with someone that loved him deeply. He hopes to
-            bring audiences that same love and comfort. His debut album, Through
-            the Trees, will be released on September 22, 2023.
+            bring audiences that same love and comfort. His latest record, For a
+            While, was released on March 22, 2024.
           </div>
           {/* 
           TODO: refine carousel to be this.
