@@ -1,32 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { PropTypes } from "prop-types";
 
 const Item = ({ soundURL, id }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const iframeRef = useRef(null);
 
-  const handleIntersection = (entries) => {
-    const entry = entries[0];
-    if (entry.isIntersecting) {
-      setIsLoaded(true);
-    }
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection);
-    observer.observe(iframeRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-500 bg-opacity-20 to-black rounded-lg w-72 h-48" />
+      <div className="absolute inset-0 bg-gradient-to-tl from-black rounded-lg w-72 h-48" />
       <iframe
         ref={iframeRef}
-        src={isLoaded ? soundURL : ""}
+        src={soundURL}
+        onLoad={() => setIsLoaded(true)}
         id={id}
-        className="rounded-lg w-72 h-48 bg-[url('/src/assets/images/icons/loading.svg')] bg-no-repeat bg-center relative"
+        className={`rounded-lg w-72 h-48 ${
+          !isLoaded && "bg-[url('/src/assets/images/icons/loading.svg')]"
+        } bg-no-repeat bg-center relative`}
         allow="clipboard-write"
         sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
       />
