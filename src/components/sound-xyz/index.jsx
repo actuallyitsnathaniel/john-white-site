@@ -20,14 +20,17 @@ const Item = ({ soundURL, id }) => {
   }, []);
 
   return (
-    <iframe
-      ref={iframeRef}
-      src={isLoaded ? soundURL : ""}
-      id={id}
-      className="rounded-lg w-72 h-48"
-      allow="clipboard-write"
-      sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
-    />
+    <div className="relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-500 bg-opacity-20 to-black rounded-lg w-72 h-48" />
+      <iframe
+        ref={iframeRef}
+        src={isLoaded ? soundURL : ""}
+        id={id}
+        className="rounded-lg w-72 h-48 bg-[url('/src/assets/images/icons/loading.svg')] bg-no-repeat bg-center relative"
+        allow="clipboard-write"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
+      />
+    </div>
   );
 };
 
@@ -46,6 +49,7 @@ const SoundXYZGallery = ({ children }) => {
                p-5 bg-gray-500 rounded-lg bg-opacity-25 content-between gap-10"
       >
         {React.Children.map(children, (child, i) => {
+          console.log(child);
           return React.cloneElement(child, { i });
         })}
       </div>
