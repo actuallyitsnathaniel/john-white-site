@@ -99,14 +99,14 @@ const About = () => {
               title={`"Conversations with John White"`}
               subtitle={"write-up by Voyage LA"}
               url={
-                "http://voyagela.com/interview/conversations-with-john-white/"
+                "https://voyagela.com/interview/conversations-with-john-white/"
               }
             />
             <PressHighlight
               title={`"Meet John Dominguez"`}
               subtitle={"interview with Voyage LA"}
               url={
-                "http://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
+                "https://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
               }
             />
 
