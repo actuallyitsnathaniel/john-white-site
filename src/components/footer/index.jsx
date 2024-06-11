@@ -1,4 +1,9 @@
-import { footerData } from "../../api/getFooter";
+// import { footerData } from "../../api/getFooter";
+
+const footerData = {
+  copyrightName: "nathaniel bowman",
+  copyrightNameLink: "https://dev.actuallyitsnathaniel.com",
+};
 const Footer = () => {
   return (
     <footer className="grid bg-black text-md text-white w-screen pb-3 bottom-0">
