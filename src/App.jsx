@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 import VideoBackground from "./components/video-background";
 import FilmGrainEffect from "./components/film-grain-effect";
@@ -37,6 +38,7 @@ const App = () => {
         <SocialLinks />
         <Footer />
       </div>
+      <Analytics />
     </Router>
   );
 };
