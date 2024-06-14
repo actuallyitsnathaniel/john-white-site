@@ -7,7 +7,7 @@ const VideoBackground = () => {
       height={"110%"}
       width={"auto"}
       id="video"
-      rel="preload"
+      // rel="preload"
       autoPlay
       loop
       muted

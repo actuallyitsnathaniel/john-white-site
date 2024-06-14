@@ -13,7 +13,7 @@ const Home = () => {
       </div>
       <iframe
         height={"315px"}
-        rel="preload prefetch"
+        // rel="preload prefetch"
         className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105"
         src={`https://www.youtube-nocookie.com/embed/${youtubeID}?rel=0`}
         title="youtube embed"
