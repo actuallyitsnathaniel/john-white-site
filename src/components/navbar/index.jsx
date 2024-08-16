@@ -81,6 +81,12 @@ const NavBar = () => {
           {...{ pageTitle }}
         />
         <NavItem
+          to="/shows"
+          label={"shows"}
+          setExpanded={setExpanded}
+          {...{ pageTitle }}
+        />
+        <NavItem
           to="/music"
           label={"music"}
           setExpanded={setExpanded}
@@ -97,12 +103,6 @@ const NavBar = () => {
             label={"contact & links"}
             setExpanded={setExpanded}
             {...{ pageTitle }} */}
-        {/* <NavItem
-          to="/shows"
-          label={"shows"}
-          setExpanded={setExpanded}
-          {...{ pageTitle }}
-        /> */}
       </ul>
     </nav>
   );
