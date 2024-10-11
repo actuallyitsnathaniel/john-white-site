@@ -1,6 +1,6 @@
-import profile1 from "../../assets/images/profiles/profile-1.jpeg";
+import profile1 from "../../assets/images/profiles/profile-1_2.jpg";
 import profile2 from "../../assets/images/profiles/profile-2.jpeg";
-import profile3 from "../../assets/images/profiles/profile-3.jpeg";
+import profile3 from "../../assets/images/profiles/profile-3_2.jpg";
 import profile4 from "../../assets/images/profiles/profile-4.jpeg";
 import profile5 from "../../assets/images/profiles/profile-5.jpeg";
 
