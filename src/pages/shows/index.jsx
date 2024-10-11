@@ -1,19 +1,31 @@
 import ShowLink from "../../components/show-link";
 // import breaking_sound from "../../assets/images/thumbnails/breaking-sound.png";
-import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
+// import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
+import sonOfMars from "../../assets/images/thumbnails/SON_OF_MARS-POSTER_3.jpg";
 
 const Shows = () => {
   return (
     <main className="flex flex-wrap h-screen font-semibold md:mt-16 text-center px-3 text-white justify-center text-3xl">
       <div className="md:p-3 lowercase">
         <ShowLink
+          link="https://www.venmo.com/u/whitenoiserecords"
+          artists="son of mars | john white | KUYO"
+          venue="the moroccan lounge"
+          venueAddress="901 e. 1st street los angeles, ca, 90017"
+          thumbnail={sonOfMars}
+          date="nov 13th, 2024"
+          price="$20"
+          priceText={"no fees, no funny business"}
+          alt="the-moroccan-nov-14th"
+        />
+        {/* <ShowLink
           link="https://new.hotelcafe.com/event/not-another-showcase-19/"
           artists="artist showcase | john white"
           date="sep 24th, 2024"
           venue="hotel cafe, los angeles, ca"
           thumbnail={lucas_flood_showcase}
           alt="hotel-cafe-sep-24th"
-        />
+        /> */}
 
         {/* <ShowLink
           link="https://www.tixr.com/groups/breakingsoundla/events/breaking-sound-la-at-adults-only-09-04-112822"
