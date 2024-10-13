@@ -33,7 +33,7 @@ const Footer = () => {
         </svg>
       </a>
       <div className="text-end pr-4">
-        copyright © {new Date().getFullYear()}. powered by{" "}
+        copyright © {new Date().getFullYear()}. powered by&nbsp;
         <a
           className="underline underline-offset-8"
           href={`${footerData.copyrightNameLink}`}

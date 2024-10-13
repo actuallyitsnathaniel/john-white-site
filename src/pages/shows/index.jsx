@@ -5,7 +5,7 @@ import sonOfMars from "../../assets/images/thumbnails/SON_OF_MARS-POSTER_3.jpg";
 
 const Shows = () => {
   return (
-    <main className="flex flex-wrap h-screen font-semibold md:mt-16 text-center px-3 text-white justify-center text-3xl">
+    <main className="flex flex-wrap h-screen font-semibold mt-16 text-center px-3 text-white justify-center text-3xl">
       <div className="md:p-3 lowercase">
         <ShowLink
           link="https://www.venmo.com/u/whitenoiserecords"
@@ -15,7 +15,7 @@ const Shows = () => {
           thumbnail={sonOfMars}
           date="nov 13th, 2024"
           price="$20"
-          priceText={"no fees, no funny business"}
+          priceText={""}
           alt="the-moroccan-nov-14th"
         />
         {/* <ShowLink

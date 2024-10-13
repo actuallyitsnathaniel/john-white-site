@@ -14,8 +14,9 @@ const ShowLink = (props) => {
           src={props.thumbnail}
           alt={props.alt}
         />
-        <p className="font-semibold">{props.price}</p>
-        <p className="text-lg">{props.priceText}</p>
+        <p className="border rounded-lg p-2 font-semibold text-4xl max-w-36 mx-auto bg-gray-700">
+          {props.price}
+        </p>
       </div>
     </a>
   );
