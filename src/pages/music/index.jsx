@@ -10,6 +10,8 @@ import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_
 import forAWhileEP from "../../assets/images/discography/Singles_EPs/for_a_while_ep.jpg";
 
 // Singles
+import fortyTwo from "../../assets/images/discography/Singles_EPs/42-single-600x600bb.jpg";
+import headOn from "../../assets/images/discography/Singles_EPs/head_on-single-600x600bb.jpg";
 import sweetWord from "../../assets/images/discography/Singles_EPs/sweet_word_feat_john_white_600x600bb.jpg";
 import iWontAsk from "../../assets/images/discography/Singles_EPs/i_wont_ask_single_600x600bb.jpg";
 import thisTime from "../../assets/images/discography/Singles_EPs/this_time_single_720x720.jpeg";
@@ -37,6 +39,28 @@ const Music = () => {
   return (
     <div className="flex md:mt-14 flex-wrap justify-center text-white">
       <Discography>
+        <Discography.Disc
+          artwork={fortyTwo}
+          title={"42 - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/08KsVcV9DrEImTpl2y4QoE?si=e41fa7f038d84219"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/42/1765495007?i=1765495460"
+          }
+          youtubeLink={"https://youtu.be/TMLFuisEc1A?feature=shared"}
+        />
+        <Discography.Disc
+          artwork={headOn}
+          title={"head on - single"}
+          spotifyLink={
+            "https://open.spotify.com/track/4fCCdi4Z3Nneatew73HyFP?si=fab38b06fdc64252"
+          }
+          appleMusicLink={
+            "https://music.apple.com/us/album/head-on/1765495007?i=1765495462"
+          }
+          youtubeLink={"https://youtu.be/fnOrN1kLtok?feature=shared"}
+        />
         <Discography.Disc
           artwork={sweetWord}
           appearsOn
