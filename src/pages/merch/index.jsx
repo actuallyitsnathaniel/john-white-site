@@ -14,7 +14,7 @@ const Merch = () => {
   });
 
   return (
-    <div className="flex flex-col mt-14 xl:mt-0 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
+    <div className="flex flex-col mt-14 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
       <SoundXYZGallery>
         {React.Children.map(releases, (release) => {
           return (
