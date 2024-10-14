@@ -1,3 +1,5 @@
+import venmo from "../../assets/images/icons/venmo.svg";
+
 const ShowLink = (props) => {
   return (
     <a href={props.link} className="text-center p-3">
@@ -14,9 +16,10 @@ const ShowLink = (props) => {
           src={props.thumbnail}
           alt={props.alt}
         />
-        <p className="border rounded-lg p-2 font-semibold text-4xl max-w-36 mx-auto bg-gray-700">
-          {props.price}
-        </p>
+        <div className="border flex flex-row items-center rounded-lg p-2 gap-3 max-w-36 mx-auto bg-gray-700">
+          <img className="object-scale-down h-12" src={venmo} />
+          <span className="font-semibold text-4xl ">{props.price}</span>
+        </div>
       </div>
     </a>
   );

@@ -8,7 +8,7 @@ const Shows = () => {
     <main className="flex flex-wrap h-screen font-semibold mt-16 text-center px-3 text-white justify-center text-3xl">
       <div className="md:p-3 lowercase">
         <ShowLink
-          link="https://www.venmo.com/u/whitenoiserecords"
+          link="https://venmo.com/whitenoiserecords?txn=charge&amount=20"
           artists="son of mars | john white | KUYO"
           venue="the moroccan lounge"
           venueAddress="901 e. 1st street los angeles, ca, 90017"
