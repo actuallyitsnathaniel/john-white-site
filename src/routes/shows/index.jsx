@@ -13,10 +13,10 @@ const Shows = () => {
           venue="the moroccan lounge"
           venueAddress="901 e. 1st street los angeles, ca, 90017"
           thumbnail={sonOfMars}
-          date="november 13st, 2024"
+          date="november 13th, 2024"
           venmoPrice="$20"
           priceText={""}
-          alt="the-moroccan-nov-14th"
+          alt="the-moroccan-nov-13th"
         />
         <ShowLink
           link="https://new.hotelcafe.com/event/not-another-showcase-19/"
