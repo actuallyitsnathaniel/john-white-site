@@ -20,7 +20,7 @@ import ErrorPage from "./error";
 const Root = () => {
   const location = useLocation();
   return (
-    <>
+    <div id="root">
       <FilmGrainEffect />
       <VideoBackground />
       <div className="flex flex-col max-h-screen w-screen justify-between [&>*]:animate-appear">
@@ -40,7 +40,7 @@ const Root = () => {
         <Footer />
       </div>
       <Analytics />
-    </>
+    </div>
   );
 };
 
