@@ -1,30 +1,31 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 
-import VideoBackground from "./components/video-background";
-import FilmGrainEffect from "./components/film-grain-effect";
-import { SocialLinks } from "./components/social-links";
-import NavBar from "./components/navbar";
-import Footer from "./components/footer";
+import VideoBackground from "../components/video-background";
+import FilmGrainEffect from "../components/film-grain-effect";
+import { SocialLinks } from "../components/social-links";
+import NavBar from "../components/navbar";
+import Footer from "../components/footer";
 
-import Home from "./pages/home";
-import Contact from "./pages/contact";
-import About from "./pages/about";
-import Links from "./pages/links";
-import Merch from "./pages/merch";
-import Music from "./pages/music";
-import Shows from "./pages/shows";
-import Secret from "./pages/secret";
-import ErrorPage from "./pages/error";
+import Home from "./home";
+import Contact from "./contact";
+import About from "./about";
+import Links from "./links";
+import Merch from "./merch";
+import Music from "./music";
+import Shows from "./shows";
+import Secret from "./secret";
+import ErrorPage from "./error";
 
-const App = () => {
+const Root = () => {
+  const location = useLocation();
   return (
-    <Router forceRefresh>
+    <>
       <FilmGrainEffect />
       <VideoBackground />
       <div className="flex flex-col max-h-screen w-screen justify-between [&>*]:animate-appear">
         <NavBar />
-        <Routes>
+        <Routes location={location}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -39,8 +40,8 @@ const App = () => {
         <Footer />
       </div>
       <Analytics />
-    </Router>
+    </>
   );
 };
 
-export default App;
+export default Root;
