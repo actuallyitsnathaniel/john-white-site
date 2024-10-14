@@ -1,6 +1,6 @@
 import ShowLink from "../../components/show-link";
-// import breaking_sound from "../../assets/images/thumbnails/breaking-sound.png";
-// import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
+import breaking_sound from "../../assets/images/thumbnails/breaking-sound.png";
+import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
 import sonOfMars from "../../assets/images/thumbnails/SON_OF_MARS-POSTER_3.jpg";
 
 const Shows = () => {
@@ -13,28 +13,28 @@ const Shows = () => {
           venue="the moroccan lounge"
           venueAddress="901 e. 1st street los angeles, ca, 90017"
           thumbnail={sonOfMars}
-          date="nov 13th, 2024"
-          price="$20"
+          date="november 13st, 2024"
+          venmoPrice="$20"
           priceText={""}
           alt="the-moroccan-nov-14th"
         />
-        {/* <ShowLink
+        <ShowLink
           link="https://new.hotelcafe.com/event/not-another-showcase-19/"
           artists="artist showcase | john white"
           date="sep 24th, 2024"
           venue="hotel cafe, los angeles, ca"
           thumbnail={lucas_flood_showcase}
           alt="hotel-cafe-sep-24th"
-        /> */}
+        />
 
-        {/* <ShowLink
+        <ShowLink
           link="https://www.tixr.com/groups/breakingsoundla/events/breaking-sound-la-at-adults-only-09-04-112822"
           artists="john white | sam denton | ryland"
           date="sep 4th, 2024"
           venue="adults only, los angeles, ca"
           thumbnail={breaking_sound}
           alt="adults-only-sep-4th"
-        /> */}
+        />
       </div>
     </main>
   );
