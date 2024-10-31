@@ -1,7 +1,7 @@
 import ShowLink from "../../components/show-link";
 import breaking_sound from "../../assets/images/thumbnails/breaking-sound.png";
 import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
-import sonOfMars from "../../assets/images/thumbnails/SON_OF_MARS-POSTER_3.jpg";
+import sonOfMars from "../../assets/images/thumbnails/jw-sons-of-mars-nov.jpg";
 
 const Shows = () => {
   return (
@@ -10,8 +10,8 @@ const Shows = () => {
         <ShowLink
           link="https://venmo.com/whitenoiserecords?txn=charge&amount=20"
           artists="son of mars | john white | KUYO"
-          venue="the moroccan lounge"
-          venueAddress="901 e. 1st street los angeles, ca, 90017"
+          venue="LOS GLOBOS"
+          venueAddress="3040 W Sunset Blvd. Los Angeles, CA 90026"
           thumbnail={sonOfMars}
           date="november 13th, 2024"
           venmoPrice="$20"
