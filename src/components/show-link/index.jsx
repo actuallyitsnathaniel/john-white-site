@@ -10,10 +10,10 @@ const ShowLink = (props) => {
     );
   };
 
-  const date = new Date().toISOString();
-  const showDate = new Date(
-    `${props.date}`.replace(/th|st|rd/g, "")
-  ).toISOString();
+  const date = new Date().toISOString().split("T")[0];
+  const showDate = new Date(`${props.date}`.replace(/th|st|rd/g, ""))
+    .toISOString()
+    .split("T")[0];
 
   return (
     date <= showDate && (
