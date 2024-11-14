@@ -18,7 +18,7 @@ const Shows = () => {
           priceText={""}
           alt="the-moroccan-nov-13th"
         />
-        {/* <ShowLink
+        <ShowLink
           link="https://new.hotelcafe.com/event/not-another-showcase-19/"
           artists="artist showcase | john white"
           date="sep 24th, 2024"
@@ -34,7 +34,7 @@ const Shows = () => {
           venue="adults only, los angeles, ca"
           thumbnail={breaking_sound}
           alt="adults-only-sep-4th"
-        /> */}
+        />
       </div>
     </main>
   );
