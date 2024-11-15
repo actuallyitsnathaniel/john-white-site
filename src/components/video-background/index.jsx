@@ -1,10 +1,9 @@
-import JohnWhiteVideoMP4 from "../../assets/videos/john-white-bg.mp4";
-import JohnWhiteVideoWEBM from "../../assets/videos/john-white-bg.webm";
+import JohnWhite42VideoMP4 from "../../assets/videos/john-white-42-bg.mp4";
 
 const VideoBackground = () => {
   return (
     <video
-      height={"110%"}
+      height={"100%"}
       width={"auto"}
       id="video"
       // rel="preload"
@@ -13,10 +12,9 @@ const VideoBackground = () => {
       muted
       playsInline
       disablePictureInPicture
-      className="brightness-50 md:translate-x-14 -translate-y-14 blur saturate-0 w-full h-full object-cover scale-[120%] fixed z-[-1] bg-black overflow-clip md:overflow-hidden flex md:align-middle md:content-center"
+      className="brightness-[25%] blur saturate-100 w-full h-full object-cover scale-[100%] fixed z-[-1] bg-black overflow-clip md:overflow-hidden flex md:align-middle md:content-center"
     >
-      <source src={JohnWhiteVideoMP4} type="video/MP4" />
-      <source src={JohnWhiteVideoWEBM} type="video/webm" />
+      <source src={JohnWhite42VideoMP4} type="video/MP4" />
     </video>
   );
 };

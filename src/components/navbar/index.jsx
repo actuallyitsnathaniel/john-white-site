@@ -80,12 +80,12 @@ const NavBar = () => {
           setExpanded={setExpanded}
           {...{ pageTitle }}
         />
-        <NavItem
+        {/* <NavItem
           to="/shows"
           label={"shows"}
           setExpanded={setExpanded}
           {...{ pageTitle }}
-        />
+        /> */}
         <NavItem
           to="/music"
           label={"music"}

@@ -5,6 +5,7 @@ import family from "../../assets/images/discography/LPs/family_600x600bb.jpeg";
 import throughTheTrees from "../../assets/images/discography/LPs/through-the-trees.jpeg";
 
 // EPs
+import fortyTwoEP from "../../assets/images/discography/Singles_EPs/42_ep_600x600bb.jpg";
 import fakeSmilesEP from "../../assets/images/discography/Singles_EPs/fake_smiles_ep600x600bb.jpeg";
 import starsRemix from "../../assets/images/discography/Singles_EPs/stars_remix_600x600bb.jpeg";
 import forAWhileEP from "../../assets/images/discography/Singles_EPs/for_a_while_ep.jpg";
@@ -39,6 +40,17 @@ const Music = () => {
   return (
     <div className="flex md:mt-14 flex-wrap justify-center text-white">
       <Discography>
+        <Discography.Disc
+          artwork={fortyTwoEP}
+          title={"42 - ep"}
+          spotifyLink={
+            "https://open.spotify.com/album/6sQQYK5eWrPxxgCIvL5iVL?si=KbRfsRrjRBu81ItDu_uiVg"
+          }
+          appleMusicLink={"https://music.apple.com/us/album/42-ep/1778810224"}
+          youtubeLink={
+            "https://youtube.com/playlist?list=PLTfQR4eBUNuoWBp5h4Z_u7clPMIoQXn9y&feature=shared"
+          }
+        />
         <Discography.Disc
           artwork={fortyTwo}
           title={"42 - single"}

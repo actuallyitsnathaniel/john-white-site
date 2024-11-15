@@ -9,7 +9,7 @@ export default function YoutubePlayistEmbed() {
         padding: "1vh",
       }}
       src={
-        "https://www.youtube.com/embed/videoseries?list=PLTfQR4eBUNuqxf7aJrCKtXmy1gCG25Tje"
+        "https://www.youtube.com/embed/videoseries?si=goNU39Ryjx7dIqOT&amp;list=PLTfQR4eBUNuoWBp5h4Z_u7clPMIoQXn9y"
       }
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
