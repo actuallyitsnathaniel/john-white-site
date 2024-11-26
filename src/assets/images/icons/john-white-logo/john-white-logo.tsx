@@ -1,8 +1,7 @@
-const JohnWhiteLogo = (props) => (
-  <div className={`grid p-8 items-center justify-center ${props.className}`}>
+const JohnWhiteLogo = ({ className }: { className?: string }) => (
+  <div className={`grid p-8 items-center justify-center ${className}`}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      alt="john-white-logo"
       aria-label="john-white-logo"
       width="100%"
       height={400}
@@ -12,7 +11,6 @@ const JohnWhiteLogo = (props) => (
       imageRendering="optimizeQuality"
       shapeRendering="geometricPrecision"
       textRendering="geometricPrecision"
-      {...props}
     >
       <path fill="#1b1c1b" d="M3.5.5c1.3.7 1.3.7 0 0z" />
       <path fill="#1d1e1d" d="M7.5 25.5c1.3.7 1.3.7 0 0z" />

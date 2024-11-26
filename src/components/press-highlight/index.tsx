@@ -1,4 +1,12 @@
-const PressHighlight = ({ title, subtitle, url }) => {
+const PressHighlight = ({
+  title,
+  subtitle,
+  url,
+}: {
+  title: string;
+  subtitle: string;
+  url: string;
+}) => {
   return (
     <div className="pb-6">
       <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">

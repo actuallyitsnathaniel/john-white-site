@@ -7,9 +7,9 @@ import profile5 from "../../assets/images/profiles/profile-5.jpeg";
 import InstagramLogo from "../../components/social-links/instagram-link";
 import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
-import YoutubeLogo from "../../components/social-links/youtube-link/index.jsx";
+import YoutubeLogo from "../../components/social-links/youtube-link/index.js";
 
-import PressHighlight from "../../components/press-highlight/index.jsx";
+import PressHighlight from "../../components/press-highlight/index.js";
 
 const About = () => {
   return (

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
-import { PropTypes } from "prop-types";
 
-const Item = ({ soundURL, id }) => {
+const Item = ({ soundURL, id }: { soundURL: string; id?: string }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const iframeRef = useRef(null);
 
@@ -29,7 +28,7 @@ const Item = ({ soundURL, id }) => {
 //   return <h2>⏲ Loading...</h2>;
 // };
 
-const SoundXYZGallery = ({ children }) => {
+const SoundXYZGallery = ({ children }: { children: JSX.Element[] }) => {
   return (
     <div id="sound-xyz-releases" className="p-5 md:px-28">
       <h1 className="p-5">digital collectibles</h1>
@@ -44,15 +43,6 @@ const SoundXYZGallery = ({ children }) => {
       </div>
     </div>
   );
-};
-
-Item.propTypes = {
-  soundURL: PropTypes.string,
-  id: PropTypes.string,
-};
-
-SoundXYZGallery.propTypes = {
-  children: PropTypes.array,
 };
 
 SoundXYZGallery.Item = Item;

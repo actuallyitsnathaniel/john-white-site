@@ -15,7 +15,6 @@ const Shows = () => {
           thumbnail={sonOfMars}
           date="november 13th, 2024"
           venmoPrice="$20"
-          priceText={""}
           alt="the-moroccan-nov-13th"
         />
         <ShowLink

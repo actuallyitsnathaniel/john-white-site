@@ -6,7 +6,7 @@ import { NavItem } from "./nav-item";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
-const usePageTitle = (location) => {
+const usePageTitle = (location: string) => {
   const [pageTitle, setPageTitle] = useState("");
 
   useEffect(() => {
@@ -49,7 +49,6 @@ const NavBar = () => {
         <div
           data-collapse-toggle="navbar"
           id="navbar-icon"
-          type="button"
           className={`md:hidden justify-end`}
           aria-controls="navbar"
           aria-expanded="false"

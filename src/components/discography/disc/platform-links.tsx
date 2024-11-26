@@ -1,4 +1,3 @@
-import { PropTypes } from "prop-types";
 // Icons
 import appleMusic from "/src/assets/images/icons/music-platforms/apple-music.svg";
 import spotify from "/src/assets/images/icons/music-platforms/spotify.svg";
@@ -7,7 +6,7 @@ import youtube from "/src/assets/images/icons/music-platforms/youtube.svg";
 import tidal from "/src/assets/images/icons/music-platforms/tidal.svg";
 import hyperlinkIcon from "/src/assets/images/icons/shop-icon.svg";
 
-const Link = ({ href, image }) => {
+const Link = ({ href, image }: { href: string, image: string }) => {
   return (
     <a
       href={href}
@@ -26,6 +25,17 @@ const Link = ({ href, image }) => {
   );
 };
 
+type MusicPlatformLinksType = {
+  className: string,
+  width?: string,
+  spotifyLink?: string,
+  appleMusicLink?: string,
+  soundcloudLink?: string,
+  tidalLink?: string,
+  webLink?: string,
+  youtubeLink?: string,
+};
+
 const MusicPlatformLinks = ({
   className,
   spotifyLink,
@@ -34,7 +44,7 @@ const MusicPlatformLinks = ({
   tidalLink,
   youtubeLink,
   webLink,
-}) => {
+}: MusicPlatformLinksType) => {
   return (
     <div
       className={`absolute flex flex-wrap justify-around
@@ -49,22 +59,6 @@ const MusicPlatformLinks = ({
       {webLink && <Link href={webLink} image={hyperlinkIcon} />}
     </div>
   );
-};
-
-Link.propTypes = {
-  href: PropTypes.string,
-  image: PropTypes.string,
-};
-
-MusicPlatformLinks.propTypes = {
-  className: PropTypes.string,
-  width: PropTypes.string,
-  spotifyLink: PropTypes.string,
-  appleMusicLink: PropTypes.string,
-  soundcloudLink: PropTypes.string,
-  tidalLink: PropTypes.string,
-  webLink: PropTypes.string,
-  youtubeLink: PropTypes.string,
 };
 
 export default MusicPlatformLinks;
