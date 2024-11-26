@@ -1,9 +1,9 @@
-import { footerData } from "../../api/getFooter";
+// import { footerData } from "../../api/getFooter";
 
-// const localFooterData = {
-//   copyrightName: "nathaniel bowman",
-//   copyrightNameLink: "https://dev.actuallyitsnathaniel.com",
-// };
+const localFooterData = {
+  copyrightName: "nathaniel bowman",
+  copyrightNameLink: "https://dev.actuallyitsnathaniel.com",
+};
 
 const Footer = () => {
   return (
@@ -36,9 +36,9 @@ const Footer = () => {
         copyright © {new Date().getFullYear()}. powered by&nbsp;
         <a
           className="underline underline-offset-8"
-          href={`${footerData.copyrightNameLink}`}
+          href={`${localFooterData.copyrightNameLink}`}
         >
-          {footerData.copyrightName}
+          {localFooterData.copyrightName}
         </a>
       </div>
     </footer>
