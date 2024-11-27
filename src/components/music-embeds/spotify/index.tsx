@@ -1,9 +1,8 @@
-export default function SpotifyEmbed() {
+const SpotifyEmbed = () => {
   return (
     <iframe
-      height="470px"
+      className="h-[418px] sm:h-[470px] md:h-[470px]"
       title="spotify-embedded"
-      loading="lazy"
       style={{
         borderRadius: "26px",
         padding: "1vh",
@@ -14,7 +13,8 @@ export default function SpotifyEmbed() {
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       }
-      sandbox="allow-same-origin"
     />
   );
-}
+};
+
+export default SpotifyEmbed;
