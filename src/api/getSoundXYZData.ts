@@ -44,7 +44,7 @@ export const getSoundXYZSongs = await fetch(sound_xyz_url, {
 })
   .then((response) => response.json())
   .then((data) => {
-    let releases = data.data.artist.releases.edges;
+    const releases = data.data.artist.releases.edges;
     return releases;
   })
   .catch((error) => console.error("Error:", error));

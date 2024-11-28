@@ -7,7 +7,7 @@ import AppleMusic from "./apple-music-link";
 import YoutubeLogo from "./youtube-link";
 
 export const SocialLinks = () => {
-  let location = useLocation();
+  const location = useLocation();
   const isHidden =
     (location.pathname.includes("links") ||
       location.pathname.includes("about") ||

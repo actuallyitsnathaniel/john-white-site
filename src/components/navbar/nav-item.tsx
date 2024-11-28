@@ -19,9 +19,7 @@ export const NavItem = ({
         "ease-in hidden md:block text-yellow-100 md:scale-110 underline"
       }`}
       to={to}
-      onClick={() => {
-        setExpanded && setExpanded(false);
-      }}
+      onClick={() => setExpanded(false)}
     >
       {label}
     </Link>

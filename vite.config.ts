@@ -7,7 +7,7 @@ import graphqlLoader from "vite-plugin-graphql-loader";
 
 // https://vitejs.dev/config/
 // eslint-disable-next-line no-unused-vars
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(() => {
   // eslint-disable-next-line no-undef
   return {
     base: "",
@@ -24,20 +24,6 @@ export default defineConfig(({ command, mode }) => {
         svg: {
           multipass: true,
           plugins: [
-            {
-              name: "preset-default",
-              params: {
-                overrides: {
-                  cleanupNumericValues: true,
-                  removeViewBox: false, // https://github.com/svg/svgo/issues/1128
-                },
-                cleanupIDs: {
-                  minify: true,
-                  remove: false,
-                },
-                convertPathData: false,
-              },
-            },
             "sortAttrs",
             {
               name: "addAttributesToSVGElement",

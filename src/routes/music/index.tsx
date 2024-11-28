@@ -38,7 +38,7 @@ import better2019Single from "../../assets/images/discography/Singles_EPs/better
 
 const Music = () => {
   return (
-    <div className="flex md:mt-14 flex-wrap justify-center text-white">
+    <div className="flex mt-16 flex-wrap justify-center text-white">
       <Discography>
         <Discography.Disc
           artwork={fortyTwoEP}

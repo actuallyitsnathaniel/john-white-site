@@ -34,7 +34,7 @@ const usePageTitle = (location: string) => {
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
 
-  let pageTitle = usePageTitle(useLocation().pathname);
+  const pageTitle = usePageTitle(useLocation().pathname);
 
   return (
     <nav

@@ -28,12 +28,12 @@ const ShowLink = ({
       <div className="border flex flex-row items-center rounded-lg p-2 gap-3 max-w-36 mx-auto bg-gray-700">
         <img className="object-scale-down h-12" src={venmo} />
         <span className="font-semibold text-4xl ">{price}</span>
+        {priceText && <span className="font-semibold">{priceText}</span>}
       </div>
     );
   };
 
   // Get today's date in Los Angeles time zone
-  const today = new Date();
   const localToday = new Date().toLocaleString("en-US", {
     timeZone: "America/Los_Angeles",
   });
@@ -69,7 +69,7 @@ const ShowLink = ({
             src={thumbnail}
             alt={alt}
           />
-          {price && <span className="font-semibold text-4xl ">{price}</span>}
+          {price && <span className="font-semibold text-4xl">{price}</span>}
           {venmoPrice && <VenmoLink price={venmoPrice} />}
         </div>
       </a>

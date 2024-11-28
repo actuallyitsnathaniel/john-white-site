@@ -13,7 +13,7 @@ import PressHighlight from "../../components/press-highlight/index.js";
 
 const About = () => {
   return (
-    <div className="flex flex-col mt-14 justify-center text-2xl text-white">
+    <div className="flex flex-col mt-16 justify-center text-2xl text-white">
       <div className="flex flex-wrap p-10 mx-auto">
         <div className="flex flex-wrap justify-around md:pb-10 items-center">
           <div className="lg:px-14 pb-10 text-justify lg:w-[55%] md:text-3xl first-line:italic">

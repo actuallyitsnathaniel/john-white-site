@@ -24,7 +24,6 @@ const Disc = ({
   youtubeLink,
   webLink,
   album = false,
-  appearsOn,
   artwork,
   title,
 }: DiscType) => {
