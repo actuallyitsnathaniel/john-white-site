@@ -4,26 +4,28 @@ import MusicPlatformLinks from "./platform-links";
 type DiscType = {
   className?: string;
   appleMusicLink?: string;
+  id: number;
   spotifyLink?: string;
   soundcloudLink?: string;
   tidalLink?: string;
   youtubeLink?: string;
   webLink?: string;
-  album?: boolean;
-  appearsOn?: boolean;
-  artwork: string;
+  releaseDate: Date;
+  releaseType: "single" | "album" | "ep" | "appearance";
+  artwork?: string;
   title?: string;
 };
 
 const Disc = ({
   className,
+  id,
   appleMusicLink,
   spotifyLink,
   soundcloudLink,
   tidalLink,
   youtubeLink,
+  releaseType,
   webLink,
-  album = false,
   artwork,
   title,
 }: DiscType) => {
@@ -32,6 +34,7 @@ const Disc = ({
   return (
     <div
       className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}
+      id={`disc-${id}`}
     >
       <div
         className={"relative h-72 w-72 mx-auto"}
@@ -57,13 +60,13 @@ const Disc = ({
             tidalLink,
             youtubeLink,
             webLink,
-            album,
+            releaseType,
           }}
         />
         <img
           height={"320px"}
           width={"320px"}
-          src={artwork}
+          src={artwork || ""}
           alt={title}
           loading="eager"
         />

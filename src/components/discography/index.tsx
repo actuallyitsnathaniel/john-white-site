@@ -46,7 +46,10 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
           className={"flex flex-wrap w-full justify-center"}
         >
           {React.Children.map(children, (child, i) => {
-            if (!child.props.album && !child.props.appearsOn)
+            if (
+              child.props.releaseType === "single" ||
+              child.props.releaseType === "ep"
+            )
               return (
                 <motion.div variants={itemVariants}>
                   {React.cloneElement(child, { expanded, setExpanded, i })}
@@ -59,7 +62,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
         <h2 className={"flex text-6xl  italic justify-center p-5"}>albums</h2>
         <div className={"flex flex-row flex-wrap w-full justify-center"}>
           {React.Children.map(children, (child, i) => {
-            if (child.props.album && !child.props.appearsOn)
+            if (child.props.releaseType === "album")
               return (
                 <motion.div variants={itemVariants}>
                   {React.cloneElement(child, { expanded, setExpanded, i })}
@@ -74,7 +77,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
         </h2>
         <div className={"flex flex-row flex-wrap w-full justify-center"}>
           {React.Children.map(children, (child, i) => {
-            if (child.props.appearsOn)
+            if (child.props.releaseType === "appearance")
               return (
                 <motion.div variants={itemVariants}>
                   {React.cloneElement(child, { expanded, setExpanded, i })}
