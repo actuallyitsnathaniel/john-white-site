@@ -43,6 +43,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
               },
             },
           }}
+          exit="exit"
           className={"flex flex-wrap w-full justify-center"}
         >
           {React.Children.map(children, (child, i) => {

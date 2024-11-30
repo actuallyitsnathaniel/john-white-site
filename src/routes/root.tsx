@@ -16,6 +16,7 @@ import Music from "./music";
 import Shows from "./shows";
 import Secret from "./secret";
 import ErrorPage from "./error";
+import { AnimatePresence } from "framer-motion";
 
 const Root = () => {
   const location = useLocation();
@@ -24,20 +25,22 @@ const Root = () => {
       <FilmGrainEffect />
       <VideoBackground />
       <div className="flex flex-col min-h-screen w-screen justify-between [&>*]:animate-appear">
-        <NavBar />
-        <Routes location={location}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/links" element={<Links />} />
-          <Route path="/digitals" element={<Merch />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/shows" element={<Shows />} />
-          <Route path="/secret" element={<Secret />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-        <SocialLinks />
-        <Footer />
+        <AnimatePresence mode="wait">
+          <NavBar />
+          <Routes location={location}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/links" element={<Links />} />
+            <Route path="/digitals" element={<Merch />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/shows" element={<Shows />} />
+            <Route path="/secret" element={<Secret />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+          <SocialLinks />
+          <Footer />
+        </AnimatePresence>
       </div>
       <Analytics />
     </div>

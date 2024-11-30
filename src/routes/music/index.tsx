@@ -2,6 +2,7 @@ import Discography from "../../components/discography";
 import { getMusicPage } from "../../api/getMusicData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
+import pageTransition from "../../util/transitionPage";
 
 type FetchedDisc = {
   AppleMusicURL?: string;
@@ -79,4 +80,4 @@ const Music = () => {
   );
 };
 
-export default Music;
+export default pageTransition(Music);
