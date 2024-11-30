@@ -10,7 +10,7 @@ type DiscType = {
   tidalLink?: string;
   youtubeLink?: string;
   webLink?: string;
-  releaseDate: Date;
+  releaseDate: string;
   releaseType: "single" | "album" | "ep" | "appearance";
   artwork?: string;
   title?: string;
@@ -25,12 +25,13 @@ const Disc = ({
   tidalLink,
   youtubeLink,
   releaseType,
+  releaseDate,
   webLink,
   artwork,
   title,
 }: DiscType) => {
   const [focused, setFocused] = useState(false);
-
+  console.log(typeof releaseDate);
   return (
     <div
       className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}
@@ -72,7 +73,9 @@ const Disc = ({
         />
       </div>
       <div className="flex flex-row w-80 flex-wrap text-center justify-center transition-scale duration-100 origin-top text-lg md:invisible md:group-hover:visible md:scale-0 md:group-hover:scale-90">
-        {title}
+        {`${title}${
+          releaseType !== "appearance" ? " - " + releaseType : ""
+        }`.toLowerCase()}
       </div>
     </div>
   );

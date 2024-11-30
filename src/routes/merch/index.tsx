@@ -7,7 +7,7 @@ import { getSoundXYZSongs } from "../../api/getSoundXYZData";
 const Merch = () => {
   const soundXyzReleases = getSoundXYZSongs;
 
-  const releases: any[] = [];
+  const releases: unknown[] = [];
 
   soundXyzReleases.map((release: { node: { id: number } }) => {
     releases.push(release.node.id);

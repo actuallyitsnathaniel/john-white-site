@@ -7,7 +7,7 @@ type FetchedDisc = {
   CoverArt: {
     url: string;
   };
-  ReleaseDate: Date;
+  ReleaseDate: string;
   ReleaseType: "single" | "album" | "ep" | "appearance";
   SoundcloudURL?: string;
   SpotifyURL?: string;
@@ -35,7 +35,11 @@ const Music = () => {
     };
     fetchMusicPage();
   }, []);
-  console.log(music);
+  const sortedMusic = music.sort(
+    (a, b) => Date.parse(b.ReleaseDate) - Date.parse(a.ReleaseDate)
+  );
+
+  console.log(typeof music[0].ReleaseDate);
 
   return (
     <div>
@@ -44,7 +48,7 @@ const Music = () => {
           <div>Loading...</div>
         ) : (
           <Discography>
-            {music.map(
+            {sortedMusic.map(
               ({
                 AppleMusicURL,
                 CoverArt,
