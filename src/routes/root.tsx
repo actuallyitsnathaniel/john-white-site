@@ -20,10 +20,10 @@ import ErrorPage from "./error";
 const Root = () => {
   const location = useLocation();
   return (
-    <div id="root">
+    <div id="root" className="">
       <FilmGrainEffect />
       <VideoBackground />
-      <div className="flex flex-col max-h-screen w-screen justify-between [&>*]:animate-appear">
+      <div className="flex flex-col min-h-screen w-screen justify-between [&>*]:animate-appear">
         <NavBar />
         <Routes location={location}>
           <Route index element={<Home />} />

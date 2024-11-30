@@ -1,6 +1,7 @@
 import Discography from "../../components/discography";
 import { getMusicPage } from "../../api/getMusicData";
 import { useEffect, useState } from "react";
+import Loading from "../../components/loading";
 
 type FetchedDisc = {
   AppleMusicURL?: string;
@@ -39,13 +40,11 @@ const Music = () => {
     (a, b) => Date.parse(b.ReleaseDate) - Date.parse(a.ReleaseDate)
   );
 
-  console.log(typeof music[0].ReleaseDate);
-
   return (
     <div>
-      <div className="flex mt-16 flex-wrap justify-center text-white">
+      <div className="flex mt-16 flex-wrap flex-grow h-max justify-center text-white">
         {isLoading ? (
-          <div>Loading...</div>
+          <Loading />
         ) : (
           <Discography>
             {sortedMusic.map(
