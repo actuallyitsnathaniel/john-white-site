@@ -41,42 +41,40 @@ const Music = () => {
   );
 
   return (
-    <div>
-      <div className="flex mt-16 flex-wrap flex-grow h-max justify-center text-white">
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <Discography>
-            {sortedMusic.map(
-              ({
-                AppleMusicURL,
-                CoverArt,
-                ReleaseDate,
-                ReleaseType,
-                id,
-                SoundcloudURL,
-                SpotifyURL,
-                TidalURL,
-                Title,
-                YoutubeURL,
-              }: FetchedDisc) => (
-                <Discography.Disc
-                  artwork={CoverArt.url}
-                  appleMusicLink={AppleMusicURL}
-                  id={id}
-                  title={Title}
-                  tidalLink={TidalURL}
-                  spotifyLink={SpotifyURL}
-                  soundcloudLink={SoundcloudURL}
-                  releaseType={ReleaseType}
-                  releaseDate={ReleaseDate}
-                  youtubeLink={YoutubeURL}
-                />
-              )
-            )}
-          </Discography>
-        )}
-      </div>
+    <div className="flex flex-grow flex-col mt-16 text-white">
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Discography>
+          {sortedMusic.map(
+            ({
+              AppleMusicURL,
+              CoverArt,
+              ReleaseDate,
+              ReleaseType,
+              id,
+              SoundcloudURL,
+              SpotifyURL,
+              TidalURL,
+              Title,
+              YoutubeURL,
+            }: FetchedDisc) => (
+              <Discography.Disc
+                artwork={CoverArt.url}
+                appleMusicLink={AppleMusicURL}
+                id={id}
+                title={Title}
+                tidalLink={TidalURL}
+                spotifyLink={SpotifyURL}
+                soundcloudLink={SoundcloudURL}
+                releaseType={ReleaseType}
+                releaseDate={ReleaseDate}
+                youtubeLink={YoutubeURL}
+              />
+            )
+          )}
+        </Discography>
+      )}
     </div>
   );
 };
