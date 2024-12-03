@@ -55,7 +55,25 @@ const About = () => {
     };
     fetchAboutPage();
   }, []);
-  console.log(about);
+
+  const RenderDescription = () => {
+    return about?.Description.map((paragraphs) => (
+      <p key={paragraphs.type} className="mb-4 text-2xl">
+        {paragraphs.children.map((child) => child.text).join(" ")}
+      </p>
+    ));
+  };
+
+  const RenderPhotos = () => {
+    return about?.AboutPhotos.photos.map((photo) => (
+      <img
+        className="object-cover snap-center"
+        key={photo.id}
+        src={photo.url}
+        alt={`profile-img-${photo.id}`}
+      />
+    ));
+  };
 
   return (
     <div className="flex flex-grow flex-col mt-16 text-white">
@@ -70,7 +88,7 @@ const About = () => {
           first-letter:font-extrabold first-letter:text-4xl
           first-line:italic"
               >
-                {`${about?.Description[0].children[0].text}`}
+                <RenderDescription />
               </div>
               {/* 
         TODO: refine carousel to be this.
@@ -80,14 +98,7 @@ const About = () => {
                 id="carousel"
                 className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-[42vw] mx-auto"
               >
-                {about?.AboutPhotos.photos.map((photo, i) => (
-                  <img
-                    className="object-cover snap-center"
-                    key={i}
-                    src={photo.url}
-                    alt={`"profile-img-${photo.id}"`}
-                  />
-                ))}
+                <RenderPhotos />
               </div>
             </div>
             <br />
