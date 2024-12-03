@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="grid bg-black text-md text-white w-screen pb-3 bottom-0">
       <a
-        className="flex justify-center pt-5 -mb-5"
+        className="flex justify-center py-5 md:-mb-5"
         href="https://www.instagram.com/whitenoisercrds/"
         aria-label="white-noise-ig-link"
         rel="noopener noreferrer"

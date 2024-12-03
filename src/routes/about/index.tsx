@@ -36,6 +36,16 @@ type AboutData = {
     id: number;
     photos: PhotoType[];
   };
+  pointOfContact: {
+    fullName: string;
+    email: string;
+    phoneNumber: string;
+  }[];
+  pressHighlight: {
+    title: string;
+    subtitle: string;
+    url: string;
+  }[];
 };
 
 const About = () => {
@@ -48,6 +58,7 @@ const About = () => {
       try {
         const response = await getAboutPage();
         setAbout(response);
+        console.log(response);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -76,7 +87,17 @@ const About = () => {
     ));
   };
 
-  console.log(about);
+  const RenderPOCs = () => {
+    return about?.pointOfContact.map(({ fullName, email, phoneNumber }) => (
+      <PointOfContact {...{ fullName, email, phoneNumber }} />
+    ));
+  };
+
+  const RenderPress = () => {
+    return about?.pressHighlight.map(({ title, subtitle, url }) => (
+      <PressHighlight {...{ title, subtitle, url }} />
+    ));
+  };
 
   return (
     <div className="flex flex-grow flex-col mt-16 text-white">
@@ -106,60 +127,18 @@ const About = () => {
             </div>
             <br />
           </div>
-          <div className="flex flex-wrap flex-row justify-center">
+          <div className="flex flex-wrap flex-row p-10">
             <div className="text-center">
-              <div>
-                <div className="text-center py-5 underline text-5xl font-extrabold">
-                  press highlights
-                </div>
-                <PressHighlight
-                  title={`"john white | record label founder"`}
-                  subtitle={"write-up by Shoutout LA"}
-                  url={
-                    "https://shoutoutla.com/meet-john-white-artist-record-label-founder/"
-                  }
-                />
-                <PressHighlight
-                  title={`"meet john white"`}
-                  subtitle={"write-up by Bold Journey"}
-                  url={"https://boldjourney.com/news/meet-john-white/"}
-                />
-                <PressHighlight
-                  title={`"FAMILY EP"`}
-                  subtitle={"review by The Permanent Rain Press"}
-                  url={
-                    "https://thepermanentrainpress.com/post/714147558303449088/john-white-family-review"
-                  }
-                />
-                <PressHighlight
-                  title={`"Conversations with John White"`}
-                  subtitle={"write-up by Voyage LA"}
-                  url={
-                    "https://voyagela.com/interview/conversations-with-john-white/"
-                  }
-                />
-                <PressHighlight
-                  title={`"Meet John Dominguez"`}
-                  subtitle={"interview with Voyage LA"}
-                  url={
-                    "https://voyagela.com/interview/meet-john-dominguez-john-white-norwalk/"
-                  }
-                />
-
-                <div className="text-center">
-                  <div className="text-lg">
-                    <div className="underline text-4xl pb-5 font-extrabold">
-                      contact:
-                    </div>
-                    <PointOfContact
-                      fullName="Daniel Espitia"
-                      email="copamgmtt@gmail.com"
-                    />
-                    <PointOfContact
-                      fullName="Victor M. Rocha"
-                      email="victor@245management.com"
-                    />
+              <div className="text-center py-5 underline text-5xl font-extrabold">
+                press highlights
+              </div>
+              <RenderPress />
+              <div className="">
+                <div className="text-lg">
+                  <div className="underline text-4xl pb-5 font-extrabold">
+                    contact:
                   </div>
+                  <RenderPOCs />
                 </div>
               </div>
               <div className="flex flex-wrap justify-center">
