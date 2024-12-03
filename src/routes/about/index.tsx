@@ -8,6 +8,7 @@ import { getAboutPage } from "../../api/getAboutData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
 import pageTransition from "../../util/transitionPage";
+import PointOfContact from "../../components/point-of-contact";
 
 type DescriptionType = {
   type: string;
@@ -74,6 +75,8 @@ const About = () => {
       />
     ));
   };
+
+  console.log(about);
 
   return (
     <div className="flex flex-grow flex-col mt-16 text-white">
@@ -148,28 +151,14 @@ const About = () => {
                     <div className="underline text-4xl pb-5 font-extrabold">
                       contact:
                     </div>
-                    <div className="pb-2">
-                      <p>Daniel Espitia</p>
-                      <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-                        <a
-                          className="italic underline font-extrabold"
-                          href="mailto:copamgmtt@gmail.com"
-                        >
-                          copamgmtt@gmail.com
-                        </a>
-                      </p>
-                    </div>
-                    <div className="pb-2">
-                      <p>Victor M. Rocha</p>
-                      <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-                        <a
-                          className="italic underline font-extrabold"
-                          href="mailto:victor@245management.com"
-                        >
-                          victor@245management.com
-                        </a>
-                      </p>
-                    </div>
+                    <PointOfContact
+                      fullName="Daniel Espitia"
+                      email="copamgmtt@gmail.com"
+                    />
+                    <PointOfContact
+                      fullName="Victor M. Rocha"
+                      email="victor@245management.com"
+                    />
                   </div>
                 </div>
               </div>
