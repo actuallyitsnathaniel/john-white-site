@@ -24,6 +24,18 @@ type PhotoType = {
   };
 };
 
+type PointOfContact = {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+};
+
+type PressHighlight = {
+  title: string;
+  subtitle: string;
+  url: string;
+};
+
 type AboutData = {
   id: number;
   documentId: string;
@@ -36,16 +48,8 @@ type AboutData = {
     id: number;
     photos: PhotoType[];
   };
-  pointOfContact: {
-    fullName: string;
-    email: string;
-    phoneNumber: string;
-  }[];
-  pressHighlight: {
-    title: string;
-    subtitle: string;
-    url: string;
-  }[];
+  pointOfContact: PointOfContact[];
+  pressHighlight: PressHighlight[];
 };
 
 const About = () => {
