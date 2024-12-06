@@ -113,8 +113,7 @@ const About = () => {
             <div className="flex flex-wrap justify-around md:pb-10 items-center">
               <div
                 className="lg:px-14 pb-10 text-justify lg:w-[55%] md:text-3xl 
-          first-letter:font-extrabold first-letter:text-4xl
-          first-line:italic"
+          first-letter:font-extrabold first-letter:text-4xl"
               >
                 <RenderDescription />
               </div>
