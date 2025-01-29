@@ -3,7 +3,7 @@ import { getMusicPage } from "../../api/getMusicData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
 import pageTransition from "../../util/transitionPage";
-import { localizedToday } from "../../util/utils";
+import { todayPST } from "../../util/utils";
 
 type FetchedDisc = {
   AppleMusicURL?: string;
@@ -31,8 +31,11 @@ const Music = () => {
         const { discography } = await getMusicPage();
 
         // Filter out music that's not out yet
+        discography.forEach((disc: FetchedDisc) => {
+          console.log(disc.Title, disc.ReleaseDate);
+        });
         const releasedMusic = discography.filter(
-          (disc: FetchedDisc) => disc.ReleaseDate >= localizedToday
+          (disc: FetchedDisc) => disc.ReleaseDate <= todayPST
         );
         setMusic(releasedMusic);
       } catch (error) {
