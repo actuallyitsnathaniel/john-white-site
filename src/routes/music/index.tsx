@@ -3,6 +3,7 @@ import { getMusicPage } from "../../api/getMusicData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
 import pageTransition from "../../util/transitionPage";
+import { localizedToday } from "../../util/utils";
 
 type FetchedDisc = {
   AppleMusicURL?: string;
@@ -28,7 +29,12 @@ const Music = () => {
       setIsLoading(true);
       try {
         const { discography } = await getMusicPage();
-        setMusic(discography);
+
+        // Filter out music that's not out yet
+        const releasedMusic = discography.filter(
+          (disc: FetchedDisc) => disc.ReleaseDate >= localizedToday
+        );
+        setMusic(releasedMusic);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {

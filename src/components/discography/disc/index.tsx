@@ -25,13 +25,13 @@ const Disc = ({
   tidalLink,
   youtubeLink,
   releaseType,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   releaseDate,
   webLink,
   artwork,
   title,
 }: DiscType) => {
   const [focused, setFocused] = useState(false);
-  console.log(typeof releaseDate);
   return (
     <div
       className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}

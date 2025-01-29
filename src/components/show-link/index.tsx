@@ -1,9 +1,11 @@
 import venmo from "../../assets/images/icons/venmo.svg";
+import { dateParser, localizedToday } from "../../util/utils";
 
 const ShowLink = ({
   price,
   priceText,
   venmoPrice,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   date,
   link,
   artists,
@@ -33,25 +35,14 @@ const ShowLink = ({
     );
   };
 
-  // Get today's date in Los Angeles time zone
-  const localToday = new Date().toLocaleString("en-US", {
-    timeZone: "America/Los_Angeles",
-  });
-  const parsedDate = `${new Date(localToday).getFullYear()}-${String(
-    new Date(localToday).getMonth() + 1
-  ).padStart(2, "0")}-${String(new Date(localToday).getDate()).padStart(
-    2,
-    "0"
-  )}`;
+  const parsedDate = dateParser(localizedToday);
 
   // Parse the show date
   const showDateObj = new Date(`${parsedDate}`.replace(/th|st|rd/g, ""));
   const showLocalDate = new Date(
     showDateObj.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
-  );
-  const showDate = `${showLocalDate.getFullYear()}-${String(
-    showLocalDate.getMonth() + 1
-  ).padStart(2, "0")}-${String(showLocalDate.getDate()).padStart(2, "0")}`;
+  ).toString();
+  const showDate = dateParser(showLocalDate);
 
   return (
     parsedDate <= showDate && (
