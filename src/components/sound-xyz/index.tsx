@@ -22,12 +22,6 @@ const Item = ({ soundURL, id }: { soundURL: string; id?: string }) => {
   );
 };
 
-// TODO: figure out why suspense isn't working ?
-// https://arc.net/l/quote/yurqdzxu
-// const Loading = () => {
-//   return <h2>⏲ Loading...</h2>;
-// };
-
 const SoundXYZGallery = ({ children }: { children: JSX.Element[] }) => {
   return (
     <div id="sound-xyz-releases" className="p-5 md:px-28">

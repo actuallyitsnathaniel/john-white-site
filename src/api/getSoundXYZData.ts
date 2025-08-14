@@ -23,6 +23,10 @@ query AllArtistReleases {
           node {
             title
             id
+            artist {
+              name
+              id
+            }
           }
         }
         pageInfo {

@@ -7,16 +7,14 @@ import { getSoundXYZSongs } from "../../api/getSoundXYZData";
 const Merch = () => {
   const soundXyzReleases = getSoundXYZSongs;
 
-  const releases: unknown[] = [];
-
-  soundXyzReleases.map((release: { node: { id: number } }) => {
-    releases.push(release.node.id);
-  });
+  const johnWhiteReleases = soundXyzReleases
+    .filter((release: { node: { artist: { name: string } } }) => release.node.artist.name === "John White")
+    .map((release: { node: { id: number } }) => release.node.id);
 
   return (
     <div className="flex flex-col mt-14 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
       <SoundXYZGallery>
-        {React.Children.map(releases, (release) => {
+        {React.Children.map(johnWhiteReleases, (release) => {
           return (
             <SoundXYZGallery.Item
               soundURL={`https://embed.sound.xyz/v1/release/${release}?referral=0x35493e493e0d2001eda31bd7fb8859f961a227ce&referral_source=embed-sound`}
