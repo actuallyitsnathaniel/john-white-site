@@ -12,7 +12,7 @@ const MusicEmbedFallback = () => (
 export const MusicLinks = memo(() => {
   return (
     <div className="text-white text-[150%] md:text-4xl font-semibold px-3 h-max">
-      <div className="p-6 text-center">"42" EP, out now</div>
+      <div className="p-6 text-center">“Murphy’s Law” (Deluxe), out now</div>
       <div className="flex flex-wrap justify-center drop-shadow-xl gap-3">
         <Suspense fallback={<MusicEmbedFallback />}>
           <SpotifyEmbed />
@@ -28,4 +28,4 @@ export const MusicLinks = memo(() => {
   );
 });
 
-MusicLinks.displayName = 'MusicLinks';
+MusicLinks.displayName = "MusicLinks";

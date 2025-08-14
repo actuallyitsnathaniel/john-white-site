@@ -10,8 +10,13 @@ export default [
       sourceType: 'module',
       parser: tsparser,
       globals: {
-        browser: true,
-        es2021: true,
+        fetch: 'readonly',
+        console: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        localStorage: 'readonly',
+        sessionStorage: 'readonly',
+        navigator: 'readonly',
       },
     },
     plugins: {
