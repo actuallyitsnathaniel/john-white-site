@@ -8,7 +8,7 @@ const pageTransition = (OgComponent: JSX.ElementType) => {
       exit={{ opacity: 0, translateX: -15 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 0.2, delay: 0.07 }}
-      className="h-full flex justify-stretch flex-grow"
+      className="h-full flex justify-stretch grow"
     >
       <OgComponent />
     </motion.div>

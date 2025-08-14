@@ -51,7 +51,7 @@ const Music = () => {
   );
 
   return (
-    <div className="flex flex-grow flex-col mt-16 text-white">
+    <div className="flex grow flex-col mt-16 text-white">
       {isLoading ? (
         <Loading />
       ) : (

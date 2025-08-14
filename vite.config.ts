@@ -4,6 +4,7 @@ import svgr from "vite-plugin-svgr";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import preload from "vite-plugin-preload";
 import graphqlLoader from "vite-plugin-graphql-loader";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 // eslint-disable-next-line no-unused-vars
@@ -12,6 +13,7 @@ export default defineConfig(() => {
   return {
     base: "",
     plugins: [
+      tailwindcss(),
       react(),
       svgr(),
       ViteImageOptimizer({
@@ -70,10 +72,29 @@ export default defineConfig(() => {
       },
       target: "ES2022",
       outDir: "./build",
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+            router: ['react-router-dom'],
+            motion: ['framer-motion']
+          }
+        }
+      },
+      chunkSizeWarningLimit: 1000,
+      minify: 'esbuild',
+      sourcemap: false,
     },
     server: {
       open: true,
       port: 3000,
+      hmr: {
+        overlay: false,
+      },
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+      exclude: ['@vercel/analytics'],
     },
   };
 });

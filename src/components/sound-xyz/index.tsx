@@ -6,7 +6,7 @@ const Item = ({ soundURL, id }: { soundURL: string; id?: string }) => {
 
   return (
     <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-tl from-black rounded-lg w-72 h-48" />
+      <div className="absolute inset-0 bg-linear-to-tl from-black rounded-lg w-72 h-48" />
       <iframe
         ref={iframeRef}
         src={soundURL}

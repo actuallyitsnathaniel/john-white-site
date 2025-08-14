@@ -1,16 +1,20 @@
-const SpotifyLink = () => {
+import { memo } from "react";
+
+const SpotifyLink = memo(() => {
   return (
     <a
-      className="transition-all duration-100 p-3 md:hover:-translate-y-2"
+      className="transition-all duration-100 p-3 md:hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
       href="https://open.spotify.com/artist/1UVoyard7BA5KdbK6JdTPx?si=X0Rbv1oYTLCQOSU_54E7bg"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Follow John White on Spotify"
     >
       <svg
         version="1.0"
         viewBox="7.37 7.31 135.84 135.5"
         xmlns="http://www.w3.org/2000/svg"
-        className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] fill-white hover:scale-110 "
+        className="transition ease-in-out duration-100 h-16 w-16 rounded-[15px] fill-white hover:scale-110"
+        aria-hidden="true"
       >
         <metadata>
           Created by potrace 1.10, written by Peter Selinger 2001-2011
@@ -27,6 +31,8 @@ const SpotifyLink = () => {
       </svg>
     </a>
   );
-};
+});
+
+SpotifyLink.displayName = 'SpotifyLink';
 
 export default SpotifyLink;

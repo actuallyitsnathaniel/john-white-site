@@ -1,27 +1,40 @@
-import { Dispatch, SetStateAction } from "react";
+import { memo, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 
-export const NavItem = ({
+interface NavItemProps {
+  pageTitle: string;
+  label: string;
+  to: string;
+  setExpanded: (value: boolean) => void;
+}
+
+export const NavItem = memo<NavItemProps>(({
   pageTitle,
   label,
   to,
   setExpanded,
-}: {
-  pageTitle: string;
-  label: string;
-  to: string;
-  setExpanded: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const handleClick = useCallback(() => {
+    setExpanded(false);
+  }, [setExpanded]);
+
+  const isActive = useMemo(() => pageTitle === label, [pageTitle, label]);
+
+  const linkClassName = useMemo(() => 
+    `transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-yellow-200 hover:underline underline-offset-4 ${
+      isActive ? "ease-in hidden md:block text-yellow-100 md:scale-110 underline" : ""
+    }`, [isActive]
+  );
+
   return (
     <Link
-      className={`transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-yellow-200 hover:underline underline-offset-4 ${
-        pageTitle == label &&
-        "ease-in hidden md:block text-yellow-100 md:scale-110 underline"
-      }`}
+      className={linkClassName}
       to={to}
-      onClick={() => setExpanded(false)}
+      onClick={handleClick}
     >
       {label}
     </Link>
   );
-};
+});
+
+NavItem.displayName = 'NavItem';
