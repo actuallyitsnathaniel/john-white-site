@@ -35,9 +35,10 @@ const Disc = ({
   return (
     <div
       className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}
-      id={`disc-${id}`}
+      id={`disc-${id}-wrapper`}
     >
       <div
+        id={`disc-${id}`}
         className={"relative h-72 w-72 mx-auto"}
         onMouseLeave={() => {
           setFocused(false);
