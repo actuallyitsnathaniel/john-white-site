@@ -1,13 +1,38 @@
-import { memo, useMemo } from "react";
+import { memo, useMemo, useEffect, useState } from "react";
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-logo";
 import { MusicLinks } from "../../components/music-embeds";
-
-const YOUTUBE_ID = "TMLFuisEc1A";
+import { getYoutubeVideoID, getHeaderTitle } from "../../api/getHomeData";
 
 const Home = memo(() => {
-  const youtubeUrl = useMemo(() => 
-    `https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?rel=0&preload=metadata`, 
-    []
+  const [YOUTUBE_ID, setYoutubeId] = useState("TMLFuisEc1A");
+  const [headerTitle, setHeaderTitle] = useState('"Murphy\'s Law" (Deluxe), out now');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [id, title] = await Promise.all([
+          getYoutubeVideoID(),
+          getHeaderTitle()
+        ]);
+        
+        if (id) {
+          setYoutubeId(id);
+        }
+        if (title) {
+          setHeaderTitle(title);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const youtubeUrl = useMemo(
+    () =>
+      `https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?rel=0&preload=metadata`,
+    [YOUTUBE_ID]
   );
 
   return (
@@ -29,12 +54,18 @@ const Home = memo(() => {
         loading="lazy"
       />
       <div>
+        <div
+          id="header-title"
+          className="p-6 text-center text-white text-[150%] md:text-4xl font-semibold "
+        >
+          {headerTitle}
+        </div>
         <MusicLinks />
       </div>
     </div>
   );
 });
 
-Home.displayName = 'Home';
+Home.displayName = "Home";
 
 export default Home;

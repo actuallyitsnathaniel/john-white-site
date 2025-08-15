@@ -1,4 +1,10 @@
-const AppleMusicEmbed = () => {
+interface AppleMusicEmbedProps {
+  appleMusicUrl?: string;
+}
+
+const AppleMusicEmbed = ({ appleMusicUrl }: AppleMusicEmbedProps) => {
+  if (!appleMusicUrl) return null;
+
   return (
     <iframe
       title="apple-music-embedded"
@@ -7,7 +13,7 @@ const AppleMusicEmbed = () => {
         borderRadius: "26px",
         padding: "1vh",
       }}
-      src={"https://embed.music.apple.com/us/album/42-ep/1778810224"}
+      src={appleMusicUrl}
       loading="lazy"
       sandbox={
         "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"

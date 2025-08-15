@@ -1,4 +1,10 @@
-export default function YoutubePlayistEmbed() {
+interface YoutubeEmbedProps {
+  youtubeUrl?: string;
+}
+
+export default function YoutubePlayistEmbed({ youtubeUrl }: YoutubeEmbedProps) {
+  if (!youtubeUrl) return null;
+
   return (
     <iframe
       height="470px"
@@ -8,9 +14,7 @@ export default function YoutubePlayistEmbed() {
         borderRadius: "26px",
         padding: "1vh",
       }}
-      src={
-        "https://www.youtube.com/embed/videoseries?si=goNU39Ryjx7dIqOT&amp;list=PLTfQR4eBUNuoWBp5h4Z_u7clPMIoQXn9y"
-      }
+      src={youtubeUrl}
       allow={
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       }

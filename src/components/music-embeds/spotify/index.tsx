@@ -1,12 +1,11 @@
 import { memo, useMemo } from 'react';
 
-const SPOTIFY_ALBUM_ID = '6sQQYK5eWrPxxgCIvL5iVL';
+interface SpotifyEmbedProps {
+  spotifyUrl?: string;
+}
 
-const SpotifyEmbed = memo(() => {
-  const spotifyUrl = useMemo(() => 
-    `https://open.spotify.com/embed/album/${SPOTIFY_ALBUM_ID}?utm_source=generator&theme=0`, 
-    []
-  );
+const SpotifyEmbed = memo(({ spotifyUrl }: SpotifyEmbedProps) => {
+  if (!spotifyUrl) return null;
 
   const embedStyle = useMemo(() => ({
     borderRadius: "26px",
@@ -16,7 +15,7 @@ const SpotifyEmbed = memo(() => {
   return (
     <iframe
       className="h-[418px] sm:h-[470px] md:h-[470px] w-72"
-      title="John White - 42 EP on Spotify"
+      title="John White on Spotify"
       style={embedStyle}
       src={spotifyUrl}
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
