@@ -56,6 +56,7 @@ type AboutData = {
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [about, setAbout] = useState<AboutData>();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const fetchAboutPage = async () => {
@@ -90,6 +91,18 @@ const About = () => {
         alt={`profile-img-${photo.id}`}
       />
     ));
+  };
+
+  const scrollToSlide = (index: number) => {
+    const carousel = document.getElementById("carousel");
+    if (carousel && about) {
+      const slideWidth = carousel.offsetWidth;
+      carousel.scrollTo({
+        left: slideWidth * index,
+        behavior: "smooth"
+      });
+      setCurrentSlide(index);
+    }
   };
 
   const RenderPOCs = () => {
@@ -138,15 +151,32 @@ const About = () => {
               >
                 <RenderDescription />
               </div>
-              {/* 
+              {/*
         TODO: refine carousel to be this.
         https://stackoverflow.com/questions/59198952/using-document-queryselector-in-react-should-i-use-refs-instead-how
          */}
-              <div
-                id="carousel"
-                className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit lg:w-[42vw] mx-auto"
-              >
-                <RenderPhotos />
+              <div className="relative lg:w-[42vw] mx-auto">
+                <div
+                  id="carousel"
+                  className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit"
+                >
+                  <RenderPhotos />
+                </div>
+                {/* Carousel navigation dots */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {about?.AboutPhotos.photos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => scrollToSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-all ${
+                        currentSlide === index
+                          ? "bg-white w-8"
+                          : "bg-white/50 hover:bg-white/75"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
             <br />
