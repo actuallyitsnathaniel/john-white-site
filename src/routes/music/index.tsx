@@ -27,21 +27,25 @@ const Music = () => {
   const [music, setMusic] = useState<FetchedDisc[]>([]); // Initialized as empty array
 
   useEffect(() => {
-    const CACHE_KEY = 'john-white-music-data';
+    const CACHE_KEY = "john-white-music-data";
     const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
-    const loadCachedImages = async (discography: FetchedDisc[]): Promise<FetchedDisc[]> => {
+    const loadCachedImages = async (
+      discography: FetchedDisc[]
+    ): Promise<FetchedDisc[]> => {
       const promises = discography.map(async (disc) => {
         if (disc.CoverArt?.url) {
           try {
             // Get cached blob URL (will fetch and cache if not already cached)
-            const cachedUrl = await musicCache.getCachedImage(disc.CoverArt.url);
+            const cachedUrl = await musicCache.getCachedImage(
+              disc.CoverArt.url
+            );
             return {
               ...disc,
               CoverArt: {
                 ...disc.CoverArt,
-                cachedUrl: cachedUrl || disc.CoverArt.url
-              }
+                cachedUrl: cachedUrl || disc.CoverArt.url,
+              },
             };
           } catch (error) {
             console.error(`Error loading image for ${disc.Title}:`, error);
@@ -56,10 +60,13 @@ const Music = () => {
 
     const fetchMusicPage = async () => {
       setIsLoading(true);
-      
+
       try {
         // Check IndexedDB cache first
-        const cachedMusic = await musicCache.getData<FetchedDisc[]>(CACHE_KEY, CACHE_DURATION);
+        const cachedMusic = await musicCache.getData<FetchedDisc[]>(
+          CACHE_KEY,
+          CACHE_DURATION
+        );
 
         let musicData: FetchedDisc[];
 
@@ -87,7 +94,7 @@ const Music = () => {
         setIsLoading(false);
       }
     };
-    
+
     fetchMusicPage();
   }, []);
   const sortedMusic = music.sort(
@@ -99,19 +106,19 @@ const Music = () => {
       <SEO
         title="Music"
         description="Stream John White's complete discography including albums, EPs, and singles. Available on Spotify, Apple Music, YouTube, and more."
-        url="https://johnwhitemusic.com/music"
+        url="https://johnwhitesmusic.com/music"
         type="music.album"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "MusicGroup",
-          "name": "John White",
-          "url": "https://johnwhitemusic.com",
-          "genre": ["Hip Hop", "Rap"],
-          "album": sortedMusic.map(disc => ({
+          name: "John White",
+          url: "https://johnwhitesmusic.com",
+          genre: ["Hip Hop", "Rap"],
+          album: sortedMusic.map((disc) => ({
             "@type": "MusicAlbum",
-            "name": disc.Title,
-            "datePublished": disc.ReleaseDate
-          }))
+            name: disc.Title,
+            datePublished: disc.ReleaseDate,
+          })),
         }}
       />
       <h1 className="sr-only">John White Music - Complete Discography</h1>
@@ -120,35 +127,35 @@ const Music = () => {
           <Loading />
         ) : (
           <Discography>
-          {sortedMusic.map(
-            ({
-              AppleMusicURL,
-              CoverArt,
-              ReleaseDate,
-              ReleaseType,
-              id,
-              SoundcloudURL,
-              SpotifyURL,
-              TidalURL,
-              Title,
-              YoutubeURL,
-            }: FetchedDisc) => (
-              <Discography.Disc
-                key={id}
-                artwork={CoverArt.cachedUrl || CoverArt.url}
-                appleMusicLink={AppleMusicURL}
-                id={id}
-                title={Title}
-                tidalLink={TidalURL}
-                spotifyLink={SpotifyURL}
-                soundcloudLink={SoundcloudURL}
-                releaseType={ReleaseType}
-                releaseDate={ReleaseDate}
-                youtubeLink={YoutubeURL}
-              />
-            )
-          )}
-        </Discography>
+            {sortedMusic.map(
+              ({
+                AppleMusicURL,
+                CoverArt,
+                ReleaseDate,
+                ReleaseType,
+                id,
+                SoundcloudURL,
+                SpotifyURL,
+                TidalURL,
+                Title,
+                YoutubeURL,
+              }: FetchedDisc) => (
+                <Discography.Disc
+                  key={id}
+                  artwork={CoverArt.cachedUrl || CoverArt.url}
+                  appleMusicLink={AppleMusicURL}
+                  id={id}
+                  title={Title}
+                  tidalLink={TidalURL}
+                  spotifyLink={SpotifyURL}
+                  soundcloudLink={SoundcloudURL}
+                  releaseType={ReleaseType}
+                  releaseDate={ReleaseDate}
+                  youtubeLink={YoutubeURL}
+                />
+              )
+            )}
+          </Discography>
         )}
       </div>
     </>

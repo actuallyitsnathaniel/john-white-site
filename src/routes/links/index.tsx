@@ -14,41 +14,41 @@ const Links = () => {
       <SEO
         title="Links"
         description="Follow John White on social media and streaming platforms. Find links to Spotify, Apple Music, YouTube, Instagram, and more."
-        url="https://johnwhitemusic.com/links"
+        url="https://johnwhitesmusic.com/links"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ProfilePage",
-          "name": "John White Links",
-          "url": "https://johnwhitemusic.com/links"
+          name: "John White Links",
+          url: "https://johnwhitesmusic.com/links",
         }}
       />
       <div className="text-center text-white">
-      <Link to={"/"}>
-        <div className="mx-auto my-auto md:w-1/4 pt-16">
-          <JohnWhiteLogo />
-        </div>
-      </Link>
-      <h1 className="text-[200%] md:text-6xl py-6 font-semibold italic">
-        links
-      </h1>
-      <div className="flex flex-wrap justify-center px-8">
-        <div className="px-6">
-          <SpotifyLink />
-        </div>
-        <div className="px-6">
-          <AppleMusic />
-        </div>
-        <div className="px-6">
-          <YoutubeLogo />
-        </div>
-        <div className="px-6">
-          <InstagramLogo />
-        </div>
-        <div className="px-6">
-          <GmailLogo />
+        <Link to={"/"}>
+          <div className="mx-auto my-auto md:w-1/4 pt-16">
+            <JohnWhiteLogo />
+          </div>
+        </Link>
+        <h1 className="text-[200%] md:text-6xl py-6 font-semibold italic">
+          links
+        </h1>
+        <div className="flex flex-wrap justify-center px-8">
+          <div className="px-6">
+            <SpotifyLink />
+          </div>
+          <div className="px-6">
+            <AppleMusic />
+          </div>
+          <div className="px-6">
+            <YoutubeLogo />
+          </div>
+          <div className="px-6">
+            <InstagramLogo />
+          </div>
+          <div className="px-6">
+            <GmailLogo />
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };

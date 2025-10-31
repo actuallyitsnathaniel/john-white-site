@@ -6,12 +6,12 @@ const Contact = () => {
       <SEO
         title="Contact"
         description="Get in touch with John White for bookings, collaborations, and inquiries."
-        url="https://johnwhitemusic.com/contact"
+        url="https://johnwhitesmusic.com/contact"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contact John White",
-          "url": "https://johnwhitemusic.com/contact"
+          name: "Contact John White",
+          url: "https://johnwhitesmusic.com/contact",
         }}
       />
       <h1 className="sr-only">Contact John White</h1>

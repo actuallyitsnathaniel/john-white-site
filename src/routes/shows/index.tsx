@@ -10,49 +10,49 @@ const Shows = () => {
       <SEO
         title="Shows & Tour Dates"
         description="Check out upcoming John White live performances, concerts, and tour dates. Get tickets and see John White perform live."
-        url="https://johnwhitemusic.com/shows"
+        url="https://johnwhitesmusic.com/shows"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "MusicEvent",
-          "name": "John White Live Performances",
-          "performer": {
+          name: "John White Live Performances",
+          performer: {
             "@type": "MusicGroup",
-            "name": "John White"
-          }
+            name: "John White",
+          },
         }}
       />
       <h1 className="sr-only">John White Shows & Tour Dates</h1>
       <main className="flex flex-wrap h-screen font-semibold mt-16 text-center px-3 text-white justify-center text-3xl">
-      <div className="md:p-3 lowercase">
-        <ShowLink
-          link="https://venmo.com/whitenoiserecords?txn=charge&amount=20"
-          artists="son of mars | john white | KUYO"
-          venue="LOS GLOBOS"
-          venueAddress="3040 W Sunset Blvd. Los Angeles, CA 90026"
-          thumbnail={sonOfMars}
-          date="november 13th, 2024"
-          venmoPrice="$20"
-          alt="the-moroccan-nov-13th"
-        />
-        <ShowLink
-          link="https://new.hotelcafe.com/event/not-another-showcase-19/"
-          artists="artist showcase | john white"
-          date="sep 24th, 2024"
-          venue="hotel cafe, los angeles, ca"
-          thumbnail={lucas_flood_showcase}
-          alt="hotel-cafe-sep-24th"
-        />
+        <div className="md:p-3 lowercase">
+          <ShowLink
+            link="https://venmo.com/whitenoiserecords?txn=charge&amount=20"
+            artists="son of mars | john white | KUYO"
+            venue="LOS GLOBOS"
+            venueAddress="3040 W Sunset Blvd. Los Angeles, CA 90026"
+            thumbnail={sonOfMars}
+            date="november 13th, 2024"
+            venmoPrice="$20"
+            alt="the-moroccan-nov-13th"
+          />
+          <ShowLink
+            link="https://new.hotelcafe.com/event/not-another-showcase-19/"
+            artists="artist showcase | john white"
+            date="sep 24th, 2024"
+            venue="hotel cafe, los angeles, ca"
+            thumbnail={lucas_flood_showcase}
+            alt="hotel-cafe-sep-24th"
+          />
 
-        <ShowLink
-          link="https://www.tixr.com/groups/breakingsoundla/events/breaking-sound-la-at-adults-only-09-04-112822"
-          artists="john white | sam denton | ryland"
-          date="sep 4th, 2024"
-          venue="adults only, los angeles, ca"
-          thumbnail={breaking_sound}
-          alt="adults-only-sep-4th"
-        />
-      </div>
-    </main>
+          <ShowLink
+            link="https://www.tixr.com/groups/breakingsoundla/events/breaking-sound-la-at-adults-only-09-04-112822"
+            artists="john white | sam denton | ryland"
+            date="sep 4th, 2024"
+            venue="adults only, los angeles, ca"
+            thumbnail={breaking_sound}
+            alt="adults-only-sep-4th"
+          />
+        </div>
+      </main>
     </>
   );
 };

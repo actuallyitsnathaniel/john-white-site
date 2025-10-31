@@ -98,7 +98,7 @@ const About = () => {
       const slideWidth = carousel.offsetWidth;
       carousel.scrollTo({
         left: slideWidth * index,
-        behavior: "smooth"
+        behavior: "smooth",
       });
       setCurrentSlide(index);
     }
@@ -121,19 +121,19 @@ const About = () => {
       <SEO
         title="About"
         description="Learn more about John White - musician, artist, and performer. Biography, press highlights, and contact information."
-        url="https://johnwhitemusic.com/about"
+        url="https://johnwhitesmusic.com/about"
         type="profile"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Person",
-          "name": "John White",
-          "url": "https://johnwhitemusic.com",
-          "jobTitle": "Musician",
-          "sameAs": [
-            "https://www.youtube.com/@johnwhitemusic",
+          name: "John White",
+          url: "https://johnwhitesmusic.com",
+          jobTitle: "Musician",
+          sameAs: [
+            "https://www.youtube.com/@johnwhitesmusic",
             "https://open.spotify.com/artist/johnwhite",
-            "https://music.apple.com/artist/johnwhite"
-          ]
+            "https://music.apple.com/artist/johnwhite",
+          ],
         }}
       />
       <h1 className="sr-only">About John White</h1>
@@ -141,68 +141,68 @@ const About = () => {
         {isLoading ? (
           <Loading />
         ) : (
-        <div className="text-2xl">
-          <div className="flex flex-wrap p-10 mx-auto">
-            <div className="flex flex-wrap justify-around md:pb-10 items-center">
-              <div
-                className="lg:px-14 pb-10 text-justify lg:w-[55%] md:text-3xl 
+          <div className="text-2xl">
+            <div className="flex flex-wrap p-10 mx-auto">
+              <div className="flex flex-wrap justify-around md:pb-10 items-center">
+                <div
+                  className="lg:px-14 pb-10 text-justify lg:w-[55%] md:text-3xl 
           first-letter:font-extrabold first-letter:text-4xl"
-              >
-                <RenderDescription />
-              </div>
-              {/*
+                >
+                  <RenderDescription />
+                </div>
+                {/*
         TODO: refine carousel to be this.
         https://stackoverflow.com/questions/59198952/using-document-queryselector-in-react-should-i-use-refs-instead-how
          */}
-              <div className="relative lg:w-[42vw] mx-auto">
-                <div
-                  id="carousel"
-                  className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit"
-                >
-                  <RenderPhotos />
-                </div>
-                {/* Carousel navigation dots */}
-                <div className="flex justify-center gap-2 mt-4">
-                  {about?.AboutPhotos.photos.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => scrollToSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        currentSlide === index
-                          ? "bg-white w-8"
-                          : "bg-white/50 hover:bg-white/75"
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <br />
-          </div>
-          <div className="flex flex-wrap flex-row p-10">
-            <div className="text-center">
-              <div className="text-center py-5 underline text-5xl font-extrabold">
-                press highlights
-              </div>
-              <RenderPress />
-              <div className="">
-                <div className="text-lg">
-                  <div className="underline text-4xl pb-5 font-extrabold">
-                    contact:
+                <div className="relative lg:w-[42vw] mx-auto">
+                  <div
+                    id="carousel"
+                    className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit"
+                  >
+                    <RenderPhotos />
                   </div>
-                  <RenderPOCs />
+                  {/* Carousel navigation dots */}
+                  <div className="flex justify-center gap-2 mt-4">
+                    {about?.AboutPhotos.photos.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => scrollToSlide(index)}
+                        className={`w-3 h-3 rounded-full transition-all ${
+                          currentSlide === index
+                            ? "bg-white w-8"
+                            : "bg-white/50 hover:bg-white/75"
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-wrap justify-center">
-                <SpotifyLink />
-                <AppleMusic />
-                <YoutubeLogo />
-                <InstagramLogo />
+              <br />
+            </div>
+            <div className="flex flex-wrap flex-row p-10">
+              <div className="text-center">
+                <div className="text-center py-5 underline text-5xl font-extrabold">
+                  press highlights
+                </div>
+                <RenderPress />
+                <div className="">
+                  <div className="text-lg">
+                    <div className="underline text-4xl pb-5 font-extrabold">
+                      contact:
+                    </div>
+                    <RenderPOCs />
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center">
+                  <SpotifyLink />
+                  <AppleMusic />
+                  <YoutubeLogo />
+                  <InstagramLogo />
+                </div>
               </div>
             </div>
           </div>
-        </div>
         )}
       </div>
     </>

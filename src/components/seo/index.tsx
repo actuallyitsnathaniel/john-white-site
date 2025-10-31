@@ -12,12 +12,14 @@ interface SEOProps {
 const SEO = ({
   title = "John White - Musician & Artist",
   description = "Official website of John White. Stream music, watch videos, and stay updated with latest releases and tour dates.",
-  image = "https://johnwhitemusic.com/john-white-og-image.jpg",
-  url = "https://johnwhitemusic.com",
+  image = "https://johnwhitesmusic.com/john-white-og-image.jpg",
+  url = "https://johnwhitesmusic.com",
   type = "website",
   jsonLd,
 }: SEOProps) => {
-  const fullTitle = title.includes("John White") ? title : `${title} | John White`;
+  const fullTitle = title.includes("John White")
+    ? title
+    : `${title} | John White`;
 
   useHead({
     meta: [
@@ -39,7 +41,9 @@ const SEO = ({
       { name: "twitter:image", content: image },
     ],
     link: [{ rel: "canonical", href: url }],
-    script: jsonLd ? [{ type: "application/ld+json", innerHTML: JSON.stringify(jsonLd) }] : [],
+    script: jsonLd
+      ? [{ type: "application/ld+json", innerHTML: JSON.stringify(jsonLd) }]
+      : [],
   });
 
   return null;

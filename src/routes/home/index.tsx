@@ -43,16 +43,16 @@ const Home = memo(() => {
       <SEO
         title="John White - Musician & Artist"
         description="Official website of John White. Stream the latest music, watch videos, and stay updated with new releases and tour dates. 'Murphy's Law' (Deluxe) out now."
-        url="https://johnwhitemusic.com"
+        url="https://johnwhitesmusic.com"
         type="music.song"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "MusicGroup",
           name: "John White",
-          url: "https://johnwhitemusic.com",
+          url: "https://johnwhitesmusic.com",
           genre: ["Hip Hop", "Rap"],
           sameAs: [
-            "https://www.youtube.com/@johnwhitemusic",
+            "https://www.youtube.com/@johnwhitesmusic",
             "https://open.spotify.com/artist/johnwhite",
             "https://music.apple.com/artist/johnwhite",
           ],
