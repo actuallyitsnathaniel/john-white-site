@@ -30,11 +30,12 @@ const Music = () => {
     const CACHE_KEY = 'john-white-music-data';
     const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
-    const cacheImages = async (discography: FetchedDisc[]): Promise<FetchedDisc[]> => {
+    const loadCachedImages = async (discography: FetchedDisc[]): Promise<FetchedDisc[]> => {
       const promises = discography.map(async (disc) => {
         if (disc.CoverArt?.url) {
           try {
-            const cachedUrl = await musicCache.cacheImage(disc.CoverArt.url);
+            // Get cached blob URL (will fetch and cache if not already cached)
+            const cachedUrl = await musicCache.getCachedImage(disc.CoverArt.url);
             return {
               ...disc,
               CoverArt: {
@@ -43,7 +44,7 @@ const Music = () => {
               }
             };
           } catch (error) {
-            console.error(`Error caching image for ${disc.Title}:`, error);
+            console.error(`Error loading image for ${disc.Title}:`, error);
             return disc;
           }
         }
@@ -56,28 +57,30 @@ const Music = () => {
     const fetchMusicPage = async () => {
       setIsLoading(true);
       
-      // Check IndexedDB cache first
-      const cachedMusic = await musicCache.getData<FetchedDisc[]>(CACHE_KEY, CACHE_DURATION);
-      if (cachedMusic) {
-        setMusic(cachedMusic);
-        setIsLoading(false);
-        return;
-      }
-
       try {
-        const { discography } = await getMusicPage();
+        // Check IndexedDB cache first
+        const cachedMusic = await musicCache.getData<FetchedDisc[]>(CACHE_KEY, CACHE_DURATION);
 
-        // Filter out music that's not out yet
-        const releasedMusic = discography.filter(
-          (disc: FetchedDisc) => disc.ReleaseDate <= todayPST
-        );
-        
-        // Cache images in background and update data
-        const musicWithCachedImages = await cacheImages(releasedMusic);
-        
-        // Cache the complete data with cached images
-        await musicCache.setData(CACHE_KEY, musicWithCachedImages);
-        setMusic(musicWithCachedImages);
+        let musicData: FetchedDisc[];
+
+        if (cachedMusic) {
+          musicData = cachedMusic;
+        } else {
+          // Fetch from API
+          const { discography } = await getMusicPage();
+
+          // Filter out music that's not out yet
+          musicData = discography.filter(
+            (disc: FetchedDisc) => disc.ReleaseDate <= todayPST
+          );
+
+          // Cache the data (without blob URLs)
+          await musicCache.setData(CACHE_KEY, musicData);
+        }
+
+        // Load images from cache (creates fresh blob URLs)
+        const musicWithImages = await loadCachedImages(musicData);
+        setMusic(musicWithImages);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {

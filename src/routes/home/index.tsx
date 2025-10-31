@@ -6,16 +6,18 @@ import SEO from "../../components/seo";
 
 const Home = memo(() => {
   const [YOUTUBE_ID, setYoutubeId] = useState("TMLFuisEc1A");
-  const [headerTitle, setHeaderTitle] = useState('"Murphy\'s Law" (Deluxe), out now');
+  const [headerTitle, setHeaderTitle] = useState(
+    '"Murphy\'s Law" (Deluxe), out now'
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [id, title] = await Promise.all([
           getYoutubeVideoID(),
-          getHeaderTitle()
+          getHeaderTitle(),
         ]);
-        
+
         if (id) {
           setYoutubeId(id);
         }
@@ -46,43 +48,45 @@ const Home = memo(() => {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "MusicGroup",
-          "name": "John White",
-          "url": "https://johnwhitemusic.com",
-          "genre": ["Hip Hop", "Rap"],
-          "sameAs": [
+          name: "John White",
+          url: "https://johnwhitemusic.com",
+          genre: ["Hip Hop", "Rap"],
+          sameAs: [
             "https://www.youtube.com/@johnwhitemusic",
             "https://open.spotify.com/artist/johnwhite",
-            "https://music.apple.com/artist/johnwhite"
-          ]
+            "https://music.apple.com/artist/johnwhite",
+          ],
         }}
       />
-      <h1 className="sr-only">John White - Musician & Artist - Official Website</h1>
-      <div className="grid text-white text-center">
+      <h1 className="sr-only">
+        John White - Musician & Artist - Official Website
+      </h1>
+      <div className="grid text-white text-center w-screen">
         <div className="flex justify-center items-center h-screen">
           <JohnWhiteLogo />
           <p className="grid absolute bottom-0 m-auto left-0 right-0 text-5xl py-2 animate-bounce">
             ↡
           </p>
         </div>
-      <iframe
-        height={315}
-        width="100%"
-        className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105"
-        src={youtubeUrl}
-        title="John White - Music Video"
-        allowFullScreen
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-        loading="lazy"
-      />
-      <div>
-        <div
-          id="header-title"
-          className="p-6 text-center text-white text-[150%] md:text-4xl font-semibold "
-        >
-          {headerTitle}
+        <iframe
+          height={315}
+          width="100%"
+          className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105"
+          src={youtubeUrl}
+          title="John White - Music Video"
+          allowFullScreen
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+          loading="lazy"
+        />
+        <div>
+          <div
+            id="header-title"
+            className="p-6 text-center text-white text-[150%] md:text-4xl font-semibold "
+          >
+            {headerTitle}
+          </div>
+          <MusicLinks />
         </div>
-        <MusicLinks />
-      </div>
       </div>
     </>
   );

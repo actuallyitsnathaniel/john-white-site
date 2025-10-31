@@ -86,32 +86,26 @@ class IndexedDBCache {
     }
   }
 
-  async cacheImage(url: string): Promise<string | null> {
+  private async cacheImage(url: string): Promise<string | null> {
     try {
-      // Check if image is already cached
-      const cachedImage = await this.getCachedImage(url);
-      if (cachedImage) {
-        return cachedImage;
-      }
-
       // Fetch and cache the image
       const response = await fetch(url);
       if (!response.ok) throw new Error(`Failed to fetch image: ${response.status}`);
-      
+
       const blob = await response.blob();
-      
+
       const db = await this.openDB();
       const transaction = db.transaction([this.imageStoreName], 'readwrite');
       const store = transaction.objectStore(this.imageStoreName);
-      
+
       await new Promise<void>((resolve, reject) => {
         const request = store.put({ url, blob, timestamp: Date.now() });
         request.onsuccess = () => resolve();
         request.onerror = () => reject(request.error);
       });
-      
+
       db.close();
-      
+
       // Return object URL for immediate use
       return URL.createObjectURL(blob);
     } catch (error) {
@@ -125,7 +119,7 @@ class IndexedDBCache {
       const db = await this.openDB();
       const transaction = db.transaction([this.imageStoreName], 'readonly');
       const store = transaction.objectStore(this.imageStoreName);
-      
+
       interface CachedImageData {
         url: string;
         blob: Blob;
@@ -137,14 +131,16 @@ class IndexedDBCache {
         request.onsuccess = () => resolve(request.result);
         request.onerror = () => reject(request.error);
       });
-      
+
       db.close();
-      
+
       if (result?.blob) {
+        // Create a fresh blob URL from the cached blob
         return URL.createObjectURL(result.blob);
       }
-      
-      return null;
+
+      // If not cached, fetch and cache it now
+      return await this.cacheImage(url);
     } catch (error) {
       console.error('Error retrieving cached image:', error);
       return null;

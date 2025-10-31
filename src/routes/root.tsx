@@ -31,7 +31,7 @@ const Root = () => {
       <div id="root" className="">
         <FilmGrainEffect />
         <VideoBackground />
-        <div className="flex flex-col min-h-screen w-screen justify-between [&>*]:animate-appear">
+        <div className="flex flex-col min-h-screen w-full justify-between [&>*]:animate-appear">
           <AnimatePresence mode="wait">
             <NavBar />
             <ErrorBoundary fallback={<Loading />}>
