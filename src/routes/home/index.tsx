@@ -2,6 +2,7 @@ import { memo, useMemo, useEffect, useState } from "react";
 import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-logo";
 import { MusicLinks } from "../../components/music-embeds";
 import { getYoutubeVideoID, getHeaderTitle } from "../../api/getHomeData";
+import SEO from "../../components/seo";
 
 const Home = memo(() => {
   const [YOUTUBE_ID, setYoutubeId] = useState("TMLFuisEc1A");
@@ -36,13 +37,33 @@ const Home = memo(() => {
   );
 
   return (
-    <div className="grid text-white text-center">
-      <div className="flex justify-center items-center h-screen">
-        <JohnWhiteLogo />
-        <p className="grid absolute bottom-0 m-auto left-0 right-0 text-5xl py-2 animate-bounce">
-          ↡
-        </p>
-      </div>
+    <>
+      <SEO
+        title="John White - Musician & Artist"
+        description="Official website of John White. Stream the latest music, watch videos, and stay updated with new releases and tour dates. 'Murphy's Law' (Deluxe) out now."
+        url="https://johnwhitemusic.com"
+        type="music.song"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MusicGroup",
+          "name": "John White",
+          "url": "https://johnwhitemusic.com",
+          "genre": ["Hip Hop", "Rap"],
+          "sameAs": [
+            "https://www.youtube.com/@johnwhitemusic",
+            "https://open.spotify.com/artist/johnwhite",
+            "https://music.apple.com/artist/johnwhite"
+          ]
+        }}
+      />
+      <h1 className="sr-only">John White - Musician & Artist - Official Website</h1>
+      <div className="grid text-white text-center">
+        <div className="flex justify-center items-center h-screen">
+          <JohnWhiteLogo />
+          <p className="grid absolute bottom-0 m-auto left-0 right-0 text-5xl py-2 animate-bounce">
+            ↡
+          </p>
+        </div>
       <iframe
         height={315}
         width="100%"
@@ -62,7 +83,8 @@ const Home = memo(() => {
         </div>
         <MusicLinks />
       </div>
-    </div>
+      </div>
+    </>
   );
 });
 

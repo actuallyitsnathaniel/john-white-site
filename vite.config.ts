@@ -56,11 +56,13 @@ export default defineConfig(() => {
         gif: {},
         webp: {
           // https://sharp.pixelplumbing.com/api-output#webp
-          lossless: true,
+          lossless: false,
+          quality: 80,
         },
         avif: {
           // https://sharp.pixelplumbing.com/api-output#avif
-          lossless: true,
+          lossless: false,
+          quality: 75,
         },
       }),
       preload(),

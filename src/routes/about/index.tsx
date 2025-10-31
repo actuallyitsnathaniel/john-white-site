@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
 import pageTransition from "../../util/transitionPage";
 import PointOfContact from "../../components/point-of-contact";
+import SEO from "../../components/seo";
 
 type DescriptionType = {
   type: string;
@@ -104,10 +105,30 @@ const About = () => {
   };
 
   return (
-    <div className="flex grow flex-col mt-16 text-white">
-      {isLoading ? (
-        <Loading />
-      ) : (
+    <>
+      <SEO
+        title="About"
+        description="Learn more about John White - musician, artist, and performer. Biography, press highlights, and contact information."
+        url="https://johnwhitemusic.com/about"
+        type="profile"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "John White",
+          "url": "https://johnwhitemusic.com",
+          "jobTitle": "Musician",
+          "sameAs": [
+            "https://www.youtube.com/@johnwhitemusic",
+            "https://open.spotify.com/artist/johnwhite",
+            "https://music.apple.com/artist/johnwhite"
+          ]
+        }}
+      />
+      <h1 className="sr-only">About John White</h1>
+      <div className="flex grow flex-col mt-16 text-white">
+        {isLoading ? (
+          <Loading />
+        ) : (
         <div className="text-2xl">
           <div className="flex flex-wrap p-10 mx-auto">
             <div className="flex flex-wrap justify-around md:pb-10 items-center">
@@ -153,8 +174,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 

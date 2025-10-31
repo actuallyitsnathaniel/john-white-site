@@ -5,6 +5,7 @@ import Loading from "../../components/loading";
 import pageTransition from "../../util/transitionPage";
 import { todayPST } from "../../util/utils";
 import { musicCache } from "../../util/indexedDBCache";
+import SEO from "../../components/seo";
 
 type FetchedDisc = {
   AppleMusicURL?: string;
@@ -92,11 +93,31 @@ const Music = () => {
   );
 
   return (
-    <div className="flex grow flex-col mt-16 text-white">
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Discography>
+    <>
+      <SEO
+        title="Music"
+        description="Stream John White's complete discography including albums, EPs, and singles. Available on Spotify, Apple Music, YouTube, and more."
+        url="https://johnwhitemusic.com/music"
+        type="music.album"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MusicGroup",
+          "name": "John White",
+          "url": "https://johnwhitemusic.com",
+          "genre": ["Hip Hop", "Rap"],
+          "album": sortedMusic.map(disc => ({
+            "@type": "MusicAlbum",
+            "name": disc.Title,
+            "datePublished": disc.ReleaseDate
+          }))
+        }}
+      />
+      <h1 className="sr-only">John White Music - Complete Discography</h1>
+      <div className="flex grow flex-col mt-16 text-white">
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <Discography>
           {sortedMusic.map(
             ({
               AppleMusicURL,
@@ -125,8 +146,9 @@ const Music = () => {
             )
           )}
         </Discography>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 

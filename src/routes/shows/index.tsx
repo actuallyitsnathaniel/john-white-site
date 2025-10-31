@@ -2,10 +2,27 @@ import ShowLink from "../../components/show-link";
 import breaking_sound from "../../assets/images/thumbnails/breaking-sound.png";
 import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
 import sonOfMars from "../../assets/images/thumbnails/jw-sons-of-mars-nov.jpg";
+import SEO from "../../components/seo";
 
 const Shows = () => {
   return (
-    <main className="flex flex-wrap h-screen font-semibold mt-16 text-center px-3 text-white justify-center text-3xl">
+    <>
+      <SEO
+        title="Shows & Tour Dates"
+        description="Check out upcoming John White live performances, concerts, and tour dates. Get tickets and see John White perform live."
+        url="https://johnwhitemusic.com/shows"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MusicEvent",
+          "name": "John White Live Performances",
+          "performer": {
+            "@type": "MusicGroup",
+            "name": "John White"
+          }
+        }}
+      />
+      <h1 className="sr-only">John White Shows & Tour Dates</h1>
+      <main className="flex flex-wrap h-screen font-semibold mt-16 text-center px-3 text-white justify-center text-3xl">
       <div className="md:p-3 lowercase">
         <ShowLink
           link="https://venmo.com/whitenoiserecords?txn=charge&amount=20"
@@ -36,6 +53,7 @@ const Shows = () => {
         />
       </div>
     </main>
+    </>
   );
 };
 

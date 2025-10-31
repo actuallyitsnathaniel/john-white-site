@@ -3,6 +3,7 @@
 import SoundXYZGallery from "../../components/sound-xyz";
 import React from "react";
 import { getSoundXYZSongs } from "../../api/getSoundXYZData";
+import SEO from "../../components/seo";
 
 const Merch = () => {
   const soundXyzReleases = getSoundXYZSongs;
@@ -12,8 +13,21 @@ const Merch = () => {
     .map((release: { node: { id: number } }) => release.node.id);
 
   return (
-    <div className="flex flex-col mt-14 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
-      <SoundXYZGallery>
+    <>
+      <SEO
+        title="Digital Collectibles"
+        description="Shop exclusive digital releases and collectibles from John White. Limited edition NFT music and digital merchandise."
+        url="https://johnwhitemusic.com/digitals"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "John White Digital Collectibles",
+          "url": "https://johnwhitemusic.com/digitals"
+        }}
+      />
+      <h1 className="sr-only">John White Digital Collectibles & Merchandise</h1>
+      <div className="flex flex-col mt-14 h-full w-screen justify-center mx-auto text-center text-4xl text-white">
+        <SoundXYZGallery>
         {React.Children.map(johnWhiteReleases, (release) => {
           return (
             <SoundXYZGallery.Item
@@ -23,7 +37,8 @@ const Merch = () => {
         })}
       </SoundXYZGallery>
       {/* 👕🧢 */}
-    </div>
+      </div>
+    </>
   );
 };
 

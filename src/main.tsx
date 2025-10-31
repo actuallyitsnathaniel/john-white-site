@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Root from "./routes/root";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createHead, UnheadProvider } from "@unhead/react/client";
 
 // Preconnect to external domains for faster resource loading
 const preconnectDomains = [
@@ -18,15 +19,18 @@ preconnectDomains.forEach(domain => {
   document.head.appendChild(link);
 });
 
+const head = createHead();
 const rootElement = document.getElementById("root")!;
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/*" element={<Root />} />
-      </Routes>
-    </Router>
+    <UnheadProvider head={head}>
+      <Router>
+        <Routes>
+          <Route path="/*" element={<Root />} />
+        </Routes>
+      </Router>
+    </UnheadProvider>
   </React.StrictMode>
 );
