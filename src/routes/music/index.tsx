@@ -132,6 +132,7 @@ const Music = () => {
               YoutubeURL,
             }: FetchedDisc) => (
               <Discography.Disc
+                key={id}
                 artwork={CoverArt.cachedUrl || CoverArt.url}
                 appleMusicLink={AppleMusicURL}
                 id={id}

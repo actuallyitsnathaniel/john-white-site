@@ -10,7 +10,7 @@ interface DiscProps {
   tidalLink?: string;
   youtubeLink?: string;
   webLink?: string;
-  releaseDate: string;
+  releaseDate?: string;
   releaseType: "single" | "album" | "ep" | "appearance";
   artwork?: string;
   title?: string;
@@ -25,7 +25,7 @@ const Disc = memo<DiscProps>(({
   tidalLink,
   youtubeLink,
   releaseType,
-  releaseDate,
+  releaseDate: _releaseDate,
   webLink,
   artwork,
   title,

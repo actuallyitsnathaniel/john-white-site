@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, ReactElement } from "react";
 
 const Item = ({ soundURL, id }: { soundURL: string; id?: string }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,7 +22,7 @@ const Item = ({ soundURL, id }: { soundURL: string; id?: string }) => {
   );
 };
 
-const SoundXYZGallery = ({ children }: { children: JSX.Element[] }) => {
+const SoundXYZGallery = ({ children }: { children: ReactElement[] }) => {
   return (
     <div id="sound-xyz-releases" className="p-5 md:px-28">
       <h1 className="p-5">digital collectibles</h1>
@@ -32,7 +32,7 @@ const SoundXYZGallery = ({ children }: { children: JSX.Element[] }) => {
       >
         {React.Children.map(children, (child, i) => {
           console.log(child);
-          return React.cloneElement(child, { i });
+          return React.cloneElement(child, { key: i });
         })}
       </div>
     </div>

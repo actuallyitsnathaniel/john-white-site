@@ -20,7 +20,6 @@ const SEO = ({
   const fullTitle = title.includes("John White") ? title : `${title} | John White`;
 
   useHead({
-    title: fullTitle,
     meta: [
       { name: "title", content: fullTitle },
       { name: "description", content: description },
@@ -40,7 +39,7 @@ const SEO = ({
       { name: "twitter:image", content: image },
     ],
     link: [{ rel: "canonical", href: url }],
-    script: jsonLd ? [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }] : [],
+    script: jsonLd ? [{ type: "application/ld+json", innerHTML: JSON.stringify(jsonLd) }] : [],
   });
 
   return null;

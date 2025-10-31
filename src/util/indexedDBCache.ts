@@ -32,7 +32,7 @@ class IndexedDBCache {
     });
   }
 
-  async setData(key: string, data: any, cacheDuration: number = 30 * 60 * 1000): Promise<void> {
+  async setData(key: string, data: any): Promise<void> {
     try {
       const db = await this.openDB();
       const transaction = db.transaction([this.storeName], 'readwrite');

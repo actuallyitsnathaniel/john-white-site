@@ -5,12 +5,12 @@ interface SpotifyEmbedProps {
 }
 
 const SpotifyEmbed = memo(({ spotifyUrl }: SpotifyEmbedProps) => {
-  if (!spotifyUrl) return null;
-
   const embedStyle = useMemo(() => ({
     borderRadius: "26px",
     padding: "1vh",
   }), []);
+
+  if (!spotifyUrl) return null;
 
   return (
     <iframe

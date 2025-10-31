@@ -7,9 +7,7 @@ import graphqlLoader from "vite-plugin-graphql-loader";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
-// eslint-disable-next-line no-unused-vars
 export default defineConfig(() => {
-  // eslint-disable-next-line no-undef
   return {
     base: "",
     plugins: [

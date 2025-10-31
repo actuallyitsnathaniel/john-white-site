@@ -71,7 +71,7 @@ export const useWebVitals = () => {
             ...prev,
             'First Contentful Paint': navEntry.loadEventEnd - navEntry.loadEventStart,
             'DOM Content Loaded': navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart,
-            'Load Complete': navEntry.loadEventEnd - navEntry.navigationStart,
+            'Load Complete': navEntry.loadEventEnd - navEntry.fetchStart,
           }));
         }
         

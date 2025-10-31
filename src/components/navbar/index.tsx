@@ -17,6 +17,8 @@ const TITLE_MAP = [
   { path: "/links", title: "links" },
 ] as const;
 
+type RoutePath = typeof TITLE_MAP[number]['path'];
+
 const usePageTitle = (location: string) => {
   const [pageTitle, setPageTitle] = useState("");
 
@@ -25,7 +27,7 @@ const usePageTitle = (location: string) => {
   }, []);
 
   useEffect(() => {
-    const title = titleMapLookup.get(location);
+    const title = titleMapLookup.get(location as RoutePath);
     if (title) {
       setPageTitle(title);
       document.title = `john white - ${title}`;

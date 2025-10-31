@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
+import { ComponentType } from "react";
 
-const pageTransition = (OgComponent: JSX.ElementType) => {
-  return () => (
+const pageTransition = (OgComponent: ComponentType) => {
+  const TransitionWrapper = () => (
     <motion.div
       id="slide-in"
       initial={{ opacity: 0, x: 15 }}
@@ -13,5 +14,9 @@ const pageTransition = (OgComponent: JSX.ElementType) => {
       <OgComponent />
     </motion.div>
   );
+
+  TransitionWrapper.displayName = `pageTransition(${OgComponent.displayName || OgComponent.name || 'Component'})`;
+
+  return TransitionWrapper;
 };
 export default pageTransition;

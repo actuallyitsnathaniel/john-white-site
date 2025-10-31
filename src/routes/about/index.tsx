@@ -25,13 +25,13 @@ type PhotoType = {
   };
 };
 
-type PointOfContact = {
+type PointOfContactType = {
   fullName: string;
   email: string;
   phoneNumber: string;
 };
 
-type PressHighlight = {
+type PressHighlightType = {
   title: string;
   subtitle: string;
   url: string;
@@ -49,8 +49,8 @@ type AboutData = {
     id: number;
     photos: PhotoType[];
   };
-  pointOfContact: PointOfContact[];
-  pressHighlight: PressHighlight[];
+  pointOfContact: PointOfContactType[];
+  pressHighlight: PressHighlightType[];
 };
 
 const About = () => {
@@ -107,13 +107,13 @@ const About = () => {
 
   const RenderPOCs = () => {
     return about?.pointOfContact.map(({ fullName, email, phoneNumber }) => (
-      <PointOfContact {...{ fullName, email, phoneNumber }} />
+      <PointOfContact key={email} {...{ fullName, email, phoneNumber }} />
     ));
   };
 
   const RenderPress = () => {
     return about?.pressHighlight.map(({ title, subtitle, url }) => (
-      <PressHighlight {...{ title, subtitle, url }} />
+      <PressHighlight key={url} {...{ title, subtitle, url }} />
     ));
   };
 
