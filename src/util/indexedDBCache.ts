@@ -1,5 +1,5 @@
-interface CacheData {
-  data: any;
+interface CacheData<T = unknown> {
+  data: T;
   timestamp: number;
   images?: { [url: string]: Blob };
 }
@@ -32,13 +32,13 @@ class IndexedDBCache {
     });
   }
 
-  async setData(key: string, data: any): Promise<void> {
+  async setData<T = unknown>(key: string, data: T): Promise<void> {
     try {
       const db = await this.openDB();
       const transaction = db.transaction([this.storeName], 'readwrite');
       const store = transaction.objectStore(this.storeName);
       
-      const cacheData: CacheData = {
+      const cacheData: CacheData<T> = {
         data,
         timestamp: Date.now(),
       };
@@ -55,13 +55,13 @@ class IndexedDBCache {
     }
   }
 
-  async getData(key: string, cacheDuration: number = 30 * 60 * 1000): Promise<any> {
+  async getData<T = unknown>(key: string, cacheDuration: number = 30 * 60 * 1000): Promise<T | null> {
     try {
       const db = await this.openDB();
       const transaction = db.transaction([this.storeName], 'readonly');
       const store = transaction.objectStore(this.storeName);
-      
-      const result = await new Promise<any>((resolve, reject) => {
+
+      const result = await new Promise<CacheData<T> | undefined>((resolve, reject) => {
         const request = store.get(key);
         request.onsuccess = () => resolve(request.result);
         request.onerror = () => reject(request.error);
@@ -126,7 +126,13 @@ class IndexedDBCache {
       const transaction = db.transaction([this.imageStoreName], 'readonly');
       const store = transaction.objectStore(this.imageStoreName);
       
-      const result = await new Promise<any>((resolve, reject) => {
+      interface CachedImageData {
+        url: string;
+        blob: Blob;
+        timestamp: number;
+      }
+
+      const result = await new Promise<CachedImageData | undefined>((resolve, reject) => {
         const request = store.get(url);
         request.onsuccess = () => resolve(request.result);
         request.onerror = () => reject(request.error);

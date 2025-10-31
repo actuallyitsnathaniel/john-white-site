@@ -7,7 +7,6 @@ import PressHighlight from "../../components/press-highlight/index.js";
 import { getAboutPage } from "../../api/getAboutData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
-import pageTransition from "../../util/transitionPage";
 import PointOfContact from "../../components/point-of-contact";
 import SEO from "../../components/seo";
 
@@ -210,4 +209,4 @@ const About = () => {
   );
 };
 
-export default pageTransition(About);
+export default About;

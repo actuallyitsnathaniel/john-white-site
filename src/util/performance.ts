@@ -3,6 +3,7 @@
  */
 
 // Debounce function with proper TypeScript types
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => void>(
   func: T,
   wait: number,
@@ -26,6 +27,7 @@ export function debounce<T extends (...args: any[]) => void>(
 }
 
 // Throttle function with proper TypeScript types
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function throttle<T extends (...args: any[]) => void>(
   func: T,
   limit: number
@@ -42,6 +44,7 @@ export function throttle<T extends (...args: any[]) => void>(
 }
 
 // Memoization function for expensive computations
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function memoize<Args extends any[], Return>(
   fn: (...args: Args) => Return
 ): (...args: Args) => Return {

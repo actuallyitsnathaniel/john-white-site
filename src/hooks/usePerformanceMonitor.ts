@@ -31,8 +31,17 @@ export const usePerformanceMonitor = (componentName: string) => {
         lastTime.current = now;
 
         // Measure memory usage (if available)
-        const memoryUsage = (performance as any).memory 
-          ? (performance as any).memory.usedJSHeapSize / 1024 / 1024 // MB
+        // Chrome-specific PerformanceMemory API
+        interface PerformanceWithMemory extends Performance {
+          memory?: {
+            usedJSHeapSize: number;
+            totalJSHeapSize: number;
+            jsHeapSizeLimit: number;
+          };
+        }
+        const perfWithMemory = performance as PerformanceWithMemory;
+        const memoryUsage = perfWithMemory.memory
+          ? perfWithMemory.memory.usedJSHeapSize / 1024 / 1024 // MB
           : 0;
 
         setMetrics({

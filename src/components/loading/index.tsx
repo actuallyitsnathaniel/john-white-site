@@ -1,5 +1,3 @@
-import pageTransition from "../../util/transitionPage";
-
 const Loading = () => {
   return (
     <div className="flex grow justify-center items-center">
@@ -8,4 +6,4 @@ const Loading = () => {
   );
 };
 
-export default pageTransition(Loading);
+export default Loading;

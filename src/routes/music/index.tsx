@@ -2,7 +2,6 @@ import Discography from "../../components/discography";
 import { getMusicPage } from "../../api/getMusicData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
-import pageTransition from "../../util/transitionPage";
 import { todayPST } from "../../util/utils";
 import { musicCache } from "../../util/indexedDBCache";
 import SEO from "../../components/seo";
@@ -58,7 +57,7 @@ const Music = () => {
       setIsLoading(true);
       
       // Check IndexedDB cache first
-      const cachedMusic = await musicCache.getData(CACHE_KEY, CACHE_DURATION);
+      const cachedMusic = await musicCache.getData<FetchedDisc[]>(CACHE_KEY, CACHE_DURATION);
       if (cachedMusic) {
         setMusic(cachedMusic);
         setIsLoading(false);
@@ -77,7 +76,7 @@ const Music = () => {
         const musicWithCachedImages = await cacheImages(releasedMusic);
         
         // Cache the complete data with cached images
-        await musicCache.setData(CACHE_KEY, musicWithCachedImages, CACHE_DURATION);
+        await musicCache.setData(CACHE_KEY, musicWithCachedImages);
         setMusic(musicWithCachedImages);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -153,4 +152,4 @@ const Music = () => {
   );
 };
 
-export default pageTransition(Music);
+export default Music;

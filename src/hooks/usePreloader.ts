@@ -35,12 +35,13 @@ export const usePreloader = (resources: string[]): PreloaderState => {
       }));
     };
 
-    const handleError = (error: any) => {
+    const handleError = (error: unknown) => {
       hasError = true;
+      const errorMessage = error instanceof Error ? error.message : 'Failed to load resources';
       setState(prev => ({
         ...prev,
         isLoading: false,
-        error: error.message || 'Failed to load resources',
+        error: errorMessage,
       }));
     };
 

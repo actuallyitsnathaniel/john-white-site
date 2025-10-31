@@ -9,6 +9,7 @@ import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Loading from "../components/loading";
 import ErrorBoundary from "../components/error-boundary";
+import PageTransition from "../components/page-transition";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -35,16 +36,16 @@ const Root = () => {
             <NavBar />
             <ErrorBoundary fallback={<Loading />}>
               <Suspense fallback={<Loading />}>
-                <Routes location={location}>
-                  <Route index element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/links" element={<Links />} />
-                  <Route path="/digitals" element={<Merch />} />
-                  <Route path="/music" element={<Music />} />
-                  <Route path="/shows" element={<Shows />} />
-                  <Route path="/secret" element={<Secret />} />
-                  <Route path="*" element={<ErrorPage />} />
+                <Routes location={location} key={location.pathname}>
+                  <Route index element={<PageTransition><Home /></PageTransition>} />
+                  <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+                  <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+                  <Route path="/links" element={<PageTransition><Links /></PageTransition>} />
+                  <Route path="/digitals" element={<PageTransition><Merch /></PageTransition>} />
+                  <Route path="/music" element={<PageTransition><Music /></PageTransition>} />
+                  <Route path="/shows" element={<PageTransition><Shows /></PageTransition>} />
+                  <Route path="/secret" element={<PageTransition><Secret /></PageTransition>} />
+                  <Route path="*" element={<PageTransition><ErrorPage /></PageTransition>} />
                 </Routes>
               </Suspense>
             </ErrorBoundary>
