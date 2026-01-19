@@ -41,6 +41,6 @@
     "typescript": "^5.9.2",
     "vite": "^7.1.2",
     "vite-plugin-graphql-loader": "^4.0.4",
-    "vite-plugin-image-optimizer": "^2.0.2"
+    "vite-plugin-image-optimizer": "^2.0.3"
   }
 }
