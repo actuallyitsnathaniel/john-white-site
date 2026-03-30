@@ -14,7 +14,7 @@ const SpotifyEmbed = memo(({ spotifyUrl }: SpotifyEmbedProps) => {
 
   return (
     <iframe
-      className="h-[418px] sm:h-[470px] md:h-[470px] w-72"
+      className="h-[418px] sm:h-[470px] md:h-[470px] w-72 max-w-full"
       title="John White on Spotify"
       style={embedStyle}
       src={spotifyUrl}

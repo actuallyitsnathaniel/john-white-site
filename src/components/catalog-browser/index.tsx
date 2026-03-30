@@ -1,7 +1,6 @@
 import { useRef, useMemo, memo, useState, useEffect } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { motion } from "motion/react";
-import CanvasText from "../canvas-text";
+import { motion, AnimatePresence } from "motion/react";
 import Disc from "../discography/disc";
 
 interface CatalogDisc {
@@ -23,11 +22,10 @@ interface CatalogBrowserProps {
   items: CatalogDisc[];
 }
 
-type SectionType = "singles / EPs" | "albums" | "appears on";
+const TABS = ["singles / EPs", "albums", "appears on"] as const;
+type Tab = (typeof TABS)[number];
 
-type Row =
-  | { kind: "header"; label: SectionType }
-  | { kind: "disc-row"; discs: CatalogDisc[] };
+type Row = { kind: "disc-row"; discs: CatalogDisc[] };
 
 const DISC_SIZE = 312; // 288px card + 24px padding
 const DISC_ROW_HEIGHT = DISC_SIZE + 48; // card + title label
@@ -39,41 +37,27 @@ function getColCount(vw: number): number {
   return 1;
 }
 
-/** Build a flat row list from sorted discs. */
 function buildRows(items: CatalogDisc[], cols: number): Row[] {
-  const sections: { label: SectionType; discs: CatalogDisc[] }[] = [
-    {
-      label: "singles / EPs",
-      discs: items.filter(
-        (d) => d.releaseType === "single" || d.releaseType === "ep"
-      ),
-    },
-    {
-      label: "albums",
-      discs: items.filter((d) => d.releaseType === "album"),
-    },
-    {
-      label: "appears on",
-      discs: items.filter((d) => d.releaseType === "appearance"),
-    },
-  ];
-
   const rows: Row[] = [];
-
-  for (const section of sections) {
-    if (section.discs.length === 0) continue;
-    rows.push({ kind: "header", label: section.label });
-    for (let i = 0; i < section.discs.length; i += cols) {
-      rows.push({ kind: "disc-row", discs: section.discs.slice(i, i + cols) });
-    }
+  for (let i = 0; i < items.length; i += cols) {
+    rows.push({ kind: "disc-row", discs: items.slice(i, i + cols) });
   }
-
   return rows;
+}
+
+function filterByTab(items: CatalogDisc[], tab: Tab): CatalogDisc[] {
+  if (tab === "singles / EPs")
+    return items.filter(
+      (d) => d.releaseType === "single" || d.releaseType === "ep",
+    );
+  if (tab === "albums") return items.filter((d) => d.releaseType === "album");
+  return items.filter((d) => d.releaseType === "appearance");
 }
 
 const CatalogBrowser = memo<CatalogBrowserProps>(({ items }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [vw, setVw] = useState(() => window.innerWidth);
+  const [activeTab, setActiveTab] = useState<Tab>("singles / EPs");
 
   useEffect(() => {
     const onResize = () => setVw(window.innerWidth);
@@ -81,103 +65,123 @@ const CatalogBrowser = memo<CatalogBrowserProps>(({ items }) => {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0 });
+  }, [activeTab]);
+
   const cols = useMemo(() => getColCount(vw), [vw]);
-  const isMobile = vw < 600;
-  const sectionHeaderHeight = isMobile ? 80 : 120;
-  const headerFontSize = isMobile ? 36 : 60;
 
-  const rows = useMemo(() => buildRows(items, cols), [items, cols]);
+  const tabCounts = useMemo(
+    () => ({
+      "singles / EPs": items.filter(
+        (d) => d.releaseType === "single" || d.releaseType === "ep",
+      ).length,
+      albums: items.filter((d) => d.releaseType === "album").length,
+      "appears on": items.filter((d) => d.releaseType === "appearance").length,
+    }),
+    [items],
+  );
 
-  const estimateSize = (index: number): number => {
-    const row = rows[index];
-    if (!row) return DISC_ROW_HEIGHT;
-    if (row.kind === "header") return sectionHeaderHeight;
-    return DISC_ROW_HEIGHT;
-  };
+  const tabItems = useMemo(
+    () => filterByTab(items, activeTab),
+    [items, activeTab],
+  );
+  const rows = useMemo(() => buildRows(tabItems, cols), [tabItems, cols]);
 
   const virtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => scrollRef.current,
-    estimateSize,
+    estimateSize: () => DISC_ROW_HEIGHT,
     overscan: 3,
   });
 
   return (
     <div
-      ref={scrollRef}
-      className="w-full overflow-y-auto"
-      style={{
-        height: "calc(100dvh - 4rem)",
-        scrollbarWidth: "none",
-        overscrollBehavior: "contain",
-      }}
+      className="flex flex-col w-full"
+      style={{ height: "calc(100dvh - 4rem)" }}
     >
-      <div
-        style={{
-          height: `${virtualizer.getTotalSize()}px`,
-          position: "relative",
-          width: "100%",
-        }}
-      >
-        {virtualizer.getVirtualItems().map((virtualRow) => {
-          const row = rows[virtualRow.index];
-          if (!row) return null;
+      {/* Tab bar */}
+      <div className="sticky top-0 z-10 flex justify-center gap-1 py-3 ">
+        {TABS.filter((tab) => tabCounts[tab] > 0).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`cursor-pointer px-5 py-1.5 text-sm font-semibold tracking-widest lowercase transition-colors duration-150 ${
+              activeTab === tab
+                ? "text-white border-b border-white"
+                : "text-white/40 hover:text-white/70"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
-          return (
-            <div
-              key={virtualRow.key}
-              data-index={virtualRow.index}
-              ref={virtualizer.measureElement}
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                transform: `translateY(${virtualRow.start}px)`,
-              }}
-            >
-              {row.kind === "header" ? (
-                <div className="flex justify-center py-3 px-4">
-                  <h2>
-                    <CanvasText
-                      text={row.label}
-                      font="Lusitana"
-                      fontSize={headerFontSize}
-                      italic
-                      animateOnView
-                    />
-                  </h2>
-                </div>
-              ) : (
-                <motion.div
-                  className="flex flex-wrap justify-center w-full"
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+      {/* Virtualised grid */}
+      <div
+        ref={scrollRef}
+        className="w-full overflow-y-auto flex-1"
+        style={{ scrollbarWidth: "none", overscrollBehavior: "contain" }}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            style={{
+              height: `${virtualizer.getTotalSize()}px`,
+              position: "relative",
+              width: "100%",
+            }}
+          >
+            {virtualizer.getVirtualItems().map((virtualRow) => {
+              const row = rows[virtualRow.index];
+              if (!row) return null;
+              return (
+                <div
+                  key={virtualRow.key}
+                  data-index={virtualRow.index}
+                  ref={virtualizer.measureElement}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    transform: `translateY(${virtualRow.start}px)`,
+                  }}
                 >
-                  {row.discs.map((disc) => (
-                    <Disc
-                      key={disc.id}
-                      id={disc.id}
-                      title={disc.title}
-                      artwork={disc.artwork}
-                      releaseType={disc.releaseType}
-                      releaseDate={disc.releaseDate}
-                      appleMusicLink={disc.appleMusicLink}
-                      spotifyLink={disc.spotifyLink}
-                      soundcloudLink={disc.soundcloudLink}
-                      tidalLink={disc.tidalLink}
-                      youtubeLink={disc.youtubeLink}
-                      webLink={disc.webLink}
-                      lyrics={disc.lyrics}
-                    />
-                  ))}
-                </motion.div>
-              )}
-            </div>
-          );
-        })}
+                  <motion.div
+                    className="flex flex-wrap justify-center w-full"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                  >
+                    {row.discs.map((disc) => (
+                      <Disc
+                        key={disc.id}
+                        id={disc.id}
+                        title={disc.title}
+                        artwork={disc.artwork}
+                        releaseType={disc.releaseType}
+                        releaseDate={disc.releaseDate}
+                        appleMusicLink={disc.appleMusicLink}
+                        spotifyLink={disc.spotifyLink}
+                        soundcloudLink={disc.soundcloudLink}
+                        tidalLink={disc.tidalLink}
+                        youtubeLink={disc.youtubeLink}
+                        webLink={disc.webLink}
+                        lyrics={disc.lyrics}
+                      />
+                    ))}
+                  </motion.div>
+                </div>
+              );
+            })}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

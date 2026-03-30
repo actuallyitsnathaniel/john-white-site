@@ -36,14 +36,70 @@ const Root = () => {
             <ErrorBoundary fallback={<Loading />}>
               <Suspense fallback={<Loading />}>
                 <Routes location={location} key={location.pathname}>
-                  <Route index element={<PageTransition><Home /></PageTransition>} />
-                  <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-                  <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-                  <Route path="/links" element={<PageTransition><Links /></PageTransition>} />
-                  <Route path="/music" element={<PageTransition><Music /></PageTransition>} />
-                  <Route path="/shows" element={<PageTransition><Shows /></PageTransition>} />
-                  <Route path="/secret" element={<PageTransition><Secret /></PageTransition>} />
-                  <Route path="*" element={<PageTransition><ErrorPage /></PageTransition>} />
+                  <Route
+                    index
+                    element={
+                      <PageTransition>
+                        <Home />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/about"
+                    element={
+                      <PageTransition>
+                        <About />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/contact"
+                    element={
+                      <PageTransition>
+                        <Contact />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/links"
+                    element={
+                      <PageTransition>
+                        <Links />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/music"
+                    element={
+                      <PageTransition>
+                        <Music />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/shows"
+                    element={
+                      <PageTransition>
+                        <Shows />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/secret"
+                    element={
+                      <PageTransition>
+                        <Secret />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="*"
+                    element={
+                      <PageTransition>
+                        <ErrorPage />
+                      </PageTransition>
+                    }
+                  />
                 </Routes>
               </Suspense>
             </ErrorBoundary>
