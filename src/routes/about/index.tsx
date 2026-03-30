@@ -5,7 +5,7 @@ import YoutubeLogo from "../../components/social-links/youtube-link/index.js";
 
 import PressHighlight from "../../components/press-highlight/index.js";
 import { getAboutPage } from "../../api/getAboutData";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Loading from "../../components/loading";
 import PointOfContact from "../../components/point-of-contact";
 import SEO from "../../components/seo";
@@ -55,7 +55,8 @@ type AboutData = {
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [about, setAbout] = useState<AboutData>();
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchAboutPage = async () => {
@@ -92,15 +93,22 @@ const About = () => {
     ));
   };
 
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const onScroll = () => {
+      setScrollProgress(carousel.scrollLeft / carousel.offsetWidth);
+    };
+
+    carousel.addEventListener("scroll", onScroll, { passive: true });
+    return () => carousel.removeEventListener("scroll", onScroll);
+  }, [isLoading]);
+
   const scrollToSlide = (index: number) => {
-    const carousel = document.getElementById("carousel");
-    if (carousel && about) {
-      const slideWidth = carousel.offsetWidth;
-      carousel.scrollTo({
-        left: slideWidth * index,
-        behavior: "smooth",
-      });
-      setCurrentSlide(index);
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.scrollTo({ left: carousel.offsetWidth * index, behavior: "smooth" });
     }
   };
 
@@ -156,25 +164,27 @@ const About = () => {
          */}
                 <div className="relative lg:w-[42vw] mx-auto">
                   <div
+                    ref={carouselRef}
                     id="carousel"
-                    className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit"
+                    className="flex rounded-xl overflow-scroll snap-x snap-mandatory h-fit scrollbar-none"
+                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                   >
                     <RenderPhotos />
                   </div>
                   {/* Carousel navigation dots */}
                   <div className="flex justify-center gap-2 mt-4">
-                    {about?.AboutPhotos.photos.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => scrollToSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all ${
-                          currentSlide === index
-                            ? "bg-white w-8"
-                            : "bg-white/50 hover:bg-white/75"
-                        }`}
-                        aria-label={`Go to slide ${index + 1}`}
-                      />
-                    ))}
+                    {about?.AboutPhotos.photos.map((_, index) => {
+                      const weight = Math.max(0, 1 - Math.abs(scrollProgress - index));
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => scrollToSlide(index)}
+                          style={{ width: `${12 + weight * 20}px`, opacity: 0.5 + weight * 0.5 }}
+                          className="h-3 rounded-full bg-white transition-none"
+                          aria-label={`Go to slide ${index + 1}`}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               </div>
