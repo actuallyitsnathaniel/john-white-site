@@ -18,7 +18,6 @@ const Home = lazy(() => import("./home"));
 const Contact = lazy(() => import("./contact"));
 const About = lazy(() => import("./about"));
 const Links = lazy(() => import("./links"));
-const Merch = lazy(() => import("./merch"));
 const Music = lazy(() => import("./music"));
 const Shows = lazy(() => import("./shows"));
 const Secret = lazy(() => import("./secret"));
@@ -41,7 +40,6 @@ const Root = () => {
                   <Route path="/about" element={<PageTransition><About /></PageTransition>} />
                   <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                   <Route path="/links" element={<PageTransition><Links /></PageTransition>} />
-                  <Route path="/digitals" element={<PageTransition><Merch /></PageTransition>} />
                   <Route path="/music" element={<PageTransition><Music /></PageTransition>} />
                   <Route path="/shows" element={<PageTransition><Shows /></PageTransition>} />
                   <Route path="/secret" element={<PageTransition><Secret /></PageTransition>} />

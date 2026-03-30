@@ -20,9 +20,9 @@ export const NavItem = memo<NavItemProps>(({
 
   const isActive = useMemo(() => pageTitle === label, [pageTitle, label]);
 
-  const linkClassName = useMemo(() => 
-    `transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-yellow-200 hover:underline underline-offset-4 ${
-      isActive ? "ease-in hidden md:block text-yellow-100 md:scale-110 underline" : ""
+  const linkClassName = useMemo(() =>
+    `cursor-pointer transition ease-in-out py-4 px-10 duration-150 hover:scale-110 hover:text-yellow-200 hover:underline underline-offset-4 ${
+      isActive ? "ease-in text-yellow-100 scale-110 underline" : ""
     }`, [isActive]
   );
 

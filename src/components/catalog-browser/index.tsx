@@ -1,4 +1,4 @@
-import { useRef, useMemo, memo } from "react";
+import { useRef, useMemo, memo, useState, useEffect } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { motion } from "motion/react";
 import CanvasText from "../canvas-text";
@@ -30,12 +30,9 @@ type Row =
   | { kind: "disc-row"; discs: CatalogDisc[] };
 
 const DISC_SIZE = 312; // 288px card + 24px padding
-const SECTION_HEADER_HEIGHT = 120; // conservative fixed estimate for 60px italic header + padding
 const DISC_ROW_HEIGHT = DISC_SIZE + 48; // card + title label
 
-/** How many disc cards fit per row given current viewport width. */
-function discsPerRow(): number {
-  const vw = window.innerWidth;
+function getColCount(vw: number): number {
   if (vw >= 1280) return 4;
   if (vw >= 900) return 3;
   if (vw >= 600) return 2;
@@ -43,7 +40,7 @@ function discsPerRow(): number {
 }
 
 /** Build a flat row list from sorted discs. */
-function buildRows(items: CatalogDisc[]): Row[] {
+function buildRows(items: CatalogDisc[], cols: number): Row[] {
   const sections: { label: SectionType; discs: CatalogDisc[] }[] = [
     {
       label: "singles / EPs",
@@ -61,7 +58,6 @@ function buildRows(items: CatalogDisc[]): Row[] {
     },
   ];
 
-  const cols = discsPerRow();
   const rows: Row[] = [];
 
   for (const section of sections) {
@@ -77,13 +73,25 @@ function buildRows(items: CatalogDisc[]): Row[] {
 
 const CatalogBrowser = memo<CatalogBrowserProps>(({ items }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [vw, setVw] = useState(() => window.innerWidth);
 
-  const rows = useMemo(() => buildRows(items), [items]);
+  useEffect(() => {
+    const onResize = () => setVw(window.innerWidth);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const cols = useMemo(() => getColCount(vw), [vw]);
+  const isMobile = vw < 600;
+  const sectionHeaderHeight = isMobile ? 80 : 120;
+  const headerFontSize = isMobile ? 36 : 60;
+
+  const rows = useMemo(() => buildRows(items, cols), [items, cols]);
 
   const estimateSize = (index: number): number => {
     const row = rows[index];
     if (!row) return DISC_ROW_HEIGHT;
-    if (row.kind === "header") return SECTION_HEADER_HEIGHT;
+    if (row.kind === "header") return sectionHeaderHeight;
     return DISC_ROW_HEIGHT;
   };
 
@@ -129,12 +137,12 @@ const CatalogBrowser = memo<CatalogBrowserProps>(({ items }) => {
               }}
             >
               {row.kind === "header" ? (
-                <div className="flex justify-center py-6 px-4">
+                <div className="flex justify-center py-3 px-4">
                   <h2>
                     <CanvasText
                       text={row.label}
                       font="Lusitana"
-                      fontSize={60}
+                      fontSize={headerFontSize}
                       italic
                       animateOnView
                     />

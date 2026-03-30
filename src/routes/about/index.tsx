@@ -83,12 +83,12 @@ const About = () => {
   };
 
   const RenderPhotos = () => {
-    return about?.AboutPhotos.photos.map((photo) => (
+    return about?.AboutPhotos.photos.map((photo, index) => (
       <img
         className="object-cover snap-center"
         key={photo.id}
         src={photo.url}
-        alt={`profile-img-${photo.id}`}
+        alt={`John White - photo ${index + 1}`}
       />
     ));
   };
@@ -188,23 +188,22 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <br />
             </div>
-            <div className="flex flex-wrap flex-row p-10">
+            <div className="flex flex-wrap flex-row p-10 mt-8">
               <div className="text-center">
-                <div className="text-center py-5 underline text-5xl font-extrabold">
+                <div className="text-center py-5 underline text-4xl font-extrabold tracking-tight">
                   press highlights
                 </div>
                 <RenderPress />
                 <div className="">
                   <div className="text-lg">
-                    <div className="underline text-4xl pb-5 font-extrabold">
+                    <div className="underline text-4xl pb-5 font-extrabold tracking-tight">
                       contact:
                     </div>
                     <RenderPOCs />
                   </div>
                 </div>
-                <div className="flex flex-wrap justify-center">
+                <div className="flex flex-wrap justify-center [&>*]:cursor-pointer">
                   <SpotifyLink />
                   <AppleMusic />
                   <YoutubeLogo />

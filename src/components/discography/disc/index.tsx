@@ -70,7 +70,7 @@ const Disc = memo<DiscProps>(({
 
   return (
     <div
-      className={`${className} transition-transform duration-100 text-8xl md:hover:scale-110 group p-3`}
+      className={`${className} transition-transform duration-100 text-base md:hover:scale-110 group p-3`}
       id={`disc-${id}-wrapper`}
     >
       <div
@@ -111,7 +111,7 @@ const Disc = memo<DiscProps>(({
           className="w-72 h-72 object-cover"
         />
       </div>
-      <div className="flex flex-row w-80 flex-wrap text-center justify-center transition-transform duration-100 origin-top text-lg md:invisible md:group-hover:visible md:scale-0 md:group-hover:scale-90">
+      <div className="flex flex-row w-80 flex-wrap text-center justify-center transition-opacity duration-200 origin-top text-sm tracking-wide md:opacity-0 md:group-hover:opacity-100">
         {displayText}
       </div>
       {lyricsOpen && lyrics && (

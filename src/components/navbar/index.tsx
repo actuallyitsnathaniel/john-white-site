@@ -11,7 +11,6 @@ const TITLE_MAP = [
   { path: "/about", title: "about" },
   { path: "/contact", title: "contact" },
   { path: "/music", title: "music" },
-  { path: "/digitals", title: "digitals" },
   { path: "/shows", title: "shows" },
   { path: "/secret", title: "secret" },
   { path: "/links", title: "links" },
@@ -46,9 +45,9 @@ const NavBar = memo(() => {
     setExpanded(value);
   }, []);
 
-  const navClassName = useMemo(() => 
-    `z-40 text-white fixed top-0 w-screen py-1 bg-none ${
-      expanded ? "h-screen bg-black bg-opacity-75" : ""
+  const navClassName = useMemo(() =>
+    `z-40 text-white fixed top-0 w-screen py-1 backdrop-blur-sm bg-black/20 ${
+      expanded ? "h-screen !bg-black/75" : ""
     }`, [expanded]
   );
 
@@ -63,7 +62,7 @@ const NavBar = memo(() => {
   return (
     <nav className={navClassName}>
       <div className="absolute flex font-semibold mx-auto w-full justify-center">
-        <div className="md:hidden p-5 justify-center text-4xl whitespace-nowrap underline">
+        <div className="md:hidden p-5 justify-center text-2xl font-semibold tracking-widest uppercase opacity-70">
           {pageTitle}
         </div>
         <div className="md:hidden fixed top-3 right-3 z-50">
@@ -86,12 +85,6 @@ const NavBar = memo(() => {
         <NavItem
           to="/music"
           label="music"
-          setExpanded={handleSetExpanded}
-          pageTitle={pageTitle}
-        />
-        <NavItem
-          to="/digitals"
-          label="digitals"
           setExpanded={handleSetExpanded}
           pageTitle={pageTitle}
         />
