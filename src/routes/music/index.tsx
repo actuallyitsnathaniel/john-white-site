@@ -1,4 +1,4 @@
-import Discography from "../../components/discography";
+import CatalogBrowser, { type CatalogDisc } from "../../components/catalog-browser";
 import { getMusicPage } from "../../api/getMusicData";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
@@ -12,6 +12,7 @@ type FetchedDisc = {
     url: string;
     cachedUrl?: string;
   };
+  Lyrics?: string;
   ReleaseDate: string;
   ReleaseType: "single" | "album" | "ep" | "appearance";
   SoundcloudURL?: string;
@@ -126,11 +127,12 @@ const Music = () => {
         {isLoading ? (
           <Loading />
         ) : (
-          <Discography>
-            {sortedMusic.map(
+          <CatalogBrowser
+            items={sortedMusic.map(
               ({
                 AppleMusicURL,
                 CoverArt,
+                Lyrics,
                 ReleaseDate,
                 ReleaseType,
                 id,
@@ -139,23 +141,21 @@ const Music = () => {
                 TidalURL,
                 Title,
                 YoutubeURL,
-              }: FetchedDisc) => (
-                <Discography.Disc
-                  key={id}
-                  artwork={CoverArt.cachedUrl || CoverArt.url}
-                  appleMusicLink={AppleMusicURL}
-                  id={id}
-                  title={Title}
-                  tidalLink={TidalURL}
-                  spotifyLink={SpotifyURL}
-                  soundcloudLink={SoundcloudURL}
-                  releaseType={ReleaseType}
-                  releaseDate={ReleaseDate}
-                  youtubeLink={YoutubeURL}
-                />
-              )
+              }: FetchedDisc): CatalogDisc => ({
+                id,
+                title: Title,
+                artwork: CoverArt.cachedUrl || CoverArt.url,
+                releaseType: ReleaseType,
+                releaseDate: ReleaseDate,
+                appleMusicLink: AppleMusicURL,
+                spotifyLink: SpotifyURL,
+                soundcloudLink: SoundcloudURL,
+                tidalLink: TidalURL,
+                youtubeLink: YoutubeURL,
+                lyrics: Lyrics,
+              })
             )}
-          </Discography>
+          />
         )}
       </div>
     </>

@@ -54,6 +54,8 @@ interface MusicPlatformLinksProps {
   tidalLink?: string;
   webLink?: string;
   youtubeLink?: string;
+  lyrics?: string;
+  onLyricsClick?: () => void;
 }
 
 const MusicPlatformLinks = memo<MusicPlatformLinksProps>(({
@@ -65,6 +67,8 @@ const MusicPlatformLinks = memo<MusicPlatformLinksProps>(({
   tidalLink,
   youtubeLink,
   webLink,
+  lyrics,
+  onLyricsClick,
 }) => {
   return (
     <div
@@ -78,6 +82,16 @@ const MusicPlatformLinks = memo<MusicPlatformLinksProps>(({
       <PlatformLink href={tidalLink || ""} image={tidal} platformName="Tidal" title={title} />
       <PlatformLink href={youtubeLink || ""} image={youtube} platformName="YouTube" title={title} />
       <PlatformLink href={webLink || ""} image={hyperlinkIcon} platformName="Website" title={title} />
+      {lyrics && onLyricsClick && (
+        <button
+          onClick={(e) => { e.stopPropagation(); onLyricsClick(); }}
+          className="flex p-4 transition-transform duration-75 md:hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-white flex-col items-center gap-1"
+          aria-label={`View lyrics for ${title || 'this release'}`}
+        >
+          <span className="text-2xl leading-none">✦</span>
+          <span className="text-xs tracking-wider uppercase">lyrics</span>
+        </button>
+      )}
     </div>
   );
 });

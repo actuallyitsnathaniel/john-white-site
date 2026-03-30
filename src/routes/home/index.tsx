@@ -3,6 +3,7 @@ import JohnWhiteLogo from "../../assets/images/icons/john-white-logo/john-white-
 import { MusicLinks } from "../../components/music-embeds";
 import { getYoutubeVideoID, getHeaderTitle } from "../../api/getHomeData";
 import SEO from "../../components/seo";
+import CanvasText from "../../components/canvas-text";
 
 const Home = memo(() => {
   const [YOUTUBE_ID, setYoutubeId] = useState("TMLFuisEc1A");
@@ -81,9 +82,14 @@ const Home = memo(() => {
         <div>
           <div
             id="header-title"
-            className="p-6 text-center text-white text-[150%] md:text-4xl font-semibold "
+            className="p-6 flex justify-center text-white font-semibold"
           >
-            {headerTitle}
+            <CanvasText
+              text={headerTitle}
+              font="Lusitana"
+              fontSize={36}
+              animateOnView={false}
+            />
           </div>
           <MusicLinks />
         </div>

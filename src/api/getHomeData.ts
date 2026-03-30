@@ -17,7 +17,7 @@ function extractYouTubeId(url: string): string | null {
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
     /youtube\.com\/v\/([^&\n?#]+)/,
-    /youtube\.com\/.*[?&]v=([^&\n?#]+)/
+    /youtube\.com\/.*[?&]v=([^&\n?#]+)/,
   ];
 
   for (const pattern of patterns) {
@@ -34,7 +34,6 @@ export const getHomeData = async () =>
   await fetch(`${prod_url}/api/home?populate=*`, GET_options)
     .then((response) => response.json())
     .then((data) => {
-      console.log("Raw API response:", data);
       return data.data;
     })
     .catch((error) => {
@@ -44,13 +43,13 @@ export const getHomeData = async () =>
 
 export const getMusicEmbedsData = async () => {
   const homeData = await getHomeData();
-  
+
   if (!homeData || !homeData.MusicEmbeds) {
     return null;
   }
 
   const musicEmbeds = homeData.MusicEmbeds;
-  
+
   const result = {
     SpotifyEmbed: extractSrcFromIframe(musicEmbeds.SpotifyEmbed),
     AppleMusicEmbed: extractSrcFromIframe(musicEmbeds.AppleMusicEmbed),

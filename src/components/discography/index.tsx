@@ -2,6 +2,7 @@ import Disc from "./disc";
 
 import React, { JSX, useState } from "react";
 import { motion } from "motion/react";
+import CanvasText from "../canvas-text";
 // import { localizedToday } from "../../util/utils";
 
 const Discography = ({ children }: { children: JSX.Element[] }) => {
@@ -18,8 +19,8 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
   return (
     <div className="flex flex-col md:px-28">
       <div>
-        <h2 className={"flex text-6xl  italic justify-center p-5"}>
-          singles / EPs
+        <h2 className={"flex justify-center p-5"}>
+          <CanvasText text="singles / EPs" font="Lusitana" fontSize={60} italic animateOnView />
         </h2>
         <motion.div
           className={"flex flex-wrap w-full justify-center"}
@@ -52,7 +53,9 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
         </motion.div>
       </div>
       <div>
-        <h2 className={"flex text-6xl  italic justify-center p-5"}>albums</h2>
+        <h2 className={"flex justify-center p-5"}>
+          <CanvasText text="albums" font="Lusitana" fontSize={60} italic animateOnView />
+        </h2>
         <motion.div
           className={"flex flex-row flex-wrap w-full justify-center"}
           initial="hidden"
@@ -81,8 +84,8 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
         </motion.div>
       </div>
       <div id="appears-on">
-        <h2 className={"flex text-6xl font-semibold italic justify-center p-5"}>
-          appears on
+        <h2 className={"flex justify-center p-5"}>
+          <CanvasText text="appears on" font="Lusitana" fontSize={60} italic animateOnView />
         </h2>
         <motion.div
           className={"flex flex-row flex-wrap w-full justify-center"}

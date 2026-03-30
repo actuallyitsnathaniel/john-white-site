@@ -1,10 +1,12 @@
 import { useState, useCallback, memo, useMemo } from "react";
 import MusicPlatformLinks from "./platform-links";
+import LyricsViewer from "../../lyrics-viewer";
 
 interface DiscProps {
   className?: string;
   appleMusicLink?: string;
   id: number;
+  lyrics?: string;
   spotifyLink?: string;
   soundcloudLink?: string;
   tidalLink?: string;
@@ -20,6 +22,7 @@ const Disc = memo<DiscProps>(({
   className = "",
   id,
   appleMusicLink,
+  lyrics,
   spotifyLink,
   soundcloudLink,
   tidalLink,
@@ -31,6 +34,7 @@ const Disc = memo<DiscProps>(({
   title,
 }) => {
   const [focused, setFocused] = useState(false);
+  const [lyricsOpen, setLyricsOpen] = useState(false);
 
   const handleMouseEnter = useCallback(() => {
     setFocused(true);
@@ -95,6 +99,8 @@ const Disc = memo<DiscProps>(({
           tidalLink={tidalLink}
           youtubeLink={youtubeLink}
           webLink={webLink}
+          lyrics={lyrics}
+          onLyricsClick={() => setLyricsOpen(true)}
         />
         <img
           height={320}
@@ -108,6 +114,13 @@ const Disc = memo<DiscProps>(({
       <div className="flex flex-row w-80 flex-wrap text-center justify-center transition-transform duration-100 origin-top text-lg md:invisible md:group-hover:visible md:scale-0 md:group-hover:scale-90">
         {displayText}
       </div>
+      {lyricsOpen && lyrics && (
+        <LyricsViewer
+          lyrics={lyrics}
+          title={title}
+          onClose={() => setLyricsOpen(false)}
+        />
+      )}
     </div>
   );
 });

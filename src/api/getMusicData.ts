@@ -2,7 +2,7 @@ import { prod_url, GET_options } from "./util";
 
 export const getMusicPage = async () =>
   await fetch(
-    `${prod_url}/api/music?populate=discography.CoverArt`, // appending with discography.CoverArt
+    `${prod_url}/api/music?populate=discography.CoverArt`, // CoverArt + all scalar fields (incl. Lyrics) via populate
     GET_options
   )
     .then((response) => response.json())
