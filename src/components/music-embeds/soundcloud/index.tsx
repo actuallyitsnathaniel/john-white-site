@@ -1,17 +1,19 @@
-export default function SoundcloudEmbed() {
+interface SoundcloudEmbedProps {
+  soundcloudUrl?: string;
+}
+
+export default function SoundcloudEmbed({ soundcloudUrl }: SoundcloudEmbedProps) {
+  if (!soundcloudUrl) return null;
+
   return (
     <iframe
-      height="470px"
+      className="h-104.5 sm:h-117.5 w-72 max-w-full"
       title="soundcloud-embed"
-      style={{
-        borderRadius: "26px",
-        padding: "1vh",
-      }}
-      src={
-        "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1414477375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-      }
+      style={{ borderRadius: "26px", padding: "1vh" }}
+      src={soundcloudUrl}
       loading="lazy"
-      sandbox="allow-same-origin"
+      allow="autoplay; encrypted-media"
+      sandbox="allow-same-origin allow-scripts allow-popups"
     />
   );
 }

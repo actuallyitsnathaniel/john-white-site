@@ -6,7 +6,8 @@ function extractSrcFromIframe(iframeHtml: string): string | null {
   }
 
   const srcMatch = iframeHtml.match(/src=["']([^"']+)["']/i);
-  return srcMatch ? srcMatch[1] : null;
+  if (!srcMatch) return null;
+  return srcMatch[1].replace(/&amp;/g, "&");
 }
 
 function extractYouTubeId(url: string): string | null {
@@ -54,6 +55,7 @@ export const getMusicEmbedsData = async () => {
     SpotifyEmbed: extractSrcFromIframe(musicEmbeds.SpotifyEmbed),
     AppleMusicEmbed: extractSrcFromIframe(musicEmbeds.AppleMusicEmbed),
     YoutubeEmbed: extractSrcFromIframe(musicEmbeds.YoutubeEmbed),
+    SoundcloudEmbed: extractSrcFromIframe(musicEmbeds.SoundcloudEmbed),
   };
 
   return result;

@@ -4,7 +4,7 @@ import { getMusicEmbedsData } from "../../api/getHomeData";
 // Lazy load music embed components
 const SpotifyEmbed = lazy(() => import("./spotify"));
 const AppleMusicEmbed = lazy(() => import("./apple-music"));
-const YoutubePlaylistEmbed = lazy(() => import("./youtube"));
+const SoundcloudEmbed = lazy(() => import("./soundcloud"));
 
 const MusicEmbedFallback = () => (
   <div className="w-16 h-16 bg-gray-700 rounded-xl animate-pulse" />
@@ -14,6 +14,7 @@ type MusicEmbedUrls = {
   SpotifyEmbed: string | null;
   AppleMusicEmbed: string | null;
   YoutubeEmbed: string | null;
+  SoundcloudEmbed: string | null;
 };
 
 export const MusicLinks = memo(() => {
@@ -71,9 +72,9 @@ export const MusicLinks = memo(() => {
             <AppleMusicEmbed appleMusicUrl={embedUrls.AppleMusicEmbed} />
           </Suspense>
         )}
-        {embedUrls.YoutubeEmbed && (
+        {embedUrls.SoundcloudEmbed && (
           <Suspense fallback={<MusicEmbedFallback />}>
-            <YoutubePlaylistEmbed youtubeUrl={embedUrls.YoutubeEmbed} />
+            <SoundcloudEmbed soundcloudUrl={embedUrls.SoundcloudEmbed} />
           </Suspense>
         )}
       </div>
