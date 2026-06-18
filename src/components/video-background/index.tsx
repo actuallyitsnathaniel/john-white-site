@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import JohnWhite42VideoMP4 from "../../assets/videos/john-white-42-bg.mp4";
+import JohnWhite42Poster from "../../assets/videos/john-white-42-bg-poster.jpg";
 
 const VideoBackground = memo(() => {
   return (
@@ -12,7 +13,8 @@ const VideoBackground = memo(() => {
       muted
       playsInline
       disablePictureInPicture
-      preload="metadata"
+      poster={JohnWhite42Poster}
+      preload="auto"
       className="brightness-50 blur saturate-100 w-full h-full object-cover fixed z-[-1] bg-black overflow-clip md:overflow-hidden flex md:align-middle md:content-center"
     >
       <source src={JohnWhite42VideoMP4} type="video/MP4" />

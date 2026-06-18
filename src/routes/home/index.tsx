@@ -7,7 +7,7 @@ import SEO from "../../components/seo";
 const Home = memo(() => {
   const [YOUTUBE_ID, setYoutubeId] = useState("TMLFuisEc1A");
   const [headerTitle, setHeaderTitle] = useState(
-    '"Murphy\'s Law" (Deluxe), out now'
+    '"Murphy\'s Law" (Deluxe), out now',
   );
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Home = memo(() => {
   const youtubeUrl = useMemo(
     () =>
       `https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?rel=0&preload=metadata`,
-    [YOUTUBE_ID]
+    [YOUTUBE_ID],
   );
 
   return (
@@ -71,7 +71,7 @@ const Home = memo(() => {
         <iframe
           height={315}
           width="100%"
-          className="m-auto md:w-[550px] h-[255px] md:h-[315px] rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105"
+          className="m-auto md:w-137.5 h-63.75 md:h-78.75 rounded-2xl overflow-clip transition ease-in-out duration-75 hover:scale-105"
           src={youtubeUrl}
           title="John White - Music Video"
           allowFullScreen
