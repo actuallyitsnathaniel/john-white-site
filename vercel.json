@@ -1,3 +1,5 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/((?!@|src/|node_modules/|assets/|.*\\.[a-z0-9]+$).*)", "destination": "/" }
+  ]
 }

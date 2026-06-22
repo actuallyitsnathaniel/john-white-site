@@ -6,28 +6,28 @@ type Contact = { fullName: string; email: string };
 
 // Edit policy wording here — routing/layout don't depend on this content.
 const POLICY = {
-  owner: "John White",
+  owner: "John Dominguez, professionally known as “John White”",
   sections: [
     {
       heading: "Copyright",
-      body: "All music, audio, recordings, compositions, lyrics, stems, and related materials on this site are the copyrighted work of John White. All rights reserved.",
+      body: "All music, audio, recordings, compositions, lyrics, stems, and related materials on this site are the copyrighted work of John Dominguez, professionally known as “John White” (the “Artist”). All rights reserved.",
     },
     {
       heading: "Permitted Use",
-      body: "You may listen to this music for personal, non-commercial purposes, or use it as explicitly licensed in writing by John White. No other use is permitted without prior written approval.",
+      body: "You may listen to this music for personal, non-commercial purposes, or use it as explicitly licensed in writing by the Artist. No other use is permitted without prior written approval.",
     },
     {
       heading: "No AI / ML Use",
-      body: "John White does not grant permission for any of his music, audio, recordings, or stems to be used for artificial intelligence or machine learning training, fine-tuning, evaluation, or dataset creation. Specifically, you may NOT:",
+      body: "The Artist does not grant permission for any of his music, audio, recordings, or stems to be used for artificial intelligence or machine learning training, fine-tuning, evaluation, or dataset creation. Specifically, you may NOT:",
       list: [
-        "Include any of his audio in any AI/ML dataset.",
-        "Use any of his audio to train, fine-tune, or evaluate any AI or ML model.",
-        "Use his audio to build tools or services that generate music “in the style of” John White, or that imitate his sound, voice, or production.",
+        "Include any of the Artist’s audio in any AI/ML dataset.",
+        "Use any of the Artist’s audio to train, fine-tune, or evaluate any AI or ML model.",
+        "Use the Artist’s audio to build tools or services that generate music “in the style of” John White, or that imitate his sound, voice, or production.",
       ],
     },
     {
       heading: "Licenses Exclude AI Rights",
-      body: "Any license John White grants does not include AI or ML rights unless those rights are explicitly granted in writing.",
+      body: "Any license the Artist grants does not include AI or ML rights unless those rights are explicitly granted in writing.",
     },
     {
       heading: "Research & Tech Projects",
@@ -37,7 +37,7 @@ const POLICY = {
     },
     {
       heading: "Agreement",
-      body: "By accessing, streaming, or downloading any content from this site, you agree to respect these restrictions. Unauthorized use may violate John White's rights and applicable laws.",
+      body: "By accessing, streaming, or downloading any content from this site, you agree to respect these restrictions. Unauthorized use may violate the Artist’s rights and applicable laws.",
     },
   ],
 };
