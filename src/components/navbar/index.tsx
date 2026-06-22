@@ -14,6 +14,7 @@ const TITLE_MAP = [
   { path: "/shows", title: "shows" },
   { path: "/secret", title: "secret" },
   { path: "/links", title: "links" },
+  { path: "/usage-and-ai-policy", title: "usage & ai policy" },
 ] as const;
 
 type RoutePath = typeof TITLE_MAP[number]['path'];
