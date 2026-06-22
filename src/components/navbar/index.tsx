@@ -46,8 +46,8 @@ const NavBar = memo(() => {
   }, []);
 
   const navClassName = useMemo(() =>
-    `z-40 text-white fixed top-0 w-screen py-1 backdrop-blur-sm bg-black/20 ${
-      expanded ? "h-screen !bg-black/75" : ""
+    `z-40 text-white fixed top-0 w-screen flex items-center bg-black/20 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none ${
+      expanded ? "h-screen !bg-black/75" : "h-16"
     }`, [expanded]
   );
 

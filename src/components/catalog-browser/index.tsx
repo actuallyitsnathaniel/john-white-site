@@ -121,7 +121,7 @@ const CatalogBrowser = memo<CatalogBrowserProps>(({ items }) => {
       <div
         ref={scrollRef}
         className="w-full overflow-y-auto flex-1"
-        style={{ scrollbarWidth: "none", overscrollBehavior: "contain" }}
+        style={{ scrollbarWidth: "none", overscrollBehavior: "auto" }}
       >
         <AnimatePresence mode="wait">
           <motion.div

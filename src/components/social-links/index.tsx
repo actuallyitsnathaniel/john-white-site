@@ -8,10 +8,11 @@ import YoutubeLogo from "./youtube-link";
 
 export const SocialLinks = () => {
   const location = useLocation();
+  // about & links render their own inline social row, so the footer's copy is
+  // hidden there to avoid duplicates. music has no inline row — show it.
   const isHidden =
     (location.pathname.includes("links") ||
-      location.pathname.includes("about") ||
-      location.pathname.includes("music")) &&
+      location.pathname.includes("about")) &&
     "hidden";
 
   return (
