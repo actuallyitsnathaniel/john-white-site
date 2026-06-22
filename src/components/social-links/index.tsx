@@ -16,9 +16,7 @@ export const SocialLinks = () => {
 
   return (
     <div
-      className={`${isHidden} flex flex-wrap px-10 sm:px-2 mx-auto md:pr-5 justify-center mb-2.5 
-      transition-translate duration-100 hover:delay-150 md:fixed md:bottom-0 bottom-auto md:left-0 
-      left-auto lg:justify-start md:pt-4 sm:h-full md:h-auto translate-y-2 lg:translate-y-4 lg:hover:translate-y-1`}
+      className={`${isHidden} flex flex-wrap justify-center md:justify-end [&_a]:p-1.5 [&_svg]:h-10 [&_svg]:w-10 [&_svg]:rounded-none!`}
     >
       <SpotifyLink />
       <AppleMusic />

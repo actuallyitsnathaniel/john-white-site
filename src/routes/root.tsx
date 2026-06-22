@@ -4,7 +4,6 @@ import { Analytics } from "@vercel/analytics/react";
 
 import VideoBackground from "../components/video-background";
 import FilmGrainEffect from "../components/film-grain-effect";
-import { SocialLinks } from "../components/social-links";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Loading from "../components/loading";
@@ -21,6 +20,7 @@ const Links = lazy(() => import("./links"));
 const Music = lazy(() => import("./music"));
 const Shows = lazy(() => import("./shows"));
 const Secret = lazy(() => import("./secret"));
+const UsageAiPolicy = lazy(() => import("./usage-and-ai-policy"));
 const ErrorPage = lazy(() => import("./error"));
 
 const Root = () => {
@@ -93,6 +93,14 @@ const Root = () => {
                     }
                   />
                   <Route
+                    path="/usage-and-ai-policy"
+                    element={
+                      <PageTransition>
+                        <UsageAiPolicy />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
                     path="*"
                     element={
                       <PageTransition>
@@ -103,7 +111,6 @@ const Root = () => {
                 </Routes>
               </Suspense>
             </ErrorBoundary>
-            <SocialLinks />
             <Footer />
           </AnimatePresence>
         </div>

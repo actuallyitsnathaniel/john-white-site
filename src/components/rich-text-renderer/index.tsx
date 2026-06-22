@@ -28,7 +28,7 @@ const RichTextRenderer: React.FC<RichTextRendererProps> = ({ content }) => {
       case "link":
         return (
           <a
-            className="underline"
+            className="link"
             href={node.url}
             target="_blank"
             rel="noopener noreferrer"

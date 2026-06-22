@@ -12,7 +12,7 @@ const PointOfContact = ({
       <p>{fullName}</p>
       {phoneNumber && <p>{phoneNumber}</p>}
       <p className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-        <a className="italic underline font-extrabold" href={`mailto:${email}`}>
+        <a className="link italic font-extrabold" href={`mailto:${email}`}>
           {email}
         </a>
       </p>
