@@ -27,3 +27,6 @@ yarn-error.log*
 # export packages
 *.gz
 .vercel
+
+# showcase captures
+showcase/
