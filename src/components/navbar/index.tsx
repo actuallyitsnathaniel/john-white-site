@@ -48,7 +48,7 @@ const NavBar = memo(() => {
 
   const navClassName = useMemo(() =>
     `z-40 text-white fixed top-0 w-screen flex items-center bg-black/20 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none ${
-      expanded ? "h-screen !bg-black/75" : "h-16"
+      expanded ? "h-screen !bg-black/90" : "h-16"
     }`, [expanded]
   );
 
@@ -63,7 +63,7 @@ const NavBar = memo(() => {
   return (
     <nav className={navClassName}>
       <div className="absolute flex font-semibold mx-auto w-full justify-center">
-        <div className="md:hidden p-5 justify-center text-2xl font-semibold tracking-widest uppercase opacity-70">
+        <div className={`md:hidden p-5 justify-center text-2xl font-semibold tracking-widest uppercase opacity-70 ${expanded ? "hidden" : ""}`}>
           {pageTitle}
         </div>
         <div className="md:hidden fixed top-3 right-3 z-50">
