@@ -90,6 +90,13 @@ const openClose = async (selector, { waitText, back = true } = {}) => {
   await revealBgVideo();
 };
 
+const hover = async (selector) => {
+  const el = page.locator(selector).first();
+  await el.scrollIntoViewIfNeeded();
+  await el.hover(); // for hover-revealed UI (panels/menus that need a real pointerover, not a click)
+  await revealBgVideo();
+};
+
 const scrollPage = async (durationMs = 4000) => {
   await page.evaluate(async (d) => {
     const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -118,6 +125,8 @@ for (const beat of cfg.beats ?? []) {
   } else if (beat.openClose !== undefined) {
     await openClose(beat.openClose, { waitText: beat.waitText, back: beat.back });
     await hold(beat.dwell); console.log("openClose", beat.openClose);
+  } else if (beat.hover !== undefined) {
+    await hover(beat.hover); await hold(beat.dwell); console.log("hover", beat.hover);
   } else if (beat.scrollPage !== undefined) {
     await scrollPage(beat.scrollPage); await hold(beat.dwell); console.log("scrollPage", beat.scrollPage);
   } else {

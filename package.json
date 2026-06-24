@@ -8,7 +8,7 @@
     "build": "vite build --emptyOutDir",
     "lint": "eslint . --ext .ts,.tsx",
     "preview": "vite preview",
-    "showcase": "node scripts/showcase.mjs"
+    "showcase": "node scripts/showcase.mjs --dwell=1500"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.3",
