@@ -39,3 +39,9 @@ Verified facts about this project. Update this file when new gotchas are discove
 - `npm run dev` — dev server default port 3000
 - `npm run lint` — ESLint on `.ts,.tsx`
 - **`npm run build` succeeds even with TypeScript errors** — always run `npx tsc --noEmit` separately
+
+## Showcase GIF (`npm run showcase`)
+- Engine `scripts/showcase.mjs` caps GIFs at `--max-mb` (default 9.9) via an ffmpeg ladder + **gifsicle `-O3 --lossy` post-pass** (needs `brew install gifsicle` — does cross-frame delta compression ffmpeg's gif muxer can't; ~45% smaller). `--lossy` flag (default 65).
+- **The bg `<video>` is the size killer.** It animates through every dwell, so even "static" holds are full-motion frames — a multi-route tour can't hit a small GIF budget on quality alone. Top rung was 47–92MB; gifsicle + ladder floor (640px/10fps/96c) ≈ 12MB.
+- To clear 9.9MB on this site: **8fps** (gifsicle floor at 8fps ≈ 7.9MB; at 10fps ≈ 12MB) and/or trim the tour (drop `scrollPage`, lower `--dwell`). For full-length/quality, export **MP4** (`--mp4`) — CRF makes motion cheap; only GitHub-inline needs GIF.
+- `macOS has no \`timeout\`/\`gtimeout\` by default` — don't wrap the run in it (exit 127).

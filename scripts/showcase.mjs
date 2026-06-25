@@ -22,6 +22,8 @@ const { values: f } = parseArgs({
     mp4: { type: "boolean", default: false },
     fps: { type: "string", default: "15" },
     scale: { type: "string", default: "960" }, // output width px
+    maxMb: { type: "string", default: "9.9" }, // hard GIF size ceiling (MB); 0 = no cap
+    lossy: { type: "string", default: "65" }, // gifsicle --lossy level (0-200); -1 = skip gifsicle
   },
 });
 
@@ -153,11 +155,55 @@ const ff = (args, out) => {
 const scale = `scale=${f.scale}:-2:flags=lanczos`;
 
 if (f.gif) {
-  // split-graph palettegen/paletteuse in ONE pass = clean GIF colors, no 2-input
-  // graph (which can trip an ffmpeg "Internal bug" on the threaded flush).
-  ff(["-i", src, "-vf", `fps=${f.fps},${scale},split[a][b];[a]palettegen[p];[b][p]paletteuse`,
-      `${f.out}/showcase.gif`], `${f.out}/showcase.gif`);
-  console.log("wrote", `${f.out}/showcase.gif`);
+  // GIF has no quality knob; size = fps x width^2 x duration x colors. ffmpeg
+  // can't target a byte size for the gif muxer, so to guarantee <= --max-mb we
+  // encode, measure, and step DOWN a ladder until it fits. Levers ordered by
+  // least visible cost first (colors -> fps -> width); duration is never cut.
+  const out = `${f.out}/showcase.gif`;
+  const budget = Number(f.maxMb) * 1_000_000;
+  // fps rungs never EXCEED the requested --fps (clamp), so the ladder stays
+  // monotonically smaller even when --fps is set below the rung defaults.
+  const fpsAt = (rung) => String(Math.min(Number(f.fps), rung));
+  // rung 1 == today's defaults, so a tour that already fits is unchanged.
+  const ladder = [
+    { fps: f.fps,     width: f.scale, colors: 256, dither: "sierra2_4a" },
+    { fps: f.fps,     width: f.scale, colors: 192, dither: "bayer:bayer_scale=3" },
+    { fps: f.fps,     width: f.scale, colors: 128, dither: "bayer:bayer_scale=3" },
+    { fps: fpsAt(12), width: f.scale, colors: 128, dither: "bayer:bayer_scale=3" },
+    { fps: fpsAt(10), width: f.scale, colors: 128, dither: "bayer:bayer_scale=2" },
+    { fps: fpsAt(10), width: "800",   colors: 128, dither: "bayer:bayer_scale=2" },
+    { fps: fpsAt(10), width: "640",   colors: 96,  dither: "bayer:bayer_scale=2" },
+  ];
+  // gifsicle (if present) does cross-frame DELTA compression + lossy LZW that
+  // ffmpeg's gif muxer cannot — ~45% smaller on motion GIFs, so the ladder
+  // stops at a much higher-quality rung. Optional: degrades gracefully if absent.
+  const hasGifsicle = spawnSync("gifsicle", ["--version"]).status === 0;
+  if (!hasGifsicle) console.warn("gifsicle not found — GIFs will be larger (brew install gifsicle)");
+  const optimize = () => {
+    if (!hasGifsicle || Number(f.lossy) < 0) return;
+    const r = spawnSync("gifsicle", ["-O3", `--lossy=${f.lossy}`, out, "-o", out], { stdio: "inherit" });
+    if (r.status !== 0) console.warn("gifsicle failed — keeping unoptimized GIF");
+  };
+  let fit = false;
+  for (const s of (Number(f.maxMb) > 0 ? ladder : ladder.slice(0, 1))) {
+    // split-graph palettegen/paletteuse in ONE pass = clean GIF colors, no
+    // 2-input graph (which can trip an ffmpeg "Internal bug" on the threaded
+    // flush). Only colors/fps/width/dither are parameterized.
+    const vf =
+      `fps=${s.fps},scale=${s.width}:-2:flags=lanczos,split[a][b]` +
+      `;[a]palettegen=max_colors=${s.colors}[p]` +
+      `;[b][p]paletteuse=dither=${s.dither}`;
+    ff(["-i", src, "-vf", vf, out], out);
+    optimize();
+    const bytes = statSync(out).size;
+    console.log(`gif ${s.width}px ${s.fps}fps ${s.colors}c -> ${(bytes / 1e6).toFixed(2)} MB`);
+    if (Number(f.maxMb) <= 0 || bytes <= budget) { fit = true; break; }
+  }
+  if (!fit)
+    console.warn(
+      `GIF still over ${f.maxMb} MB at the smallest preset — kept the smallest one. ` +
+      `Shorten the tour (drop beats or lower --dwell) and re-run.`);
+  console.log("wrote", out);
 }
 if (f.mp4) {
   ff(["-i", src, "-vf", scale, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
