@@ -89,6 +89,12 @@ const NavBar = memo(() => {
           setExpanded={handleSetExpanded}
           pageTitle={pageTitle}
         />
+        <NavItem
+          to="/shows"
+          label="shows"
+          setExpanded={handleSetExpanded}
+          pageTitle={pageTitle}
+        />
       </ul>
     </nav>
   );

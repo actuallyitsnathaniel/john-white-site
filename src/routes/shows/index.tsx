@@ -6,7 +6,7 @@ const Shows = () => {
   const appId = import.meta.env.VITE_BANDSINTOWN_API_KEY;
 
   return (
-    <div className="flex flex-1 flex-col text-center text-white items-center justify-center text-3xl">
+    <div className="flex flex-1 flex-col text-center text-white items-center justify-center text-3xl pt-24 pb-12">
       <SEO
         title="Shows & Tour Dates"
         description="Check out upcoming John White live performances, concerts, and tour dates. Get tickets and see John White perform live."
