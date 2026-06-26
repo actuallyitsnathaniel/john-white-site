@@ -1,3 +1,50 @@
+import { motion } from "motion/react";
+import SEO from "../../components/seo";
+import BandsintownEvents from "../../components/bandsintown-events";
+
+const Shows = () => {
+  const appId = import.meta.env.VITE_BANDSINTOWN_API_KEY;
+
+  return (
+    <div className="flex flex-1 flex-col text-center text-white items-center justify-center text-3xl">
+      <SEO
+        title="Shows & Tour Dates"
+        description="Check out upcoming John White live performances, concerts, and tour dates. Get tickets and see John White perform live."
+        url="https://johnwhitesmusic.com/shows"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MusicEvent",
+          name: "John White Live Performances",
+          performer: {
+            "@type": "MusicGroup",
+            name: "John White",
+          },
+        }}
+      />
+      <h1 className="sr-only">John White Shows & Tour Dates</h1>
+      <h2 className="sr-only">Live Performances</h2>
+      <h3 className="sr-only">Concert Schedule</h3>
+      <motion.div className="flex flex-col gap-5 items-center">
+        <BandsintownEvents artistName="john white" appId={appId} />
+        <p className="text-xl pt-10">Wanna be first to the show?</p>
+        <a
+          href="https://www.bandsintown.com/a/15555621"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-base px-6 py-2 rounded-full border border-yellow-200 text-yellow-200 font-extrabold transition duration-300 hover:bg-yellow-200 hover:text-black hover:-translate-y-0.5"
+        >
+          follow
+        </a>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Shows;
+
+/* ---------------------------------------------------------------------------
+   Previous hardcoded ShowLink-based shows page, kept for reference.
+
 import ShowLink from "../../components/show-link";
 import breaking_sound from "../../assets/images/thumbnails/breaking-sound.png";
 import lucas_flood_showcase from "../../assets/images/thumbnails/lucas-flood-showcase.jpg";
@@ -58,3 +105,4 @@ const Shows = () => {
 };
 
 export default Shows;
+--------------------------------------------------------------------------- */
