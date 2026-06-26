@@ -25,7 +25,7 @@ const Shows = () => {
       <h2 className="sr-only">Live Performances</h2>
       <h3 className="sr-only">Concert Schedule</h3>
       <motion.div className="flex flex-col gap-5 items-center">
-        <BandsintownEvents artistName="john white" appId={appId} />
+        <BandsintownEvents artistName="id_15555621" appId={appId} />
         <p className="text-xl pt-10">Wanna be first to the show?</p>
         <a
           href="https://www.bandsintown.com/a/15555621"
