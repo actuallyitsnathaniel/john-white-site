@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 interface Event {
@@ -68,7 +68,7 @@ function getIWasThereUrl(
 const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   artistName,
   appId,
-  initialView = "past",
+  initialView = "upcoming",
   perPage = 5,
 }) => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -76,6 +76,8 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [view, setView] = useState<"upcoming" | "past">(initialView);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  // true once the user clicks a tab, so the empty-upcoming auto-fallback never overrides a deliberate choice
+  const userPicked = useRef(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -91,12 +93,18 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
           throw new Error(`Error fetching events: ${response.statusText}`);
         }
         const data: Event[] = await response.json();
+        // No upcoming shows and the user hasn't chosen a tab → fall back to past.
+        // Keep loading true so the refetch shows no flash of empty content.
+        if (view === "upcoming" && data.length === 0 && !userPicked.current) {
+          setView("past"); // the view change re-runs this effect to fetch past events
+          return;
+        }
         setEvents(data);
         setCurrentPage(1);
+        setLoading(false);
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
         setError(err.message);
-      } finally {
         setLoading(false);
       }
     };
@@ -125,7 +133,10 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
           return (
             <button
               key={tab}
-              onClick={() => setView(tab)}
+              onClick={() => {
+                userPicked.current = true;
+                setView(tab);
+              }}
               aria-pressed={active}
               className={`px-6 py-2 rounded-full border transition duration-300 ${
                 active
